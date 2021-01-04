@@ -1,0 +1,27 @@
+add_newline = false
+
+[line_break]
+disbled = true
+
+# replace ">" with 
+[character]
+succes_symbol = "[λ](bold #00A652)"
+error_symbol = "[λ](bold #df382c)"
+
+# show hostname
+[hostname]
+ssh_only = false
+trim_at = ".companyname.com"
+disabled = false
+style = "bold italic #87A752"
+
+# directory
+[directory]
+truncate_to_repo = true
+style = "bold italic #87A752"
+
+[cmd_duration]
+min_time = 4
+show_milliseconds = false
+disabled = false
+style = "bold italic #87A752"

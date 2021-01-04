@@ -1,0 +1,93 @@
+# wm independent hotkeys
+
+# terminal emulator
+super + Return
+	kitty
+
+# program launcher
+super + @space
+	dmenu_run -fn "Monokai" -p "run:" -i
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+#Window stuff
+
+# close
+super + w
+	bspc node -c
+
+# rotate windows
+super + x
+	bspc node -R 270
+
+# switch windows
+super + {h,j,k,semicolon}
+	bspc node -f {west,south,north,east}
+
+# swap windows
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# resize window size
+alt + ctrl + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+alt + shift + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# move windows
+alt + super + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# choose direction
+ctrl + super + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# choose and oper terminal
+super + {i,o}
+	bspc node -p {east,south}
+
+# go to next and previous windows
+alt + Tab
+	bspc node -f next
+
+alt + shift + Tab
+	bspc node -f prev
+
+#Desktop stuff 
+
+#switch to desktops
+alt + {h,l}
+	bspc desktop -f {prev,next}
+
+# new desktop
+alt + d
+	bspc monitor -a desktop
+	bspc desktop -f any.\!occupied
+
+# remove desktop
+alt + w
+	bspc desktop focused -r
+
+# change to all the modes
+
+# fullscreen
+super + m
+	bspc node -t fullscreen
+
+# tiling mode
+super + t
+	bspc node -t tiled
+
+# floating mode
+super + f
+	bspc node -t floating
+
+# stick and unstick windows super + s 
+super + s
+	bspc node -g sticky=on
+
+super + alt + s
+	bspc node -g sticky=off
