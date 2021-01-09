@@ -68,7 +68,7 @@ inoremap jj <Esc>
 nnoremap <Leader>n :nohls<CR>
 
 "autocomplete
-autocmd BufRead *.cpp,*.hpp,Makefile nnoremap <Leader>t :!ctags languages=c++
+autocmd BufRead *.cpp,*.hpp,Makefile nnoremap <Leader>t :!ctags languages=c++ .<CR>
 
 call plug#begin()
   Plug 'sundaran1122/vim-git'
