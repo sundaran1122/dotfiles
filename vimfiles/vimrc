@@ -29,6 +29,7 @@ set nu
 set rnu
 set laststatus=2
 set backspace=2
+set nowrap
 
 "code folding options
 set foldmethod=indent

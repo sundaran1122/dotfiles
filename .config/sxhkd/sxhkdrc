@@ -6,7 +6,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -fn "Monokai" -p "run:" -i
+	dmenu_run -fn "Mononokai" -p "run:" -i
 
 # quit/restart bspwm
 super + alt + {q,r}

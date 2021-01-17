@@ -1,11 +1,14 @@
 #! /bin/sh
 
+EDITOR=vim
 killall "picom"
 killall "sxhkd"
-picom &
+killall "launchlemonbar"
 sxhkd &
 xrandr -s 1360x768
+picom &
 nitrogen --restore
+~/.config/lemonbar/launchlemonbar
 
 bspc config border_width         2
 bspc config window_gap          10
