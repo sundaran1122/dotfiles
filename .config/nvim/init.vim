@@ -31,6 +31,9 @@ set laststatus=2
 set backspace=2
 set nowrap
 
+"statusline
+set stl=%m%h%w\ \|%n\ <%f>\|\ %F%=%l:%c\ \|%p%%\ %L\|
+
 "code folding options
 set foldmethod=indent
 set foldnestmax=3
