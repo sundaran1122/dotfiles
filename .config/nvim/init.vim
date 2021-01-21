@@ -64,7 +64,7 @@ nnoremap <Leader>L <C-w>L
 
 "general maps
 nnoremap <F6> :so %<CR>
-nnoremap <Leader><C-e> :15Lex<CR>
+nnoremap <Leader><C-e> :15Lexplore<CR>
 inoremap jj <Esc>
 nnoremap <Leader>n :nohls<CR>
 

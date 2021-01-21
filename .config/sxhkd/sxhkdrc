@@ -65,7 +65,6 @@ alt + {h,l}
 # new desktop
 alt + d
 	bspc monitor -a desktop
-	bspc desktop -f any.\!occupied
 
 # remove desktop
 alt + w
