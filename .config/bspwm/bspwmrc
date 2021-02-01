@@ -13,14 +13,13 @@ picom &
 nitrogen --restore
 ~/.config/lemonbar/launchlemonbar
 
-bspc config border_width         2
-bspc config window_gap          10
+bspc config border_width        1
+bspc config window_gap          05
 
 bspc config split_ratio          0.5
 bspc config focus_follow_mouse	 true
 bspc config border_width	 2.0
-bspc config normal_border_color  '#CCCCCC'
-bspc config focused_border_color '#00FFFF'
+bspc config focused_border_color  '#CCCCCC'
 bspc config focus_follows_pointer  true
 xsetroot -cursor_name left_ptr
 

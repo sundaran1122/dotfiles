@@ -2,8 +2,7 @@
 filetype indent plugin on
 syntax enable
 
-"indent option
-set ai
+"indent option set ai
 set shiftwidth=2
 set tabstop=2
 set smarttab
@@ -30,6 +29,7 @@ set rnu
 set laststatus=2
 set backspace=2
 set nowrap
+set showcmd
 
 "statusline
 set stl=%m%h%w\ \|%n\ <%f>\|\ %F%=%l:%c\ \|%p%%\ %L\|
@@ -73,7 +73,7 @@ nnoremap <Leader>n :nohls<CR>
 
 "autocomplete
 autocmd BufRead *.cpp,*.hpp,Makefile nnoremap <Leader>t :!ctags languages=c++ .<CR>
+set completeopt=longest,menuone
 
 call plug#begin()
-  Plug 'sundaran1122/vim-git'
 call plug#end()
