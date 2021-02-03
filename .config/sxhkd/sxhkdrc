@@ -12,6 +12,10 @@ super + @space
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
+# lock screen
+super + alt + l
+  betterlockscreen -l
+
 #Window stuff
 
 # close

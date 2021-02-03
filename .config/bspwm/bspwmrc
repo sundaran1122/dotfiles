@@ -11,7 +11,7 @@ killall "launchlemonbar"
 sxhkd &
 xrandr -s 1360x768
 picom &
-nitrogen --restore
+hsetroot -fill ~/wallpapers/wallpaper.png
 ~/.config/lemonbar/launchlemonbar
 
 bspc config border_width        1
