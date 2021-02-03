@@ -12,5 +12,5 @@ $INSTALL xf86_intel_video xorg xorg-xinit alsa alsa-utils
 
 # install stuff
 $INSTALL neovim zsh
-$INSTALL bspwm sxhkd lemonbar picom nitrogen
+$INSTALL bspwm sxhkd lemonbar picom hsetroot
 $INSTALL kitty neofetch
