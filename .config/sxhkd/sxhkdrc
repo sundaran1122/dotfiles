@@ -2,7 +2,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	$TERMINAL
 
 # program launcher
 super + @space
@@ -20,7 +20,10 @@ super + w
 
 # rotate windows
 super + x
-	bspc node -R 270
+	bspc node @parent -R 270
+
+super + shift + x
+  bspc node @parent -R 90
 
 # switch windows
 super + {h,j,k,semicolon}
@@ -42,12 +45,12 @@ alt + super + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # choose direction
-ctrl + super + {h,j,k,l}
+ctrl + super + {h,j,k,l,c}
 	bspc node -p {west,south,north,east}
 
 # choose and oper terminal
 super + {i,o}
-	bspc node -p {east,south}
+	bspc node -p {east,south} && $TERMINAL
 
 # go to next and previous windows
 alt + Tab
@@ -64,7 +67,7 @@ alt + {h,l}
 
 # new desktop
 alt + d
-	bspc monitor -a desktop
+	bspc monitor -a desktop && bspc desktop -f next
 
 # remove desktop
 alt + w
@@ -88,5 +91,5 @@ super + f
 super + s
 	bspc node -g sticky=on
 
-super + alt + s
+super + shift + s
 	bspc node -g sticky=off
