@@ -52,7 +52,7 @@ alt + super + {h,j,k,l}
 ctrl + super + {h,j,k,l,c}
 	bspc node -p {west,south,north,east}
 
-# choose and oper terminal
+# choose and open terminal
 super + {i,o}
 	bspc node -p {east,south} && $TERMINAL
 
