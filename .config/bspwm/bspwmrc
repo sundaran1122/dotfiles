@@ -13,6 +13,7 @@ xrandr -s 1360x768
 picom &
 hsetroot -fill ~/wallpapers/wallpaper.png
 ~/.config/lemonbar/launchlemonbar
+betterlockscreen -b 1 -u wallpapers/wallpaper.png &
 
 bspc config border_width        1
 bspc config window_gap          05

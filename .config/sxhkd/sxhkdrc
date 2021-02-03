@@ -14,7 +14,7 @@ super + alt + {q,r}
 
 # lock screen
 super + alt + l
-  betterlockscreen -l
+  betterlockscreen -l blur
 
 #Window stuff
 
