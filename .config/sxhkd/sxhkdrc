@@ -13,7 +13,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # lock screen
-super + alt + l
+super + alt + s
   betterlockscreen -l blur
 
 #Window stuff
@@ -26,7 +26,7 @@ super + w
 super + x
 	bspc node @parent -R 270
 
-super + shift + x
+super + ctrl + x
   bspc node @parent -R 90
 
 # switch windows
@@ -45,7 +45,7 @@ alt + shift + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # move windows
-alt + super + ctrl + {h,j,k,l}
+alt + super + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # choose direction

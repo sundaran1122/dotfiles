@@ -32,7 +32,7 @@ set nowrap
 set showcmd
 
 "statusline
-set stl=%m%h%w\ \|%n\ <%f>\|\ %F%=%l:%c\ \|%p%%\ %L\|
+set stl=%m%h%w\ \|%n\ <%f>\|%=%l:%c\ \|%p%%\ %L\|
 
 "code folding options
 set foldmethod=indent
