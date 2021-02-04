@@ -5,12 +5,10 @@
 #include <stdio.h>
 
 int rx_bytes, tx_bytes;
-int rx_prev_bytes = 0;
-int tx_prev_bytes = 0;
+int rx_bytes_fd, tx_bytes_fd;
+int rx_prev_bytes, tx_prev_bytes;
 char rx_bytes_str[32];
 char tx_bytes_str[32];
-int rx_bytes_fd, tx_bytes_fd;
-int length = 0;
 
 void NetworkModule(){
   lseek(rx_bytes_fd, 0, SEEK_SET);

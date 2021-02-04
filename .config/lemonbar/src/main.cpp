@@ -7,16 +7,17 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 
-// define global variables
-int lemonpipe[2];
-char * buffer = new char[256];
-
 void sigint_handler(int){
   write(1, "ending", 6);
   _exit(0);
 }
 
-#include "module.cpp"
+// define global variables
+int lemonpipe[2];
+char * buffer = new char[256];
+int length = 0;
+
+#include "network.cpp"
 
 int main(){
   // register signal handlers
