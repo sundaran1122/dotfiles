@@ -5,12 +5,12 @@ void DesktopModule(int){
   int pid = fork();
   if(pid == 0){
     dup2(output[1], 1);
-    execlp("bash", "bash", "/home/sundaran/.scripts/lemonbar/desktopmodule.sh");
+    execlp("zsh", "zsh", "/home/sundaran/.scripts/lemonbar/desktopmodule.zsh");
   }
-
   wait(0);
-  memset(desktops, 0, 64);
-  read(output[0], desktops, 64);
+
+  memset(desktops, 0, 1024);
+  read(output[0], desktops, 1024);
   close(output[0]);
   close(output[1]);
   return;

@@ -17,6 +17,7 @@ xrandr -s 1360x768
 picom &
 hsetroot -fill ~/wallpapers/wallpaper.png
 betterlockscreen -b 1 -u wallpapers/wallpaper.png &
+bspc desktop focused -n 0
 ~/.config/lemonbar/controllemonbar &
 cat /tmp/wm/lemonbar | lemonbar -fMononoki -B#2E3440 -F#D8DEE9 -gx32 -p | zsh &
 
@@ -34,7 +35,6 @@ xsetroot -cursor_name left_ptr
 bspc rule -a Gimp state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc desktop focused -n 0
 
 #resize stuff
 bspc config pointer_modifier mod4

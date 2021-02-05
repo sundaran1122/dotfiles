@@ -10,7 +10,7 @@
 
 // define global variables
 int lemonin;
-char desktops[64];
+char * desktops = new char[1024];
 
 #include "network.cpp" 
 #include "desktop.cpp"
@@ -33,7 +33,7 @@ int main(){
 
   // async modules
   signal(SIGUSR1, DesktopModule);
-  memset(desktops, 0, 64);
+  memset(desktops, 0, 1024);
   kill(getpid(), SIGUSR1);
 
   for(;;){
