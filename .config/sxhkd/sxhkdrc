@@ -67,15 +67,15 @@ alt + shift + Tab
 
 #switch to desktops
 alt + {h,l}
-	bspc desktop -f {prev,next}
+	bspc desktop -f {prev,next} && killall -SIGUSR1 controllemonbar
 
 # new desktop
 alt + d
-	bspc monitor -a desktop && bspc desktop -f next
+  ~/.scripts/bspwm/newdesktop.zsh && killall -SIGUSR1 controllemonbar
 
 # remove desktop
 alt + w
-	bspc desktop focused -r
+	bspc desktop focused -r && killall -SIGUSR1 controllemonbar
 
 # change to all the modes
 

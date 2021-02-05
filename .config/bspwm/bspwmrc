@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/zsh
 
 export EDITOR=nvim
 export BROWSER=firefox
@@ -6,14 +6,19 @@ export TERMINAL=kitty
 
 killall "picom"
 killall "sxhkd"
-killall "launchlemonbar"
+killall "lemonbar"
+killall "controllemonbar"
+mkdir -p /tmp/wm
+mkfifo /tmp/wm/lemonbar
+mkfifo /tmp/wm/lemonbarout
 
 sxhkd &
 xrandr -s 1360x768
 picom &
 hsetroot -fill ~/wallpapers/wallpaper.png
-~/.config/lemonbar/launchlemonbar
 betterlockscreen -b 1 -u wallpapers/wallpaper.png &
+~/.config/lemonbar/controllemonbar &
+cat /tmp/wm/lemonbar | lemonbar -fMononoki -B#2E3440 -F#D8DEE9 -gx32 -p | zsh &
 
 bspc config border_width        1
 bspc config window_gap          10
@@ -29,6 +34,7 @@ xsetroot -cursor_name left_ptr
 bspc rule -a Gimp state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc desktop focused -n 0
 
 #resize stuff
 bspc config pointer_modifier mod4

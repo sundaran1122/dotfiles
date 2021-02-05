@@ -1,8 +1,8 @@
 CC=g++
 
 all:
-	$(CC) -o ../launchlemonbar main.cpp
-	../launchlemonbar
+	$(CC) -o ../controllemonbar main.cpp
+	bspc wm -r
 
 build:
-	$(CC) -o -s -O2 ../launchlemonbar main.cpp
+	$(CC) -o -s -O2 ../controllemonbar main.cpp
