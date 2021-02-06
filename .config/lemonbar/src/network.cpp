@@ -16,8 +16,7 @@ void NetworkModule(){
 
   MODULE_START;
   printf(" v %.2fK ", (rx_bytes - rx_prev_bytes)/1000.0);
-  MODULE_END;
-  printf("  ");
+  printf("%{B-} ");
   MODULE_START;
   printf(" ^ %.2fK ", (tx_bytes - tx_prev_bytes)/1000.0);
 

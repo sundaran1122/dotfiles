@@ -8,6 +8,7 @@ killall "picom"
 killall "sxhkd"
 killall "lemonbar"
 killall "controllemonbar"
+killall "updatedesktopmodule.zsh"
 mkdir -p /tmp/wm
 mkfifo /tmp/wm/lemonbar
 mkfifo /tmp/wm/lemonbarout
