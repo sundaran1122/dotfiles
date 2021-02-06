@@ -1,3 +1,5 @@
 #!/bin/zsh
-bspc monitor -a `bspc query -D | wc -l`
-bspc desktop -f next
+DESKTOPNUM=`bspc query -D | wc -l`
+
+bspc monitor -a $DESKTOPNUM
+bspc desktop -f $DESKTOPNUM

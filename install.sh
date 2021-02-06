@@ -8,9 +8,10 @@ export UPDATE="pacman -Syu"
 $UPDATE
 
 # setup specific to arch
-$INSTALL xf86_intel_video xorg xorg-xinit alsa alsa-utils
+$INSTALL xf86_intel_video xorg xorg-xinit alsa alsa-utils base-devel
 
 # install stuff
 $INSTALL neovim zsh
-$INSTALL bspwm sxhkd lemonbar picom hsetroot
+$INSTALL bspwm sxhkd picom hsetroot betterlockscreen
+$INSTALL dmenu
 $INSTALL kitty neofetch

@@ -7,13 +7,19 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <sys/types.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 
 // define global variables
 int lemonin;
 char * desktops = new char[1024];
 
+#include "helpers.cpp"
 #include "network.cpp" 
-#include "desktop.cpp"
+#include "asyncmodules.cpp"
 
 void sigint_handler(int){
   write(2, "ending", 6);
