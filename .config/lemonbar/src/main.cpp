@@ -13,9 +13,13 @@
 #include <unistd.h>
 #include <stdio.h>
 
+#define MODULE_START printf("%%{B#3B4252}%%{+u}")
+#define MODULE_END printf("%%{B-}%%{-u}")
+
 // define global variables
 int lemonin;
 char * desktops = new char[1024];
+char * windowname = new char[32];
 
 #include "helpers.cpp"
 #include "network.cpp" 
@@ -39,15 +43,26 @@ int main(){
 
   // async modules
   signal(SIGUSR1, DesktopModule);
+  signal(SIGUSR2, WindowModule);
   memset(desktops, 0, 1024);
+  memset(windowname, 0, 32);
   kill(getpid(), SIGUSR1);
+  kill(getpid(), SIGUSR2);
 
   for(;;){
+    printf("  ");
     printf(desktops);
+    printf("  ");
+    printf(windowname);
 
+    // center aligned modules
+    printf("%{c}  hello ");
+    // LoadSimpleModule("/home/sundaran/.scripts/lemonbar/datemodule.zsh");
+    
     // right aligned modules
     printf("%{r}");
     NetworkModule();
+    printf("  \n");
     fflush(stdout);
     sleep(1);
   }

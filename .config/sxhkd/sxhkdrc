@@ -35,7 +35,7 @@ super + {h,j,k,semicolon}
 
 # swap windows
 super + shift + {h,j,k,l}
-	bspc node -s {west,south,north,east}
+	bspc node -s {west,south,north,east} --follow
 
 # resize window size
 alt + ctrl + {h,j,k,l}
@@ -52,10 +52,6 @@ alt + super + {h,j,k,l}
 ctrl + super + {h,j,k,l,c}
 	bspc node -p {west,south,north,east}
 
-# choose and open terminal
-super + {i,o}
-	bspc node -p {east,south} && $TERMINAL
-
 # go to next and previous windows
 alt + Tab
 	bspc node -f next
@@ -67,18 +63,17 @@ alt + shift + Tab
 
 #switch to desktops
 alt + {h,l}
-	bspc desktop -f {prev,next} && killall -SIGUSR1 controllemonbar
+	bspc desktop -f {prev,next}
 
 # new desktop
 alt + d
-  ~/.scripts/bspwm/newdesktop.zsh && killall -SIGUSR1 controllemonbar
+  ~/.scripts/bspwm/newdesktop.zsh
 
 # remove desktop
 alt + w
-	bspc desktop focused -r && ~/.scripts/bspwm/renamedesktop.zsh && killall -SIGUSR1 controllemonbar
+	bspc desktop focused -r && ~/.scripts/bspwm/renamedesktop.zsh
 
 # change to all the modes
-
 # fullscreen
 super + m
 	bspc node -t fullscreen
