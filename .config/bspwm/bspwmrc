@@ -21,7 +21,7 @@ bspc desktop focused -n 0
 
 ~/.config/lemonbar/controllemonbar &
 ~/.scripts/lemonbar/updatedesktopmodule.zsh &
-~/.scripts/lemobar/updatewindowmodule.zsh &
+~/.scripts/lemonbar/updatewindowmodule.zsh &
 cat /tmp/wm/lemonbar | lemonbar -fMononoki -B#2E3440 -F#D8DEE9 -u2 -U#88C0D0 -gx32 -p | zsh &
 
 xsetroot -cursor_name left_ptr
