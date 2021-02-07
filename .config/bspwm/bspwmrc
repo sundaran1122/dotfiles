@@ -8,7 +8,7 @@ killall "picom"
 killall "sxhkd"
 killall "lemonbar"
 killall "controllemonbar"
-killall "updatedesktopmodule.zsh"
+killall "zsh"
 mkdir -p /tmp/wm
 mkfifo /tmp/wm/lemonbar
 mkfifo /tmp/wm/lemonbarout
@@ -20,11 +20,10 @@ hsetroot -fill ~/wallpapers/wallpaper.png
 bspc desktop focused -n 0
 
 ~/.config/lemonbar/controllemonbar &
-~/.scripts/lemonbar/updatedesktopmodule.zsh &
-~/.scripts/lemonbar/updatewindowmodule.zsh &
-cat /tmp/wm/lemonbar | lemonbar -fMononoki -B#2E3440 -F#D8DEE9 -u2 -U#88C0D0 -gx32 -p | zsh &
+zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &
+zsh ~/.scripts/lemonbar/updatewindowmodule.zsh &
 
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
 
 bspc config border_width        1
 bspc config window_gap          10

@@ -3,28 +3,27 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include <iostream>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 #define MODULE_START printf("%%{B#3B4252}%%{+u} ")
 #define MODULE_END printf(" %%{B-}%%{-u}")
 
 // define global variables
-int lemonin;
+int lemonin[2];
 char * desktops = new char[1024];
 char * windowname = new char[32];
-char * temp = new char[32];
 
 #include "helpers.cpp"
 #include "network.cpp" 
 #include "asyncmodules.cpp"
+#include "time.cpp"
 
 void sigint_handler(int){
   write(2, "ending", 6);
@@ -36,8 +35,15 @@ int main(){
   signal(SIGINT, sigint_handler);
 
   // open the pipe
-  lemonin = open("/tmp/wm/lemonbar", O_WRONLY | O_NONBLOCK);
-  dup2(lemonin, 1);
+  pipe(lemonin);
+  int pid = fork();
+  if(pid == 0){
+    dup2(lemonin[0], 0);
+    execlp("lemonbar", "lemonbar", "-fMononoki",
+        "-B#2E3440", "-F#D8DEE9", "-U#88C0D0",
+        "-u2", "-gx32", "-p");
+  }
+  dup2(lemonin[1], 1);
 
   rx_bytes_fd = open("/sys/class/net/enp0s3/statistics/rx_bytes", O_RDONLY);
   tx_bytes_fd = open("/sys/class/net/enp0s3/statistics/tx_bytes", O_RDONLY);
@@ -58,18 +64,11 @@ int main(){
 
     // center aligned modules
     printf("%{c}");
-    LoadModule("/home/sundaran/.scripts/lemonbar/datemodule.zsh", temp, 32);
-    printf(temp);
+    TimeModule();
     
     // right aligned modules
     printf("%{r}");
     NetworkModule();
-
-    printf("  ");
-    MODULE_START;
-    LoadModule("/home/sundaran/.scripts/lemonbar/timemodule.zsh", temp, 32);
-    printf(temp);
-    MODULE_END;
 
     printf("  \n");
     fflush(stdout);
