@@ -10,8 +10,6 @@ killall "lemonbar"
 killall "controllemonbar"
 killall "zsh"
 mkdir -p /tmp/wm
-mkfifo /tmp/wm/lemonbar
-mkfifo /tmp/wm/lemonbarout
 
 sxhkd &
 xrandr -s 1360x768
@@ -35,6 +33,7 @@ bspc config presel_feedback_color '#8FBCBB'
 bspc config focus_follows_pointer  true
 
 bspc rule -a Gimp state=floating
+bspc rule -a :*:Dialog state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
