@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-for DESKTOP in `bspc query -D -d .\!occupied`
-do
-  bspc desktop $DESKTOP -r
-done
+DESKTOP=`bspc query -D -d .\\!occupied`
+[[ $DESKTOP == "" ]] && exit
+
+bspc desktop $DESKTOP -r
+
+~/.scripts/bspwm/renamedesktop.zsh

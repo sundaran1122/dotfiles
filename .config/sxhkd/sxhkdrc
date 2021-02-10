@@ -12,11 +12,11 @@ super + @space
 
 # restart bspwm
 super + alt + r
-  bspc desktop -f 0 && bspc wm -r
+  bspc desktop -f 1 && bspc wm -r
 
 # quit bspwm
 super + alt + q
-  bspc quit
+  ~/.scripts/bspwm/quitbspwm.zsh
 
 # lock screen
 super + alt + s
