@@ -12,6 +12,7 @@ $INSTALL xf86_intel_video xorg xorg-xinit alsa alsa-utils base-devel
 
 # install stuff
 $INSTALL neovim zsh
-$INSTALL bspwm sxhkd picom hsetroot betterlockscreen
-$INSTALL dmenu
+$INSTALL bspwm sxhkd
+$INSTALL picom hsetroot betterlockscreen
+$INSTALL dmenu fzf
 $INSTALL kitty neofetch
