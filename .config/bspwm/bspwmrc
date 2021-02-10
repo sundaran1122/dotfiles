@@ -9,13 +9,14 @@ killall "sxhkd"
 killall "lemonbar"
 killall "controllemonbar"
 killall "zsh"
+killall "bspc"
 mkdir -p /tmp/wm
 
 sxhkd &
 xrandr -s 1360x768
 picom &
 hsetroot -fill ~/wallpapers/wallpaper.png &
-bspc desktop focused -n 0
+bspc desktop focused -n 1
 
 ~/.config/lemonbar/controllemonbar &
 zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &
