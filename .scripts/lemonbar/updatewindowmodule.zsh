@@ -2,5 +2,5 @@
 
 while true
 do
-  (bspc subscribe node_add node_remove node_focus | cat | echo) && killall -SIGUSR2 controllemonbar
+  bspc subscribe -c 1 node_add node_remove node_focus && killall -SIGUSR2 controllemonbar
 done

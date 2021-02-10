@@ -2,5 +2,5 @@
 
 while true
 do
-(bspc subscribe desktop_focus desktop_add desktop_remove | cat | echo) && killall -SIGUSR1 controllemonbar
+bspc subscribe -c 1 desktop_focus desktop_add desktop_remove && killall -SIGUSR1 controllemonbar
 done

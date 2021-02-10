@@ -10,9 +10,13 @@ super + @space
   -sb "#3B4252" -sf "#ECEFF3" \
   -fn "Mononokai" -p "run:" -i
 
-# quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+# restart bspwm
+super + alt + r
+  bspc desktop -f 0 && bspc wm -r
+
+# quit bspwm
+super + alt + q
+  bspc quit
 
 # lock screen
 super + alt + s
@@ -74,11 +78,11 @@ alt + h
 
 # fullscreen
 super + m
-	bspc node -t fullscreen
+	bspc node -t fullscreen && xdo hide -dr && xdo hide -N Bar
 
 # tiling mode
 super + t
-	bspc node -t tiled
+	bspc node -t tiled && xdo show -dr && xdo show -N Bar
 
 # floating mode
 super + f

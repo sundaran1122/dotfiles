@@ -41,7 +41,7 @@ int main(){
     dup2(lemonin[0], 0);
     execlp("lemonbar", "lemonbar", "-fMononoki",
         "-B#2E3440", "-F#D8DEE9", "-U#88C0D0",
-        "-u2", "-gx25", "-p");
+        "-u1", "-gx25", "-p");
   }
   dup2(lemonin[1], 1);
 
@@ -65,7 +65,7 @@ int main(){
     // center aligned modules
     printf("%{c}");
     TimeModule();
-    
+
     // right aligned modules
     printf("%{r}");
     NetworkModule();
