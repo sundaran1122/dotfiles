@@ -64,18 +64,14 @@ alt + shift + Tab
 #Desktop stuff 
 
 #switch to desktops
-alt + {h,l}
-	bspc desktop -f {prev,next}
+alt + l
+	~/.scripts/bspwm/switchtonextdesktop.zsh
 
-# new desktop
-alt + d
-  ~/.scripts/bspwm/newdesktop.zsh
-
-# remove desktop
-alt + w
-	bspc desktop focused -r && ~/.scripts/bspwm/renamedesktop.zsh
+alt + h
+	~/.scripts/bspwm/switchtoprevdesktop.zsh
 
 # change to all the modes
+
 # fullscreen
 super + m
 	bspc node -t fullscreen
