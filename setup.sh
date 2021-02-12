@@ -2,6 +2,7 @@
 
 # install stuff
 sudo ./install.sh
+./aur.sh
 
 # set symlinks
 ln -sf ~/dotfiles/.config ~/.config

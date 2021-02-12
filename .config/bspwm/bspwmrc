@@ -14,8 +14,8 @@ mkdir -p /tmp/wm
 
 sxhkd &
 xrandr -s 1360x768
-picom &
 hsetroot -fill ~/wallpapers/wallpaper.png &
+picom --experimental-backend &
 bspc desktop focused -n 1
 
 ~/.config/lemonbar/controllemonbar &

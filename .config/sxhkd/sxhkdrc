@@ -56,7 +56,7 @@ alt + super + {h,j,k,l}
 
 # choose direction
 ctrl + super + {h,j,k,l,c}
-	bspc node -p {west,south,north,east}
+	bspc node -p {west,south,north,east,cancel}
 
 # go to next and previous windows
 alt + Tab

@@ -7,8 +7,8 @@ HISTFILE=~/.cache/zsh/zshhistory
 autoload -Uz compinit; compinit
 
 alias n="nvim"
-alias cf="cd \`PATH='' /bin/find -L -O3 -type d | egrep -v '`cat ~/.config/fzf/excluded`' | fzf --tiebreak=length,index\`"
-alias nf="nvim \`PATH='' /bin/find -L -O3 -type f | egrep -v '`cat ~/.config/fzf/excluded`' | fzf --tiebreak=length,index\`"
+alias cf="cd \`PATH='' /bin/find -O3 -type d | egrep -v '`cat ~/.config/fzf/excluded`' | fzf --tiebreak=length,index\`"
+alias nf="nvim \`PATH='' /bin/find -O3 -type f | egrep -v '`cat ~/.config/fzf/excluded`' | fzf --tiebreak=length,index\`"
 
 #nordic tty?
 if [[ $TERM = "linux" ]]
