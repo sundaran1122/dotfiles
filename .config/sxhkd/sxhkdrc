@@ -15,11 +15,11 @@ super + alt + r
   bspc desktop -f 1 && bspc wm -r
 
 # quit bspwm
-super + alt + q
+super + alt + b; q
   ~/.scripts/bspwm/quitbspwm.zsh
 
 # lock screen
-super + alt + s
+super + alt + b; s
   betterlockscreen -l blur
 
 #Window stuff
@@ -40,7 +40,7 @@ super + {h,j,k,semicolon}
 	bspc node -f {west,south,north,east}
 
 # swap windows
-super + shift + {h,j,k,l}
+super + m; super + {h,j,k,semicolon}
 	bspc node -s {west,south,north,east} --follow
 
 # resize window size
@@ -77,20 +77,20 @@ alt + h
 # change to all the modes
 
 # fullscreen
-super + m
-	bspc node -t fullscreen && xdo hide -dr && xdo hide -N Bar
+super + s; super + m
+	bspc node -t fullscreen && xdo hide -N Bar && xdo hide -dr
 
 # tiling mode
-super + t
-	bspc node -t tiled && xdo show -dr && xdo show -N Bar
+super + s; super + t
+	bspc node -t tiled && xdo show -N Bar && xdo show -dr
 
 # floating mode
-super + f
+super + s; super + f
 	bspc node -t floating
 
 # stick and unstick windows super + s 
-super + s
+super + s; super + s
 	bspc node -g sticky=on
 
-super + shift + s
+super + s; super + u
 	bspc node -g sticky=off

@@ -1,7 +1,7 @@
 #! /bin/zsh
 
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=min
 export TERMINAL=kitty
 
 killall "picom"
