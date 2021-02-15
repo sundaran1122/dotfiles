@@ -30,25 +30,43 @@ super + alt + b; s
 
 # screenshot
 super + alt + s
-  maim -s `yad --title=Dialog --geometry=1150x600+100+100 --file`
+  maim -s `yad --title=Dialog --geometry=1150x600+100+100 --file` && echo "Screenshot taken!" > /tmp/wm/notifications
 
-# hide and unhide bar
-super + alt + h
-  xdo hide -N Bar && bspc config top_padding 0
+# change window gap
+super + alt + equal
+  bspc config window_gap $(expr $(bspc config window_gap) - 3)
 
-super + alt + ctrl + h
-  xdo show -N Bar
+super + alt + minus
+  bspc config window_gap $(expr $(bspc config window_gap) + 3)
 
 ###############################
-# Window stuff
+# Hide and unhide windows
+###############################
+
+# hide and unhide bar
+super + g
+  xdotool search --class Bar windowunmap && bspc config top_padding 3
+
+super + alt + g
+  xdotool search --class Bar windowmap && bspc config top_padding 20
+
+# hide and unhide windows
+super + u
+  bspc node -g hidden=true
+
+super + alt + u
+  ~/.scripts/bspwm/mapwindow.zsh
+
+###############################
+# General Window stuff
 ###############################
 
 # close
 super + w
-	xdo close
+	bspc node -c
 
 super + q
-  xdo kill
+  bspc node -k
 
 # rotate windows
 super + x
@@ -57,31 +75,63 @@ super + x
 super + ctrl + x
   bspc node @parent -R 90
 
+# choose direction
+ctrl + super + {h,j,k,l,c}
+	bspc node -p {west,south,north,east,cancel}
+
+###############################
+# switch between windows
+###############################
+
 # switch windows
 super + {h,j,k,semicolon}
 	bspc node -f {west,south,north,east}
+
+# for floating windows
+super + c
+  bspc node -f next.\!focused.leaf.local
+  
+# go up and down the node tree
+super + {u,d}
+  bspc node -f {first_ancestor,any.window.descendant_of}
+
+###############################
+# swap windows
+###############################
 
 # swap windows
 super + m; super + {h,j,k,semicolon}
 	bspc node -s {west,south,north,east} --follow
 
-super + c
-  xdo activate -dr
+# swap with biggest node
+super m; super + b
+  bspc node -s biggest.local --follow
 
+# insert windows
+super + i; super + {h,j,k,semicolon}
+  bspc node -n {west,south,north,east} --follow
+
+###############################
+# resize and move windows
+###############################
+
+# equalize
 super + b
-  bspc node -s biggest --follow
+  bspc node @/ -B
+
+super + e
+  bspc node @/ -E
 
 # resize window size
 alt + ctrl + {h,j,k,l}
-	xdo resize {-w -20,-h +20,-h -20,-w +20}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+alt + shift + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # move windows
-alt + shift + {h,j,k,l}
-  xdo move  {-x -20, -y +20, -y -20, -x +20}
-
-# choose direction
-ctrl + super + {h,j,k,l,c}
-	bspc node -p {west,south,north,east,cancel}
+alt + super + {h,j,k,l}
+  bspc node -v {-20 0,0 20,0 -20,20 0}
 
 ###############################
 # Desktop stuff 
@@ -100,11 +150,11 @@ alt + h
 
 # fullscreen
 super + s; super + m
-	bspc node -t fullscreen && xdo hide -N Bar && xdo hide -dr
+	bspc node -t fullscreen && xdo hide -dr
 
 # tiling mode
 super + s; super + t
-	bspc node -t tiled && xdo show -N Bar && xdo show -dr
+	bspc node -t tiled && xdo show -dr
 
 # floating mode
 super + s; super + f

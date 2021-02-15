@@ -44,6 +44,7 @@ bspc config pointer_follows_focus  true
 
 bspc rule -a Gimp state=floating
 bspc rule -a \*:\*:Dialog state=floating
+bspc rule -a \*:\*:Notification state=floating manage=off
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
