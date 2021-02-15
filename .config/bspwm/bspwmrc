@@ -11,6 +11,7 @@ killall "controllemonbar"
 killall "zsh"
 killall "bspc"
 mkdir -p /tmp/wm
+mkfifo /tmp/wm/notifications
 
 sxhkd &
 xrandr -s 1360x768
@@ -21,13 +22,18 @@ bspc desktop focused -n 1
 ~/.config/lemonbar/controllemonbar &
 zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &
 zsh ~/.scripts/lemonbar/updatewindowmodule.zsh &
+zsh ~/.scripts/bspwm/notification-server.zsh &
 
 xsetroot -cursor_name left_ptr &
 
 bspc config border_width        1
-bspc config window_gap          10
+bspc config window_gap          3
+bspc config top_padding         20
+bspc config left_padding        0
+bspc config right_padding       0
+bspc config bottom_padding      0
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.55
 bspc config automatic_scheme     longest_side
 
 bspc config focused_border_color  '#88C0D0'
