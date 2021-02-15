@@ -1,4 +1,6 @@
+###############################
 # wm independent hotkeys
+###############################
 
 # terminal emulator
 super + Return
@@ -9,6 +11,10 @@ super + @space
 	dmenu_run -nb "#2E3440" -nf "#D8DEE9" \
   -sb "#3B4252" -sf "#ECEFF3" \
   -fn "Mononokai" -p "run:" -i
+
+###############################
+# super + alt stuff
+###############################
 
 # restart bspwm
 super + alt + r
@@ -22,11 +28,27 @@ super + alt + b; q
 super + alt + b; s
   betterlockscreen -l blur
 
-#Window stuff
+# screenshot
+super + alt + s
+  maim -s `yad --title=Dialog --geometry=1150x600+100+100 --file`
+
+# hide and unhide bar
+super + alt + h
+  xdo hide -N Bar && bspc config top_padding 0
+
+super + alt + ctrl + h
+  xdo show -N Bar
+
+###############################
+# Window stuff
+###############################
 
 # close
 super + w
-	bspc node -c
+	xdo close
+
+super + q
+  xdo kill
 
 # rotate windows
 super + x
@@ -43,38 +65,38 @@ super + {h,j,k,semicolon}
 super + m; super + {h,j,k,semicolon}
 	bspc node -s {west,south,north,east} --follow
 
+super + c
+  xdo activate -dr
+
+super + b
+  bspc node -s biggest --follow
+
 # resize window size
 alt + ctrl + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-alt + shift + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	xdo resize {-w -20,-h +20,-h -20,-w +20}
 
 # move windows
-alt + super + {h,j,k,l}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+alt + shift + {h,j,k,l}
+  xdo move  {-x -20, -y +20, -y -20, -x +20}
 
 # choose direction
 ctrl + super + {h,j,k,l,c}
 	bspc node -p {west,south,north,east,cancel}
 
-# go to next and previous windows
-alt + Tab
-	bspc node -f next
+###############################
+# Desktop stuff 
+###############################
 
-alt + shift + Tab
-	bspc node -f prev
-
-#Desktop stuff 
-
-#switch to desktops
+# switch to desktops
 alt + l
 	~/.scripts/bspwm/switchtonextdesktop.zsh
 
 alt + h
 	~/.scripts/bspwm/switchtoprevdesktop.zsh
 
+###############################
 # change to all the modes
+###############################
 
 # fullscreen
 super + s; super + m
@@ -87,6 +109,10 @@ super + s; super + t
 # floating mode
 super + s; super + f
 	bspc node -t floating
+
+# pseudo tiling mode
+super + s; super + p
+  bspc node -t pseudo_tiled
 
 # stick and unstick windows super + s 
 super + s; super + s

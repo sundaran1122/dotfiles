@@ -14,8 +14,8 @@ mkdir -p /tmp/wm
 
 sxhkd &
 xrandr -s 1360x768
-hsetroot -fill ~/wallpapers/wallpaper.png &
 picom --experimental-backend &
+hsetroot -fill ~/wallpapers/wallpaper.png &
 bspc desktop focused -n 1
 
 ~/.config/lemonbar/controllemonbar &
@@ -37,7 +37,7 @@ bspc config focus_follows_pointer  true
 bspc config pointer_follows_focus  true
 
 bspc rule -a Gimp state=floating
-bspc rule -a :*:Dialog state=floating
+bspc rule -a \*:\*:Dialog state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
