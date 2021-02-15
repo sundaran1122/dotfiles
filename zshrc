@@ -1,14 +1,16 @@
 #!/bin/zsh
-
 export PROMPT="%F{1}[%F{6}%n%F{1}@%F{6}%M%F{1}]%f %F{10}%~%F{8}>
 %F{2}λ%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
 autoload -Uz compinit; compinit
 
+bindkey -v
+bindkey '^?' backward-delete-char
+
 alias n="nvim"
-alias cf="cd \`PATH='' /bin/find -O3 -type d | egrep -v '`cat ~/.config/fzf/excluded`' | fzf --tiebreak=length,index\`"
-alias nf="nvim \`PATH='' /bin/find -O3 -type f | egrep -v '`cat ~/.config/fzf/excluded`' | fzf --tiebreak=length,index\`"
+alias cf="cd \`FZF_DEFAULT_COMMAND='find . -type d `cat .config/fzf/excluded`' fzf --tiebreak=length,index\`"
+alias nf="n \`FZF_DEFAULT_COMMAND='find . -type f `cat .config/fzf/excluded`' fzf --tiebreak=length,index\`"
 
 #nordic tty?
 if [[ $TERM = "linux" ]]

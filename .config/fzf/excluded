@@ -1,1 +1,8 @@
-.git|.cache|.mozilla|packages|.local|Min
+-name "*" ! \
+-path "*/.git/*" ! \
+-path "*/.cache/*" ! \
+-path "*/.mozilla/*" ! \
+-path "*/packages/*" ! \
+-path "*/.local/*" ! \
+-path "*/.cargo/*" ! \
+-path "*/Min/*"
