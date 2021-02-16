@@ -48,6 +48,7 @@ set wildignore+=**/node_modules/**
 let g:mapleader=" "
 set clipboard=unnamed
 set nocompatible
+set clipboard=unnamedplus
 
 "netrw config
 let g:netrw_liststyle=3

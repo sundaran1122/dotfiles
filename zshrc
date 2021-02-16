@@ -37,3 +37,6 @@ then
 
   clear
 fi
+
+DISABLE_AUTO_TITLE="true"
+echo -en "\e]0;\007"
