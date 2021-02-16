@@ -18,7 +18,7 @@ super + @space
 
 # restart bspwm
 super + alt + r
-  bspc desktop -f 1 && bspc wm -r
+  bspc wm -r
 
 # quit bspwm
 super + alt + b; q
@@ -51,7 +51,7 @@ super + alt + g
   xdotool search --class Bar windowmap && bspc config top_padding 20
 
 # hide and unhide windows
-super + u
+alt + u
   bspc node -g hidden=true
 
 super + alt + u
@@ -93,7 +93,7 @@ super + c
   
 # go up and down the node tree
 super + {u,d}
-  bspc node -f {first_ancestor,any.window.descendant_of}
+  bspc node -f @{parent,1}
 
 ###############################
 # swap windows
@@ -117,7 +117,7 @@ super + i; super + {h,j,k,semicolon}
 
 # equalize
 super + b
-  bspc node @/ -B
+  bspc node @parent -B
 
 super + e
   bspc node @/ -E
