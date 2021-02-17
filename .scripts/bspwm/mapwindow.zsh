@@ -7,9 +7,9 @@ do
   windowname="$windowname\n$(xdotool getwindowname $window)"
 done
 
-windowid=$(echo -e $windowname | dmenu -nb "#2E3440" -nf "#D8DEE9" \
+windowid=$(echo -e $windowname | sort | uniq | dmenu -nb "#2E3440" -nf "#D8DEE9" \
   -sb "#3B4252" -sf "#ECEFF3" \
-  -fn "Mononokai" -p "map:" -i)
+  -fn "Mononokai" -p "map:" -i -l 20)
 
 for window in $(xdotool search  --desktop $(xdotool get_desktop) --name $windowid)
 do

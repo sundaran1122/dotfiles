@@ -116,11 +116,8 @@ super + i; super + {h,j,k,semicolon}
 ###############################
 
 # equalize
-super + b
-  bspc node @parent -B
-
-super + e
-  bspc node @/ -E
+super + {b,e}
+  bspc node @/ {-B,-E}
 
 # resize window size
 alt + ctrl + {h,j,k,l}
