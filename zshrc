@@ -39,4 +39,7 @@ then
 fi
 
 DISABLE_AUTO_TITLE="true"
-echo -en "\e]0;\007"
+chpwd () {
+  print -Pn "\e]0;%n@%m : %~\a"
+}
+chpwd
