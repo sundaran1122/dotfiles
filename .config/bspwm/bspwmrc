@@ -17,7 +17,7 @@ sxhkd &
 xrandr -s 1360x768
 picom --experimental-backend &
 hsetroot -fill ~/wallpapers/wallpaper.png &
-bspc monitor -d 0
+bspc desktop -n 0
 
 ~/.config/lemonbar/controllemonbar &
 zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &

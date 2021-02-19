@@ -43,6 +43,14 @@ super + alt + minus
 super + a; super + s
   maim -s `yad --title=Dialog --geometry=1150x600+100+100 --file` && echo "Screenshot taken!" > /tmp/wm/notifications
 
+# kill processes
+super + a; super + {k,c}
+  ~/.scripts/dmenu/killproc.zsh {SIGKILL,SIGINT}
+
+# open passmenu
+super + a; super + p
+  passmenu
+
 ###############################
 # Hide and unhide stuff
 ###############################
@@ -59,13 +67,6 @@ alt + u
 
 super + alt + u
   ~/.scripts/bspwm/mapwindow.zsh
-
-# toggle borders
-alt + b
-  bspc config border_width 1
-
-super + alt + b
-  bspc config border_width 0
 
 ###############################
 # General Window stuff
@@ -102,8 +103,20 @@ super + c
   bspc node -f next.\!focused.leaf.local
   
 # go up and down the node tree
-super + {u,d}
-  bspc node -f @{parent,1}
+super + u
+  bspc node -f @parent && bspc config border_width 1 \
+  && bspc subscribe node_focus -c 1 && bspc config border_width 0
+
+super + d
+  bspc node -f any.descendant_of.window
+
+# go to previous window
+super + p
+  bspc node -f last
+
+# switch to biggest desktop
+super + b
+  bspc node -f biggest.local
 
 ###############################
 # swap windows
@@ -114,7 +127,7 @@ super + m; super + {h,j,k,semicolon}
 	bspc node -s {west,south,north,east} --follow
 
 # swap with biggest node
-super m; super + b
+super + m; super + b
   bspc node -s biggest.local --follow
 
 # insert windows
@@ -126,8 +139,8 @@ super + i; super + {h,j,k,semicolon}
 ###############################
 
 # equalize
-super + {b,e}
-  bspc node @/ {-B,-E}
+super + e
+  bspc node @/ -E
 
 # resize window size
 alt + shift + {h,j,k,l}
