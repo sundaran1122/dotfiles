@@ -52,6 +52,18 @@ super + a; super + p
   passmenu
 
 ###############################
+# open apps
+###############################
+
+# open calcurse
+super + o; super + c
+  kitty -e calcurse
+
+# open browser
+super + o; super + b
+  $BROWSER
+
+###############################
 # Hide and unhide stuff
 ###############################
 
@@ -100,12 +112,14 @@ super + {h,j,k,semicolon}
 
 # for floating windows
 super + c
-  bspc node -f next.\!focused.leaf.local
+  bspc node -f next.\!focused.leaf.local.\!hidden
   
 # go up and down the node tree
 super + u
-  bspc node -f @parent && bspc config border_width 1 \
-  && bspc subscribe node_focus -c 1 && bspc config border_width 0
+  bspc node -f @parent && sleep .001 && \
+  bspc config border_width 2 \
+  && bspc subscribe node_focus -c 1 && \
+  bspc config border_width 0
 
 super + d
   bspc node -f any.descendant_of.window
