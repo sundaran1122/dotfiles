@@ -26,7 +26,7 @@ super + alt + q
 
 # lock screen
 super + alt + s
-  betterlockscreen -l blur
+  ~/.scripts/genral/lockscreen.zsh
 
 # change window gap
 super + alt + equal
@@ -57,11 +57,15 @@ super + a; super + p
 
 # open calcurse
 super + o; super + c
-  kitty -e calcurse
+  $TERMINAL -e calcurse
 
 # open browser
 super + o; super + b
   $BROWSER
+
+# open alsamixer
+super + o; super + a
+  $TERMINAL -e alsamixer
 
 ###############################
 # Hide and unhide stuff
@@ -78,7 +82,7 @@ alt + u
   bspc node -g hidden=true
 
 super + alt + u
-  ~/.scripts/bspwm/mapwindow.zsh
+  ~/.scripts/general/mapwindow.zsh
 
 ###############################
 # General Window stuff
@@ -181,7 +185,7 @@ alt + h
 
 # fullscreen
 super + s; super + m
-	bspc node -t fullscreen && xdo hide -dr
+	~/.scripts/bspwm/monacle.zsh
 
 # tiling mode
 super + s; super + t

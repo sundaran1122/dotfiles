@@ -22,7 +22,7 @@ bspc desktop -n 0
 ~/.config/lemonbar/controllemonbar &
 zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &
 zsh ~/.scripts/lemonbar/updatewindowmodule.zsh &
-zsh ~/.scripts/bspwm/notification-server.zsh &
+zsh ~/.scripts/general/notification-server.zsh &
 
 xsetroot -cursor_name left_ptr &
 
