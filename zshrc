@@ -9,8 +9,8 @@ bindkey -v
 bindkey '^?' backward-delete-char
 
 alias n="nvim"
-alias cf="cd \`FZF_DEFAULT_COMMAND='find . -type d `cat .config/fzf/excluded`' fzf --tiebreak=length,index\`"
-alias nf="n \`FZF_DEFAULT_COMMAND='find . -type f `cat .config/fzf/excluded`' fzf --tiebreak=length,index\`"
+alias cf="cd \`find -O3 -type f -o \( $(cat .config/fzf/excluded) \) -prune -o -print | fzf --tiebreak=length,index\`"
+alias nf="nvim \`find -O3 -type d -o \( $(cat .config/fzf/excluded) \) -prune -o -print | fzf --tiebreak=length,index\`"
 
 #nordic tty?
 if [[ $TERM = "linux" ]]
@@ -41,5 +41,6 @@ fi
 DISABLE_AUTO_TITLE="true"
 chpwd () {
   print -Pn "\e]0;%n@%m : %~\a"
+  killall "controllemonbar" -SIGUSR2
 }
 chpwd

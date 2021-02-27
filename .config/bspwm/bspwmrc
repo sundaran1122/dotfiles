@@ -10,6 +10,7 @@ killall "lemonbar"
 killall "controllemonbar"
 killall "zsh"
 killall "bspc"
+killall "tiramisu"
 mkdir -p /tmp/wm
 mkfifo /tmp/wm/notifications
 
@@ -17,15 +18,26 @@ sxhkd &
 xrandr -s 1360x768
 picom --experimental-backend &
 hsetroot -fill ~/wallpapers/wallpaper.png &
-bspc desktop -n 0
+[[ $(xdotool get_desktop) = 0 ]] && bspc desktop -n 0
 
 ~/.config/lemonbar/controllemonbar &
 zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &
 zsh ~/.scripts/lemonbar/updatewindowmodule.zsh &
 zsh ~/.scripts/general/notification-server.zsh &
 
+#
+# xorg stuff
+#
+killall xcape
 xsetroot -cursor_name left_ptr &
+xset r rate 300 50
+setxkbmap -option caps:super
 
+killall xcap 2>/dev/null ; xcape -e "Super_L=Escape"
+
+#
+# bspwm stuff
+#
 bspc config border_width        0
 bspc config window_gap          2
 bspc config left_padding        -2

@@ -1,8 +1,9 @@
--name "*" ! \
--path "*/.git/*" ! \
--path "*/.cache/*" ! \
--path "*/.mozilla/*" ! \
--path "*/packages/*" ! \
--path "*/.local/*" ! \
--path "*/.cargo/*" ! \
--path "*/Min/*"
+-path "*/.git/*" -o \
+-path "*/.cache/*" -o \
+-path "*/.mozilla/*" -o \
+-path "*/packages/*" -o \
+-path "*/.local/*" -o \
+-path "*/.cargo/*" -o \
+-path "*/.themes/*" -o \
+-path "*/Min/*" -o \
+-path "*/.npm/*"

@@ -1,8 +1,10 @@
-#!/bin/zsh
+#!/bin/bash
 
-tail -f /tmp/wm/notifications | while read -r notification
+tiramisu | while read -r notif
 do
-  yad --text=$notification --title=Dialog \
+  summary=$(echo $notif | grep ^summary | cut -d: -f 2)
+  [[ $summary == "" ]] && continue
+  yad --text=$summary --title=Dialog \
     --geometry=-10+20+30x10 --no-focus \
     --no-buttons --timeout=1
   sleep 1

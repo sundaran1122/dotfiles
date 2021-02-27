@@ -26,7 +26,7 @@ super + alt + q
 
 # lock screen
 super + alt + s
-  ~/.scripts/genral/lockscreen.zsh
+  ~/.scripts/general/lockscreen.zsh
 
 # change window gap
 super + alt + equal
@@ -41,7 +41,7 @@ super + alt + minus
 
 # screenshot
 super + a; super + s
-  maim -s `yad --title=Dialog --geometry=1150x600+100+100 --file` && echo "Screenshot taken!" > /tmp/wm/notifications
+  maim -s `yad --title=Dialog --geometry=1150x600+100+100 --file` && notify-send -a maim "Screenshot taken!"
 
 # kill processes
 super + a; super + {k,c}
@@ -74,7 +74,7 @@ super + o; super + a
 # hide and unhide bar
 super + alt + g
   (xdotool search --all --onlyvisible --class Bar windowunmap && \
-  bspc config top_padding 2) || \
+  bspc config top_padding 0) || \
   xdotool search --class Bar windowmap
 
 # hide and unhide windows
@@ -97,13 +97,13 @@ super + q
 
 # rotate windows
 super + x
-	bspc node @parent -R 270
+	bspc node @parent -R 90
 
 super + ctrl + x
-  bspc node @parent -R 90
+  bspc node @parent -R 270
 
 # choose direction
-ctrl + super + {h,j,k,l,c}
+super + ctrl + {h,j,k,l,c}
 	bspc node -p {west,south,north,east,cancel}
 
 ###############################
@@ -111,7 +111,7 @@ ctrl + super + {h,j,k,l,c}
 ###############################
 
 # switch windows
-super + {h,j,k,semicolon}
+super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 
 # for floating windows
@@ -141,7 +141,7 @@ super + b
 ###############################
 
 # swap windows
-super + m; super + {h,j,k,semicolon}
+super + m; super + {h,j,k,l}
 	bspc node -s {west,south,north,east} --follow
 
 # swap with biggest node
@@ -149,7 +149,7 @@ super + m; super + b
   bspc node -s biggest.local --follow
 
 # insert windows
-super + i; super + {h,j,k,semicolon}
+super + i; super + {h,j,k,l}
   bspc node -n {west,south,north,east} --follow
 
 ###############################
@@ -161,7 +161,7 @@ super + e
   bspc node @/ -E
 
 # resize window size
-alt + shift + {h,j,k,l}
+alt + ctrl + {h,j,k,l}
   {d1=left; d2=right; dx=-10; dy=0;, \
   d1=bottom; d2=top; dx=0; dy=10;, \
   d1=top; d2=bottom; dx=0; dy=-10;, \
