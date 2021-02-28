@@ -1,3 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
-let g:netrw_dirhist_1='/home/sundaran/dotfiles/.config/nvim'
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/sundaran/dotfiles/.config/fzf'
+let g:netrw_dirhist_3='/home/sundaran/.cache/paru'
+let g:netrw_dirhist_2='/home/sundaran/meme/memes'
+let g:netrw_dirhist_1='/home/sundaran/scripts/less'
+let g:netrw_dirhist_0='/home/sundaran/dotfiles/.scripts/bspwm'
+let g:netrw_dirhist_9='/home/sundaran/packages/st'
+let g:netrw_dirhist_8='/home/sundaran'
+let g:netrw_dirhist_7='/home/sundaran/dotfiles/.git'
+let g:netrw_dirhist_6='/home/sundaran'
+let g:netrw_dirhist_5='/home/sundaran/dotfiles/.scripts/bspwm'

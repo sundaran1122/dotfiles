@@ -59,6 +59,7 @@ bspc rule -a Gimp state=floating
 bspc rule -a \*:\*:Dialog state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a Jami-gnome state=floating sticky=true
 
 #resize stuff
 bspc config pointer_modifier mod4

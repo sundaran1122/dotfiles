@@ -116,7 +116,7 @@ super + {h,j,k,l}
 
 # for floating windows
 super + c
-  bspc node -f next.\!focused.leaf.local.\!hidden
+  bspc node -f next.\!focused.leaf.local.\!hidden.floating
   
 # go up and down the node tree
 super + u
