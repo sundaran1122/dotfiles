@@ -11,7 +11,7 @@ $UPDATE
 $INSTALL neovim zsh
 $INSTALL bspwm sxhkd
 $INSTALL picom hsetroot betterlockscreen
-$INSTALL dmenu fzf xdotool xdo
+$INSTALL dmenu fzf xdotool xdo fd yad
 $INSTALL kitty neofetch
 
 mkdir ~/packages

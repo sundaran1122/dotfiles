@@ -1,9 +1,1 @@
--path "*/.git/*" -o \
--path "*/.cache/*" -o \
--path "*/.mozilla/*" -o \
--path "*/packages/*" -o \
--path "*/.local/*" -o \
--path "*/.cargo/*" -o \
--path "*/.themes/*" -o \
--path "*/Min/*" -o \
--path "*/.npm/*"
+-E .git -E .mozilla -E .local -E .npm -E .cache
