@@ -1,10 +1,10 @@
-#!/bin/zsh
+#!/bin/bash
 
 killall "picom"
 killall "sxhkd"
 killall "lemonbar"
 killall "controllemonbar"
-killall "zsh"
+killall "bash"
 killall "bspc"
 
 bspc quit

@@ -5,7 +5,7 @@ void LoadModule(char * modulepath, char * buffer, int size){
   int pid = fork();
   if(pid == 0){
     dup2(output[1], 1);
-    execlp("zsh", "zsh", modulepath);
+    execlp("bash", "bash", modulepath);
   }
   wait(0);
 

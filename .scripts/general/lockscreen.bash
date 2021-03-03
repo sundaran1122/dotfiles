@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 maim -m 1 -u /tmp/lockscreen.png
 

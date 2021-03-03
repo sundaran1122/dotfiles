@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 DESKTOPNAME=`xdotool get_desktop` 
 

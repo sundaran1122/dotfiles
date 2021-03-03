@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bspc node focused.automatic -n any.leaf.local.\!window

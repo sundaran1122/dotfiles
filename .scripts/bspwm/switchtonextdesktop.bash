@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 DESKTOPNAME=$(xdotool get_desktop)
 DESKTOPNUMS=$(xdotool get_num_desktops)

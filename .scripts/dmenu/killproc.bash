@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 kill -$1 $(ps aux | awk '{print $2 " " $11}' | \
 	dmenu -nb "#2E3440" -nf "#D8DEE9" \

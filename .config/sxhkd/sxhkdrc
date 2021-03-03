@@ -22,11 +22,11 @@ super + alt + r
 
 # quit bspwm
 super + alt + q
-  ~/.scripts/bspwm/quitbspwm.zsh
+  ~/.scripts/bspwm/quitbspwm.bash
 
 # lock screen
 super + alt + s
-  ~/.scripts/general/lockscreen.zsh
+  ~/.scripts/general/lockscreen.bash
 
 # change window gap
 super + alt + equal
@@ -45,7 +45,7 @@ super + a; super + s
 
 # kill processes
 super + a; super + {k,c}
-  ~/.scripts/dmenu/killproc.zsh {SIGKILL,SIGINT}
+  ~/.scripts/dmenu/killproc.bash {SIGKILL,SIGINT}
 
 # open passmenu
 super + a; super + p
@@ -82,7 +82,7 @@ alt + u
   bspc node -g hidden=true
 
 super + alt + u
-  ~/.scripts/general/mapwindow.zsh
+  ~/.scripts/general/mapwindow.bash
 
 ###############################
 # General Window stuff
@@ -141,6 +141,9 @@ super + b
 ###############################
 
 # swap windows
+ctrl + super + s
+  bspc node @parent -R 180
+
 super + m; super + {h,j,k,l}
 	bspc node -s {west,south,north,east} --follow
 
@@ -151,6 +154,10 @@ super + m; super + b
 # insert windows
 super + i; super + {h,j,k,l}
   bspc node -n {west,south,north,east} --follow
+
+# insert receptacle
+super + i; super + i
+  bspc node -i
 
 ###############################
 # resize and move windows
@@ -174,10 +181,10 @@ alt + ctrl + {h,j,k,l}
 
 # switch to desktops
 alt + l
-	~/.scripts/bspwm/switchtonextdesktop.zsh
+	~/.scripts/bspwm/switchtonextdesktop.bash
 
 alt + h
-	~/.scripts/bspwm/switchtoprevdesktop.zsh
+	~/.scripts/bspwm/switchtoprevdesktop.bash
 
 ###############################
 # change to all the modes
@@ -185,7 +192,7 @@ alt + h
 
 # fullscreen
 super + s; super + m
-	~/.scripts/bspwm/monacle.zsh
+	~/.scripts/bspwm/monacle.bash
 
 # tiling mode
 super + s; super + t

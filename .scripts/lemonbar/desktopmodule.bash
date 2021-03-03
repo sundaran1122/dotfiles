@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 DESKTOP=`bspc query -D -d focused --names`
 bspc query -D --names | tr "\n" " " \

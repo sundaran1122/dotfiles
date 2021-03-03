@@ -1,4 +1,4 @@
-#! /bin/zsh
+#!/bin/bash
 
 export EDITOR=nvim
 export BROWSER=firefox
@@ -8,7 +8,7 @@ killall "picom"
 killall "sxhkd"
 killall "lemonbar"
 killall "controllemonbar"
-killall "zsh"
+killall "bash"
 killall "bspc"
 killall "tiramisu"
 mkdir -p /tmp/wm
@@ -21,9 +21,9 @@ hsetroot -fill ~/wallpapers/wallpaper.png &
 [[ $(xdotool get_desktop) = 0 ]] && bspc desktop -n 0
 
 ~/.config/lemonbar/controllemonbar &
-zsh ~/.scripts/lemonbar/updatedesktopmodule.zsh &
-zsh ~/.scripts/lemonbar/updatewindowmodule.zsh &
-zsh ~/.scripts/general/notification-server.zsh &
+bash ~/.scripts/lemonbar/updatedesktopmodule.bash &
+bash ~/.scripts/lemonbar/updatewindowmodule.bash &
+bash ~/.scripts/general/notification-server.bash &
 
 #
 # xorg stuff
@@ -47,6 +47,7 @@ bspc config bottom_padding      -2
 bspc config split_ratio          0.55
 bspc config automatic_scheme     longest_side
 bspc config ignore_ewmh_focus    true
+bspc config external_rules_command    $HOME/.config/bspwm/external_rules
 
 bspc config focused_border_color     '#88C0D0'
 bspc config border_color             '#E5E9F0'
@@ -57,9 +58,10 @@ bspc config pointer_follows_monitor   true
 
 bspc rule -a Gimp state=floating
 bspc rule -a \*:\*:Dialog state=floating
+bspc rule -a \*:\*:Alert state=floating sticky=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a Jami-gnome state=floating sticky=true
+bspc rule -a Jami-gnome state=floating sticky=on
 
 #resize stuff
 bspc config pointer_modifier mod4
