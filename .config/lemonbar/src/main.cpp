@@ -18,7 +18,7 @@
 // define global variables
 int lemonin[2];
 char * desktops = new char[1024];
-char * windowname = new char[32];
+char * windowname = new char[256];
 
 #include "helpers.cpp"
 #include "network.cpp" 
@@ -52,7 +52,7 @@ int main(){
   signal(SIGUSR1, DesktopModule);
   signal(SIGUSR2, WindowModule);
   memset(desktops, 0, 1024);
-  memset(windowname, 0, 32);
+  memset(windowname, 0, 256);
   kill(getpid(), SIGUSR1);
   kill(getpid(), SIGUSR2);
 

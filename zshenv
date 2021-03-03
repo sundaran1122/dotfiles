@@ -1,4 +1,5 @@
 export PAGER="less"
+export MANPAGER="nvim -c 'set ft=man'"
 export XDG_DATA_HOME="~/.local/share"
 
 export LESSHISTFILE=".cache/less/history"

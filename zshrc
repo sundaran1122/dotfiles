@@ -1,6 +1,6 @@
 #!/bin/zsh
-export PROMPT="%F{1}[%F{6}%n%F{1}@%F{6}%M%F{1}]%f %F{10}%~%F{8}>
-%F{2}λ%f "
+export PROMPT="%F{1}%f %F{12}%~%F{8}>
+ %F{2}λ%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
 autoload -Uz compinit; compinit
@@ -9,14 +9,14 @@ bindkey -v
 bindkey '^?' backward-delete-char
 
 alias n="nvim"
-alias cf="cd \`fd -t d -H $(cat .config/fzf/excluded) | fzf --tiebreak=length,index\`"
-alias nf="nvim \`fd -t f -H $(cat .config/fzf/excluded) | fzf --tiebreak=length,index\`"
+alias cf="cd \`fd -t d -H $(cat ~/.config/fzf/excluded) | fzf --tiebreak=length,index --prompt=\"λ \"\`"
+alias nf="nvim \`fd -t f -H $(cat ~/.config/fzf/excluded) | fzf --tiebreak=length,index --prompt=\"λ \"\`"
 
 #nordic tty?
 if [[ $TERM = "linux" ]]
 then
-  export PROMPT="%F{1}[%F{6}%n%F{1}@%F{6}%M%F{1}]%f %F{10}%~%F{8}>
-%F{2}>%f "
+  export PROMPT="%F{1}%f %F{10}%~%F{8}>
+ %F{2}>%f "
 
   echo -en "\e]P02E3440"
   echo -en "\e]P1BF616A"
@@ -40,7 +40,9 @@ fi
 
 DISABLE_AUTO_TITLE="true"
 chpwd () {
-  print -Pn "\e]0;%n@%m : %~\a"
+  print -Pn "\e]0;zsh : %~\a"
   killall "controllemonbar" -SIGUSR2
+  pwd > /tmp/pwd
 }
-chpwd
+
+cd $(cat /tmp/pwd) || chpwd
