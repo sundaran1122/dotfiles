@@ -1,5 +1,4 @@
 #!/bin/bash
-
 export EDITOR=nvim
 export BROWSER=firefox
 export TERMINAL=kitty
@@ -18,7 +17,7 @@ sxhkd &
 xrandr -s 1360x768
 picom --experimental-backend &
 hsetroot -fill ~/wallpapers/wallpaper.png &
-[[ $(xdotool get_desktop) = 0 ]] && bspc desktop -n 0
+bspc desktop -n ·
 
 ~/.config/lemonbar/controllemonbar &
 bash ~/.scripts/lemonbar/updatedesktopmodule.bash &

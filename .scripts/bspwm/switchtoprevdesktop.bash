@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DESKTOPNAME=`xdotool get_desktop` 
+DESKTOPNAME=$(xdotool get_desktop)
 
 
 if [[ $DESKTOPNAME == "0" ]]
@@ -10,11 +10,3 @@ fi
 
 bspc desktop prev -f
 bspc desktop next.\!occupied -r
-
-I=0
-
-for DESKTOP in `bspc query -D`
-do
-  bspc desktop $DESKTOP -n $I
-  I=$(expr $I + 1)
-done

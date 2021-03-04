@@ -1,3 +1,22 @@
 #!/bin/bash
 
-bspc node focused.automatic -n any.leaf.local.\!window
+# check if we have presel
+[[ -z $(bspc query -N -n focused.automatic) ]] && exit
+
+# check if receptacle exists
+receptacle=$(bspc query -N -n .leaf.\!window -d focused)
+if [[ -n $receptacle ]]
+then
+  echo "node=$receptacle"
+  exit
+fi
+
+BIGGESTWINDOW=$(bspc query -N -n biggest.tiled -d focused)
+eval $(xdotool getwindowgeometry --shell $BIGGESTWINDOW)
+
+if [[ $WIDTH -gt $HEIGHT ]]
+then
+  echo "node=biggest.local.tiled split_dir=east"
+else
+  echo "node=biggest.local.tiled split_dir=south"
+fi
