@@ -4,5 +4,5 @@ void DesktopModule(int){
 }
 
 void WindowModule(int){
- LoadModule("/home/sundaran/.scripts/lemonbar/windownamemodule.bash", windowname, 256);
+ LoadModule("/home/sundaran/.scripts/lemonbar/windownamemodule.bash", windowname, 64);
 }

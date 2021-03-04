@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -S lemonbar-xft-git johannburg-picom-git
+paru -S lemonbar-xft-git johannburg-picom-git

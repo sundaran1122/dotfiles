@@ -16,7 +16,7 @@ eval $(xdotool getwindowgeometry --shell $BIGGESTWINDOW)
 
 if [[ $WIDTH -gt $HEIGHT ]]
 then
-  echo "node=biggest.local.tiled split_dir=east"
+  echo "node=biggest.tiled.local split_dir=east"
 else
-  echo "node=biggest.local.tiled split_dir=south"
+  echo "node=biggest.tiled.local split_dir=south"
 fi

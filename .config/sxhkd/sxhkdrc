@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	$TERMINAL
+	$TERMINAL -e zsh
 
 # program launcher
 super + @space
@@ -34,6 +34,10 @@ super + alt + equal
 
 super + alt + minus
   bspc config window_gap $(expr $(bspc config window_gap) + 3)
+
+# kill picom
+super + alt + c
+  killall "picom"
 
 ###############################
 # action commands
@@ -116,13 +120,12 @@ super + {h,j,k,l}
 
 # for floating windows
 super + c
-  bspc node -f next.\!focused.leaf.local.\!hidden.floating
+  bspc node -f next.\!focused.leaf.local.\!hidden
   
 # go up and down the node tree
 super + u
-  bspc node -f @parent && sleep .001 && \
-  bspc config border_width 2 \
-  && bspc subscribe node_focus -c 1 && \
+  bspc node -f @parent && sleep 0.1 && bspc config border_width 2 && \
+  bspc subscribe -c 1 node_focus && \
   bspc config border_width 0
 
 super + d

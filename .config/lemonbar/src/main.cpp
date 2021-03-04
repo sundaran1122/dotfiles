@@ -18,7 +18,7 @@
 // define global variables
 int lemonin[2];
 char * desktops = new char[1024];
-char * windowname = new char[256];
+char * windowname = new char[64];
 
 #include "helpers.cpp"
 #include "network.cpp" 
@@ -45,14 +45,14 @@ int main(){
   }
   dup2(lemonin[1], 1);
 
-  rx_bytes_fd = open("/sys/class/net/enp0s3/statistics/rx_bytes", O_RDONLY);
-  tx_bytes_fd = open("/sys/class/net/enp0s3/statistics/tx_bytes", O_RDONLY);
+  rx_bytes_fd = open("/sys/class/net/wlp2s0/statistics/rx_bytes", O_RDONLY);
+  tx_bytes_fd = open("/sys/class/net/wlp2s0/statistics/tx_bytes", O_RDONLY);
 
   // async modules
   signal(SIGUSR1, DesktopModule);
   signal(SIGUSR2, WindowModule);
   memset(desktops, 0, 1024);
-  memset(windowname, 0, 256);
+  memset(windowname, 0, 64);
   kill(getpid(), SIGUSR1);
   kill(getpid(), SIGUSR2);
 

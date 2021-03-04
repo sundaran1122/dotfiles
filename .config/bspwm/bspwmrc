@@ -15,7 +15,7 @@ mkfifo /tmp/wm/notifications
 
 sxhkd &
 xrandr -s 1360x768
-picom --experimental-backend &
+picom --experimental-backend --backend glx &
 hsetroot -fill ~/wallpapers/wallpaper.png &
 bspc desktop -n ·
 
@@ -37,11 +37,11 @@ killall xcap 2>/dev/null ; xcape -e "Super_L=Escape"
 #
 # bspwm stuff
 #
-bspc config border_width        0
-bspc config window_gap          2
-bspc config left_padding        -2
-bspc config right_padding       -2
-bspc config bottom_padding      -2
+bspc config border_width         0
+bspc config window_gap          1
+bspc config left_padding        -1
+bspc config right_padding       -1
+bspc config bottom_padding      -1
 
 bspc config split_ratio          0.55
 bspc config automatic_scheme     longest_side
