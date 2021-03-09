@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check if we have presel
-[[ -z $(bspc query -N -n focused.automatic) ]] && exit
+[[ -z $(bspc query -N -n focused.automatic.tiled) ]] && exit
 
 # check if receptacle exists
 receptacle=$(bspc query -N -n .leaf.\!window -d focused)
@@ -11,12 +11,4 @@ then
   exit
 fi
 
-BIGGESTWINDOW=$(bspc query -N -n biggest.tiled -d focused)
-eval $(xdotool getwindowgeometry --shell $BIGGESTWINDOW)
-
-if [[ $WIDTH -gt $HEIGHT ]]
-then
-  echo "node=biggest.tiled.local split_dir=east"
-else
-  echo "node=biggest.tiled.local split_dir=south"
-fi
+echo "node=biggest.local.tiled"

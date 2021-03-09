@@ -6,7 +6,7 @@ syntax enable
 set shiftwidth=2
 set tabstop=2
 set smarttab
-set expandtab
+set noexpandtab
 
 "search stuff
 set hlsearch

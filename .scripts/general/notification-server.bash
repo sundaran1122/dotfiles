@@ -7,5 +7,6 @@ do
   yad --form --align=center --field="$summary":LBL --field=:LBL \
     --field="$body":LBL \
     --no-buttons --posx=-5 --posy=25 --width=250 \
-    --title=Alert --timeout=1 --no-focus
+    --title=Alert --timeout=1 --no-focus &
+  sleep 1
 done
