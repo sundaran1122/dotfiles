@@ -14,8 +14,8 @@ killall "bash"
 killall "bspc"
 killall "tiramisu"
 killall "xdotool"
+
 mkdir -p /tmp/wm
-mkfifo /tmp/wm/notifications
 
 sxhkd &
 xrandr -s 1366x768
@@ -61,7 +61,7 @@ bspc config pointer_follows_monitor   true
 
 spc rule -a Gimp state=floating
 bspc rule -a \*:\*:Dialog state=floating
-bspc rule -a \*:\*:Alert state=floating sticky=on
+bspc rule -a \*:\*:Alert manage=off
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Jami-gnome state=floating sticky=on
