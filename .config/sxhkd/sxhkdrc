@@ -189,11 +189,10 @@ super + r
 
 # resize window size
 alt + ctrl + {h,j,k,l}
-	{d1=left; d2=right; dx=-10; dy=0;, \
-	d1=bottom; d2=top; dx=0; dy=10;, \
-	d1=top; d2=bottom; dx=0; dy=-10;, \
-	d1=right; d2=left; dx=10; dy=0; } \
-	bspc node -z $d1 $dx $dy || bspc node -z $d2 $dx $dy
+	bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
+
+alt + shift + {h,j,k,l}
+	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
 
 ###############################
 # Desktop stuff 
