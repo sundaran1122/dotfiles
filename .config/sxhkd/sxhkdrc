@@ -82,7 +82,7 @@ super + o; super + s
 
 # hide and unhide bar
 super + alt + g
-	(xdotool search --all --onlyvisible --class Bar windowunmap && \
+	(xdotool search --all --onlyvisible --class Bar windowunmap; \
 	bspc config top_padding 0) || \
 	xdotool search --class Bar windowmap
 

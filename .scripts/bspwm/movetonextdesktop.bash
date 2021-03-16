@@ -10,6 +10,5 @@ then
   bspc monitor -a ·
 fi
 
-bspc node focused -d next
-bspc desktop -f next
+bspc node focused -d next --follow
 bspc desktop prev.\!occupied -r

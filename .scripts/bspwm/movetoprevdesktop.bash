@@ -8,6 +8,5 @@ then
   exit
 fi
 
-bspc node focused -d prev
-bspc desktop prev -f
+bspc node focused -d prev --follow
 bspc desktop next.\!occupied -r

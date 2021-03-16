@@ -9,8 +9,8 @@ bindkey -v
 bindkey '^?' backward-delete-char
 
 alias n="nvim"
-alias cf="cd \`fd -t d -H $(cat ~/.config/fzf/excluded) | fzf --tiebreak=length,index --prompt=\"λ \"\`"
-alias nf="nvim \`fd -t f -H $(cat ~/.config/fzf/excluded) | fzf --tiebreak=length,index --prompt=\"λ \"\`"
+alias cf="cd \`fd -t d | fzf --tiebreak=length,index --prompt=\"λ \"\`"
+alias nf="nvim \`fd -t f | fzf --tiebreak=length,index --prompt=\"λ \"\`"
 
 #nordic tty?
 if [[ $TERM = "linux" ]]

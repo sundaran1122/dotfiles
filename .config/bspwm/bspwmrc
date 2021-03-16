@@ -65,6 +65,7 @@ bspc rule -a \*:\*:Alert manage=off
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Jami-gnome state=floating sticky=on
+bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on rectangle=480x270+886+497
 
 #resize stuff
 bspc config pointer_modifier mod4

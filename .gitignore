@@ -1,1 +1,6 @@
-.config/lemonbar
+.config/lemonbar/controllemonbar
+*GIMP*
+*pulse*
+.config/lemonbar/controllemonbar
+.config/nvim/.netrwhist
+*.o
