@@ -1,3 +1,11 @@
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#include "helpers.h"
+
 int rx_bytes, tx_bytes;
 int rx_bytes_fd, tx_bytes_fd;
 int rx_prev_bytes, tx_prev_bytes;

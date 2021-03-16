@@ -1,8 +1,7 @@
 CC=g++
 
-all:
-	$(CC) -o ../controllemonbar main.cpp
-	bspc wm -r
+%.o: %.cpp
+	$(CC) -c $<
 
-build:
-	$(CC) -o -s -O2 ../controllemonbar main.cpp
+all: main.o asyncmodules.o helpers.o time.o network.o
+	$(CC) -s -O2 -o ../controllemonbar $^

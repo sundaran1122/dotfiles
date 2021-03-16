@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <time.h>
+
 time_t rawtime;
 tm timestruct;
 

@@ -1,3 +1,7 @@
+#include <unistd.h>
+#include <sys/wait.h>
+#include <string.h>
+
 void LoadModule(char * modulepath, char * buffer, int size){
   int output[2];
   pipe(output);

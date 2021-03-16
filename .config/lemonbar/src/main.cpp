@@ -12,23 +12,19 @@
 #include <string.h>
 #include <unistd.h>
 
-#define MODULE_START printf("%%{B#3B4252}%%{+u} ")
-#define MODULE_END printf(" %%{B-}%%{-u}")
-
 // define global variables
 int lemonin[2];
 char * desktops = new char[1024];
 char * windowname = new char[64];
 
-#include "helpers.cpp"
-#include "network.cpp" 
-#include "asyncmodules.cpp"
-#include "time.cpp"
-
 void sigint_handler(int){
   write(2, "ending", 6);
   _exit(0);
 }
+
+#include "network.h"
+#include "time.h"
+#include "asyncmodules.h"
 
 int main(){
   // register signal handlers
@@ -39,9 +35,9 @@ int main(){
   int pid = fork();
   if(pid == 0){
     dup2(lemonin[0], 0);
-    execlp("lemonbar", "lemonbar", "-fMononoki",
+    execlp("lemonbar", "lemonbar", "-fmononoki-Regular Nerd Font Complete Mono",
         "-B#2E3440", "-F#D8DEE9", "-U#88C0D0",
-        "-u1", "-gx20", "-p");
+        "-u1", "-gx20", "-o3", "-p");
   }
   dup2(lemonin[1], 1);
 

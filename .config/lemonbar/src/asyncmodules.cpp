@@ -1,3 +1,11 @@
+#include <unistd.h>
+#include <signal.h>
+
+#include "helpers.h"
+
+extern char * desktops;
+extern char * windowname;
+
 void DesktopModule(int){
   LoadModule("/home/sundaran/.scripts/lemonbar/desktopmodule.bash" , desktops, 1024);
   kill(getpid(), SIGUSR2);
