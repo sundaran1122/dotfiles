@@ -3,7 +3,7 @@
 bspc node -t fullscreen
 xdotool search --class Bar windowunmap
 
-HIDDENWINDOWS="$(bspc query -N -n .\!focused.window.\!hidden.local)"
+HIDDENWINDOWS="$(bspc query -N -n .\!focused.window.\!hidden.local.tiled)"
 
 for WINDOW in $HIDDENWINDOWS
 do

@@ -82,7 +82,7 @@ super + o; super + s
 
 # hide and unhide bar
 super + alt + g
-	(xdotool search --all --onlyvisible --class Bar windowunmap; \
+	(xdotool search --all --onlyvisible --class Bar windowunmap && \
 	bspc config top_padding 0) || \
 	xdotool search --class Bar windowmap
 
@@ -237,7 +237,7 @@ super + s; super + p
 ###############################
 
 # stick and unstick windows super + s 
-super + s; super + s
+super + t
 	[[ -n $(bspc query -N -n focused.sticky ) ]] && bspc node -g sticky=off || bspc node -g sticky=on
 
 # mark a node

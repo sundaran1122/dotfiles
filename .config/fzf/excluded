@@ -1,1 +1,0 @@
--E .git -E .mozilla -E .local -E .npm -E .cache -E .themes -E packages -E .cargo -E .gradle
