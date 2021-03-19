@@ -5,7 +5,7 @@ sudo ./install.sh
 ./aur.sh
 
 # set symlinks
-ln -sf ~/dotfiles/.config ~/.config
+ln -sf ~/dotfiles/config ~/.config
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/zshenv ~/.zsenvh
 ln -sf ~/dotfiles/scripts ~/.scripts
