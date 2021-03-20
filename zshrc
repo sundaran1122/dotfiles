@@ -46,3 +46,22 @@ chpwd () {
 }
 
 cd $(cat /tmp/pwd) || chpwd
+
+# custom funtions
+explr () {
+	while true
+	do
+		dirs="$(fd)"
+		sel="$(echo -e $dirs\\nquit\\n.. | sk --tiebreak=score,index)"
+		if [[ -d $sel ]]
+		then
+			cd $sel
+			continue
+		fi
+		if [[ $sel == "quit" ]]
+		then
+			return
+		fi
+		xdg-open $sel
+	done
+}

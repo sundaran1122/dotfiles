@@ -1,3 +1,7 @@
 
 [Default Applications]
 x-scheme-handler/discord-610508934456934412=discord-610508934456934412.desktop
+text=nvim.desktop
+image/png=sxiv.desktop
+text/plain=nvim.desktop
+text/x-shellscript=nvim.desktop

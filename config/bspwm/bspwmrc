@@ -6,21 +6,23 @@ export TERMINAL=kitty
 export SXHKD_SHELL=bash
 export SHELL=zsh
 
-killall "picom"
-killall "sxhkd"
-killall "lemonbar"
-killall "controllemonbar"
-killall "bash"
-killall "bspc"
-killall "tiramisu"
-killall "xdotool"
+killall "picom" &> /dev/null 
+killall "sxhkd" &> /dev/null 
+killall "lemonbar" &> /dev/null 
+killall "controllemonbar" &> /dev/null
+killall "bash" &> /dev/null
+killall "bspc" &> /dev/null
+killall "tiramisu" &> /dev/null
+killall "xdotool" &> /dev/null
+killall "keynav" &> /dev/null
 
-mkdir -p /tmp/wm
+mkdir -p /tmp/wm &> /dev/null
 
 sxhkd &
 xrandr -s 1366x768
 picom --experimental-backend --backend glx &
 hsetroot -fill ~/wallpapers/wallpaper.png &
+keynav &
 bspc desktop -n ·
 
 ~/.config/lemonbar/controllemonbar &
@@ -31,18 +33,22 @@ bash ~/.scripts/general/notification-server.bash &
 #
 # xorg stuff
 #
-killall xcape
-xsetroot -cursor_name left_ptr &
+xsetroot -cursor_name left_ptr
 xset r rate 300 50
 setxkbmap -option caps:super
 
-killall xcap 2>/dev/null ; xcape -e "Super_L=Escape"
+killall xcape 2>/dev/null ; xcape -e "Super_L=Escape"
+
+#
+# hot corners
+#
+xdotool behave_screen_edge --delay 1000 top-right key super+alt+s &> /dev/null &
 
 #
 # bspwm stuff
 #
 bspc config border_width         0
-bspc config window_gap          1
+bspc config window_gap           1
 bspc config left_padding        -1
 bspc config right_padding       -1
 bspc config bottom_padding      -1
@@ -53,13 +59,12 @@ bspc config ignore_ewmh_focus    true
 bspc config external_rules_command    $HOME/.config/bspwm/external_rules
 
 bspc config focused_border_color     '#88C0D0'
-bspc config border_color             '#E5E9F0'
 bspc config presel_feedback_color    '#8FBCBB'
 bspc config focus_follows_pointer     true
 bspc config pointer_follows_focus     true
 bspc config pointer_follows_monitor   true
 
-spc rule -a Gimp state=floating
+bspc rule -a Gimp state=floating
 bspc rule -a \*:\*:Dialog state=floating
 bspc rule -a \*:\*:Alert manage=off
 bspc rule -a Kupfer.py focus=on
