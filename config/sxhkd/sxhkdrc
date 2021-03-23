@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty -e zsh
+	$TERMINAL -e zsh
 
 # program launcher
 super + @space
@@ -56,21 +56,26 @@ super + a; super + p
 	passmenu && \
 	notify-send -a "Pass: password manager" -u normal "password copied" "a password has been copied to the clipboard"
 
+# select unicode
+super + a; super + e
+	$TERMINAL --title Dialog -e "$HOME/.scripts/dmenu/emoji.dash" ;\
+	cat /tmp/wm/emoji | xclip -selection clipboard
+
 ###############################
 # open apps
 ###############################
 
 # open calcurse
 super + o; super + c
-	kitty -e calcurse
+	$TERMINAL -e calcurse
 
 # open browser
 super + o; super + b
-	firefox
+	$BROWSER
 
 # open alsamixer
 super + o; super + a
-	kitty -e alsamixer
+	$TERMINAL -e alsamixer
 
 # open screenkey
 super + o; super + s
