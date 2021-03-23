@@ -1,0 +1,415 @@
+[  4548.292] (WW) Failed to open protocol names file lib/xorg/protocol.txt
+[  4548.295] 
+X.Org X Server 1.20.10
+X Protocol Version 11, Revision 0
+[  4548.301] Build Operating System: Linux Artix Linux
+[  4548.303] Current Operating System: Linux artbox 5.11.8-artix1-1 #1 SMP PREEMPT Sun, 21 Mar 2021 21:02:45 +0000 x86_64
+[  4548.303] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-linux root=UUID=7185644a-6429-4ee2-b091-d90c719a7f70 rw loglevel=3 quiet
+[  4548.307] Build Date: 14 December 2020  12:57:17PM
+[  4548.308]  
+[  4548.309] Current version of pixman: 0.40.0
+[  4548.314] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[  4548.314] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[  4548.322] (==) Log file: "~/.local/share/xorg/Xorg.0.log", Time: Tue Mar 23 15:40:21 2021
+[  4548.324] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[  4548.324] (==) No Layout section.  Using the first Screen section.
+[  4548.324] (==) No screen section available. Using defaults.
+[  4548.325] (**) |-->Screen "Default Screen Section" (0)
+[  4548.325] (**) |   |-->Monitor "<default monitor>"
+[  4548.325] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[  4548.325] (==) Automatically adding devices
+[  4548.325] (==) Automatically enabling devices
+[  4548.325] (==) Automatically adding GPU devices
+[  4548.325] (==) Automatically binding GPU devices
+[  4548.325] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[  4548.325] (WW) The directory "/usr/share/fonts/misc" does not exist.
+[  4548.325] 	Entry deleted from font path.
+[  4548.325] (WW) The directory "/usr/share/fonts/OTF" does not exist.
+[  4548.325] 	Entry deleted from font path.
+[  4548.325] (WW) The directory "/usr/share/fonts/Type1" does not exist.
+[  4548.325] 	Entry deleted from font path.
+[  4548.325] (==) FontPath set to:
+	/usr/share/fonts/TTF,
+	/usr/share/fonts/100dpi,
+	/usr/share/fonts/75dpi
+[  4548.325] (==) ModulePath set to "/usr/lib/xorg/modules"
+[  4548.325] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[  4548.325] (II) Module ABI versions:
+[  4548.325] 	X.Org ANSI C Emulation: 0.4
+[  4548.325] 	X.Org Video Driver: 24.1
+[  4548.325] 	X.Org XInput driver : 24.1
+[  4548.325] 	X.Org Server Extension : 10.0
+[  4548.329] (++) using VT number 1
+
+[  4548.337] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[  4548.338] (II) xfree86: Adding drm device (/dev/dri/card0)
+[  4548.340] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 10 paused 0
+[  4548.347] (--) PCI:*(0@0:2:0) 8086:22b1:103c:821d rev 53, Mem @ 0x80000000/16777216, 0x90000000/268435456, I/O @ 0x0000f000/64, BIOS @ 0x????????/131072
+[  4548.348] (WW) Open ACPI failed (/var/run/acpid.socket) (No such file or directory)
+[  4548.348] (II) LoadModule: "glx"
+[  4548.348] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[  4548.353] (II) Module glx: vendor="X.Org Foundation"
+[  4548.354] 	compiled for 1.20.10, module version = 1.0.0
+[  4548.354] 	ABI class: X.Org Server Extension, version 10.0
+[  4548.354] (==) Matched intel as autoconfigured driver 0
+[  4548.354] (==) Matched modesetting as autoconfigured driver 1
+[  4548.354] (==) Matched fbdev as autoconfigured driver 2
+[  4548.354] (==) Matched vesa as autoconfigured driver 3
+[  4548.354] (==) Assigned the driver to the xf86ConfigLayout
+[  4548.354] (II) LoadModule: "intel"
+[  4548.354] (II) Loading /usr/lib/xorg/modules/drivers/intel_drv.so
+[  4548.355] (II) Module intel: vendor="X.Org Foundation"
+[  4548.355] 	compiled for 1.20.10, module version = 2.99.917
+[  4548.355] 	Module class: X.Org Video Driver
+[  4548.355] 	ABI class: X.Org Video Driver, version 24.1
+[  4548.355] (II) LoadModule: "modesetting"
+[  4548.355] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[  4548.357] (II) Module modesetting: vendor="X.Org Foundation"
+[  4548.357] 	compiled for 1.20.10, module version = 1.20.10
+[  4548.357] 	Module class: X.Org Video Driver
+[  4548.357] 	ABI class: X.Org Video Driver, version 24.1
+[  4548.357] (II) LoadModule: "fbdev"
+[  4548.358] (WW) Warning, couldn't open module fbdev
+[  4548.358] (EE) Failed to load module "fbdev" (module does not exist, 0)
+[  4548.358] (II) LoadModule: "vesa"
+[  4548.358] (II) Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[  4548.358] (II) Module vesa: vendor="X.Org Foundation"
+[  4548.358] 	compiled for 1.20.9, module version = 2.5.0
+[  4548.358] 	Module class: X.Org Video Driver
+[  4548.358] 	ABI class: X.Org Video Driver, version 24.1
+[  4548.358] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[  4548.359] (II) intel: Driver for Intel(R) HD Graphics
+[  4548.359] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[  4548.359] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[  4548.359] (II) modesetting: Driver for Modesetting Kernel Drivers: kms
+[  4548.359] (II) VESA: driver for VESA chipsets: vesa
+[  4548.360] xf86EnableIOPorts: failed to set IOPL for I/O (Operation not permitted)
+[  4548.360] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20201103
+[  4548.360] (II) intel(0): SNA compiled from 2.99.917-916-g31486f40
+[  4548.377] (WW) Falling back to old probe method for modesetting
+[  4548.378] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[  4548.378] (--) intel(0): Integrated Graphics Chipset: Intel(R) HD Graphics
+[  4548.378] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3, sse4.1, sse4.2; using a maximum of 4 threads
+[  4548.378] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[  4548.378] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[  4548.379] (==) intel(0): RGB weight 888
+[  4548.379] (==) intel(0): Default visual is TrueColor
+[  4548.381] (II) intel(0): Output DP1 has no monitor section
+[  4548.381] (II) intel(0): Enabled output DP1
+[  4548.381] (II) intel(0): Output HDMI1 has no monitor section
+[  4548.382] (II) intel(0): Enabled output HDMI1
+[  4548.382] (II) intel(0): Output DP2 has no monitor section
+[  4548.382] (II) intel(0): Enabled output DP2
+[  4548.382] (II) intel(0): Output HDMI2 has no monitor section
+[  4548.383] (II) intel(0): Enabled output HDMI2
+[  4548.383] (II) intel(0): Output DP3 has no monitor section
+[  4548.383] (II) intel(0): Enabled output DP3
+[  4548.383] (II) intel(0): Output HDMI3 has no monitor section
+[  4548.384] (II) intel(0): Enabled output HDMI3
+[  4548.384] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[  4548.385] (II) intel(0): Output VIRTUAL1 has no monitor section
+[  4548.385] (II) intel(0): Enabled output VIRTUAL1
+[  4548.385] (--) intel(0): Output DP2 using initial mode 1366x768 on pipe 0
+[  4548.385] (==) intel(0): TearFree enabled
+[  4548.385] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[  4548.385] (==) intel(0): DPI set to (96, 96)
+[  4548.385] (II) Loading sub module "dri3"
+[  4548.385] (II) LoadModule: "dri3"
+[  4548.385] (II) Module "dri3" already built-in
+[  4548.385] (II) Loading sub module "dri2"
+[  4548.385] (II) LoadModule: "dri2"
+[  4548.385] (II) Module "dri2" already built-in
+[  4548.385] (II) Loading sub module "present"
+[  4548.385] (II) LoadModule: "present"
+[  4548.385] (II) Module "present" already built-in
+[  4548.385] (II) UnloadModule: "modesetting"
+[  4548.385] (II) Unloading modesetting
+[  4548.386] (II) UnloadModule: "vesa"
+[  4548.386] (II) Unloading vesa
+[  4548.386] (II) intel(0): SNA initialized with Cherryview (gen8) backend
+[  4548.386] (==) intel(0): Backing store enabled
+[  4548.386] (==) intel(0): Silken mouse disabled
+[  4548.386] (II) intel(0): HW Cursor enabled
+[  4548.387] (==) intel(0): DPMS enabled
+[  4548.388] (==) intel(0): Display hotplug detection enabled
+[  4548.388] (II) intel(0): [DRI2] Setup complete
+[  4548.388] (II) intel(0): [DRI2]   DRI driver: i965
+[  4548.388] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[  4548.388] (II) intel(0): direct rendering: DRI2 DRI3 enabled
+[  4548.389] (II) intel(0): hardware support for Present enabled
+[  4548.389] (II) Initializing extension Generic Event Extension
+[  4548.389] (II) Initializing extension SHAPE
+[  4548.389] (II) Initializing extension MIT-SHM
+[  4548.389] (II) Initializing extension XInputExtension
+[  4548.389] (II) Initializing extension XTEST
+[  4548.389] (II) Initializing extension BIG-REQUESTS
+[  4548.389] (II) Initializing extension SYNC
+[  4548.389] (II) Initializing extension XKEYBOARD
+[  4548.389] (II) Initializing extension XC-MISC
+[  4548.389] (II) Initializing extension SECURITY
+[  4548.389] (II) Initializing extension XFIXES
+[  4548.389] (II) Initializing extension RENDER
+[  4548.389] (II) Initializing extension RANDR
+[  4548.389] (II) Initializing extension COMPOSITE
+[  4548.389] (II) Initializing extension DAMAGE
+[  4548.389] (II) Initializing extension MIT-SCREEN-SAVER
+[  4548.389] (II) Initializing extension DOUBLE-BUFFER
+[  4548.389] (II) Initializing extension RECORD
+[  4548.389] (II) Initializing extension DPMS
+[  4548.389] (II) Initializing extension Present
+[  4548.389] (II) Initializing extension DRI3
+[  4548.390] (II) Initializing extension X-Resource
+[  4548.390] (II) Initializing extension XVideo
+[  4548.390] (II) Initializing extension XVideo-MotionCompensation
+[  4548.390] (II) Initializing extension GLX
+[  4548.422] (II) AIGLX: Loaded and initialized i965
+[  4548.422] (II) GLX: Initialized DRI2 GL provider for screen 0
+[  4548.422] (II) Initializing extension XFree86-VidModeExtension
+[  4548.422] (II) Initializing extension XFree86-DGA
+[  4548.422] (II) Initializing extension XFree86-DRI
+[  4548.422] (II) Initializing extension DRI2
+[  4548.427] (II) intel(0): switch to mode 1366x768@60.0 on DP2 using pipe 0, position (0, 0), rotation normal, reflection none
+[  4548.430] (II) intel(0): Setting screen physical size to 361 x 203
+[  4548.576] (II) config/udev: Adding input device Power Button (/dev/input/event2)
+[  4548.577] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[  4548.577] (II) LoadModule: "libinput"
+[  4548.577] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[  4548.580] (II) Module libinput: vendor="X.Org Foundation"
+[  4548.580] 	compiled for 1.20.8, module version = 0.30.0
+[  4548.580] 	Module class: X.Org XInput Driver
+[  4548.580] 	ABI class: X.Org XInput driver, version 24.1
+[  4548.580] (II) Using input driver 'libinput' for 'Power Button'
+[  4548.581] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 15 paused 0
+[  4548.581] (**) Power Button: always reports core events
+[  4548.581] (**) Option "Device" "/dev/input/event2"
+[  4548.582] (**) Option "_source" "server/udev"
+[  4548.585] (II) event2  - Power Button: is tagged by udev as: Keyboard
+[  4548.585] (II) event2  - Power Button: device is a keyboard
+[  4548.586] (II) event2  - Power Button: device removed
+[  4548.586] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input2/event2"
+[  4548.586] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[  4548.587] (II) event2  - Power Button: is tagged by udev as: Keyboard
+[  4548.587] (II) event2  - Power Button: device is a keyboard
+[  4548.587] (II) config/udev: Adding input device Video Bus (/dev/input/event6)
+[  4548.587] (**) Video Bus: Applying InputClass "libinput keyboard catchall"
+[  4548.587] (II) Using input driver 'libinput' for 'Video Bus'
+[  4548.589] (II) systemd-logind: got fd for /dev/input/event6 13:70 fd 18 paused 0
+[  4548.589] (**) Video Bus: always reports core events
+[  4548.589] (**) Option "Device" "/dev/input/event6"
+[  4548.589] (**) Option "_source" "server/udev"
+[  4548.590] (II) event6  - Video Bus: is tagged by udev as: Keyboard
+[  4548.590] (II) event6  - Video Bus: device is a keyboard
+[  4548.591] (II) event6  - Video Bus: device removed
+[  4548.591] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input6/event6"
+[  4548.591] (II) XINPUT: Adding extended input device "Video Bus" (type: KEYBOARD, id 7)
+[  4548.592] (II) event6  - Video Bus: is tagged by udev as: Keyboard
+[  4548.592] (II) event6  - Video Bus: device is a keyboard
+[  4548.593] (II) config/udev: Adding input device Power Button (/dev/input/event0)
+[  4548.593] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[  4548.593] (II) Using input driver 'libinput' for 'Power Button'
+[  4548.595] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 19 paused 0
+[  4548.595] (**) Power Button: always reports core events
+[  4548.595] (**) Option "Device" "/dev/input/event0"
+[  4548.595] (**) Option "_source" "server/udev"
+[  4548.596] (II) event0  - Power Button: is tagged by udev as: Keyboard
+[  4548.596] (II) event0  - Power Button: device is a keyboard
+[  4548.597] (II) event0  - Power Button: device removed
+[  4548.597] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input0/event0"
+[  4548.597] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 8)
+[  4548.598] (II) event0  - Power Button: is tagged by udev as: Keyboard
+[  4548.598] (II) event0  - Power Button: device is a keyboard
+[  4548.599] (II) config/udev: Adding input device Sleep Button (/dev/input/event1)
+[  4548.599] (**) Sleep Button: Applying InputClass "libinput keyboard catchall"
+[  4548.599] (II) Using input driver 'libinput' for 'Sleep Button'
+[  4548.602] (II) systemd-logind: got fd for /dev/input/event1 13:65 fd 20 paused 0
+[  4548.602] (**) Sleep Button: always reports core events
+[  4548.602] (**) Option "Device" "/dev/input/event1"
+[  4548.602] (**) Option "_source" "server/udev"
+[  4548.603] (II) event1  - Sleep Button: is tagged by udev as: Keyboard
+[  4548.603] (II) event1  - Sleep Button: device is a keyboard
+[  4548.604] (II) event1  - Sleep Button: device removed
+[  4548.604] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input1/event1"
+[  4548.604] (II) XINPUT: Adding extended input device "Sleep Button" (type: KEYBOARD, id 9)
+[  4548.605] (II) event1  - Sleep Button: is tagged by udev as: Keyboard
+[  4548.605] (II) event1  - Sleep Button: device is a keyboard
+[  4548.607] (II) config/udev: Adding input device MOSART Semi. 2.4G INPUT DEVICE (/dev/input/event12)
+[  4548.607] (**) MOSART Semi. 2.4G INPUT DEVICE: Applying InputClass "libinput keyboard catchall"
+[  4548.607] (II) Using input driver 'libinput' for 'MOSART Semi. 2.4G INPUT DEVICE'
+[  4548.610] (II) systemd-logind: got fd for /dev/input/event12 13:76 fd 21 paused 0
+[  4548.610] (**) MOSART Semi. 2.4G INPUT DEVICE: always reports core events
+[  4548.610] (**) Option "Device" "/dev/input/event12"
+[  4548.611] (**) Option "_source" "server/udev"
+[  4548.612] (II) event12 - MOSART Semi. 2.4G INPUT DEVICE: is tagged by udev as: Keyboard
+[  4548.612] (II) event12 - MOSART Semi. 2.4G INPUT DEVICE: device is a keyboard
+[  4548.613] (II) event12 - MOSART Semi. 2.4G INPUT DEVICE: device removed
+[  4548.613] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.0/0003:062A:4C01.0001/input/input12/event12"
+[  4548.613] (II) XINPUT: Adding extended input device "MOSART Semi. 2.4G INPUT DEVICE" (type: KEYBOARD, id 10)
+[  4548.615] (II) event12 - MOSART Semi. 2.4G INPUT DEVICE: is tagged by udev as: Keyboard
+[  4548.615] (II) event12 - MOSART Semi. 2.4G INPUT DEVICE: device is a keyboard
+[  4548.616] (II) config/udev: Adding input device MOSART Semi. 2.4G INPUT DEVICE Mouse (/dev/input/event13)
+[  4548.616] (**) MOSART Semi. 2.4G INPUT DEVICE Mouse: Applying InputClass "libinput pointer catchall"
+[  4548.616] (II) Using input driver 'libinput' for 'MOSART Semi. 2.4G INPUT DEVICE Mouse'
+[  4548.620] (II) systemd-logind: got fd for /dev/input/event13 13:77 fd 22 paused 0
+[  4548.620] (**) MOSART Semi. 2.4G INPUT DEVICE Mouse: always reports core events
+[  4548.620] (**) Option "Device" "/dev/input/event13"
+[  4548.620] (**) Option "_source" "server/udev"
+[  4548.622] (II) event13 - MOSART Semi. 2.4G INPUT DEVICE Mouse: is tagged by udev as: Mouse
+[  4548.622] (II) event13 - MOSART Semi. 2.4G INPUT DEVICE Mouse: device is a pointer
+[  4548.622] (II) event13 - MOSART Semi. 2.4G INPUT DEVICE Mouse: device removed
+[  4548.622] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:062A:4C01.0002/input/input13/event13"
+[  4548.622] (II) XINPUT: Adding extended input device "MOSART Semi. 2.4G INPUT DEVICE Mouse" (type: MOUSE, id 11)
+[  4548.623] (**) Option "AccelerationScheme" "none"
+[  4548.623] (**) MOSART Semi. 2.4G INPUT DEVICE Mouse: (accel) selected scheme none/0
+[  4548.623] (**) MOSART Semi. 2.4G INPUT DEVICE Mouse: (accel) acceleration factor: 2.000
+[  4548.623] (**) MOSART Semi. 2.4G INPUT DEVICE Mouse: (accel) acceleration threshold: 4
+[  4548.624] (II) event13 - MOSART Semi. 2.4G INPUT DEVICE Mouse: is tagged by udev as: Mouse
+[  4548.625] (II) event13 - MOSART Semi. 2.4G INPUT DEVICE Mouse: device is a pointer
+[  4548.626] (II) config/udev: Adding input device MOSART Semi. 2.4G INPUT DEVICE Mouse (/dev/input/mouse0)
+[  4548.626] (II) No input driver specified, ignoring this device.
+[  4548.626] (II) This device may have been added with another device file.
+[  4548.626] (II) config/udev: Adding input device MOSART Semi. 2.4G INPUT DEVICE Consumer Control (/dev/input/event14)
+[  4548.627] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: Applying InputClass "libinput keyboard catchall"
+[  4548.627] (II) Using input driver 'libinput' for 'MOSART Semi. 2.4G INPUT DEVICE Consumer Control'
+[  4548.630] (II) systemd-logind: got fd for /dev/input/event14 13:78 fd 23 paused 0
+[  4548.630] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: always reports core events
+[  4548.630] (**) Option "Device" "/dev/input/event14"
+[  4548.630] (**) Option "_source" "server/udev"
+[  4548.632] (II) event14 - MOSART Semi. 2.4G INPUT DEVICE Consumer Control: is tagged by udev as: Keyboard
+[  4548.632] (II) event14 - MOSART Semi. 2.4G INPUT DEVICE Consumer Control: device is a keyboard
+[  4548.632] (II) event14 - MOSART Semi. 2.4G INPUT DEVICE Consumer Control: device removed
+[  4548.632] (II) libinput: MOSART Semi. 2.4G INPUT DEVICE Consumer Control: needs a virtual subdevice
+[  4548.633] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:062A:4C01.0002/input/input14/event14"
+[  4548.633] (II) XINPUT: Adding extended input device "MOSART Semi. 2.4G INPUT DEVICE Consumer Control" (type: MOUSE, id 12)
+[  4548.633] (**) Option "AccelerationScheme" "none"
+[  4548.633] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: (accel) selected scheme none/0
+[  4548.633] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: (accel) acceleration factor: 2.000
+[  4548.633] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: (accel) acceleration threshold: 4
+[  4548.635] (II) event14 - MOSART Semi. 2.4G INPUT DEVICE Consumer Control: is tagged by udev as: Keyboard
+[  4548.635] (II) event14 - MOSART Semi. 2.4G INPUT DEVICE Consumer Control: device is a keyboard
+[  4548.636] (II) config/udev: Adding input device MOSART Semi. 2.4G INPUT DEVICE System Control (/dev/input/event15)
+[  4548.636] (**) MOSART Semi. 2.4G INPUT DEVICE System Control: Applying InputClass "libinput keyboard catchall"
+[  4548.636] (II) Using input driver 'libinput' for 'MOSART Semi. 2.4G INPUT DEVICE System Control'
+[  4548.639] (II) systemd-logind: got fd for /dev/input/event15 13:79 fd 24 paused 0
+[  4548.640] (**) MOSART Semi. 2.4G INPUT DEVICE System Control: always reports core events
+[  4548.640] (**) Option "Device" "/dev/input/event15"
+[  4548.640] (**) Option "_source" "server/udev"
+[  4548.641] (II) event15 - MOSART Semi. 2.4G INPUT DEVICE System Control: is tagged by udev as: Keyboard
+[  4548.641] (II) event15 - MOSART Semi. 2.4G INPUT DEVICE System Control: device is a keyboard
+[  4548.642] (II) event15 - MOSART Semi. 2.4G INPUT DEVICE System Control: device removed
+[  4548.642] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:062A:4C01.0002/input/input15/event15"
+[  4548.642] (II) XINPUT: Adding extended input device "MOSART Semi. 2.4G INPUT DEVICE System Control" (type: KEYBOARD, id 13)
+[  4548.644] (II) event15 - MOSART Semi. 2.4G INPUT DEVICE System Control: is tagged by udev as: Keyboard
+[  4548.644] (II) event15 - MOSART Semi. 2.4G INPUT DEVICE System Control: device is a keyboard
+[  4548.645] (II) config/udev: Adding input device MOSART Semi. 2.4G INPUT DEVICE (/dev/input/event16)
+[  4548.645] (II) No input driver specified, ignoring this device.
+[  4548.645] (II) This device may have been added with another device file.
+[  4548.646] (II) config/udev: Adding input device Trust Webcam: Trust Webcam (/dev/input/event4)
+[  4548.646] (**) Trust Webcam: Trust Webcam: Applying InputClass "libinput keyboard catchall"
+[  4548.646] (II) Using input driver 'libinput' for 'Trust Webcam: Trust Webcam'
+[  4548.649] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 25 paused 0
+[  4548.649] (**) Trust Webcam: Trust Webcam: always reports core events
+[  4548.649] (**) Option "Device" "/dev/input/event4"
+[  4548.649] (**) Option "_source" "server/udev"
+[  4548.651] (II) event4  - Trust Webcam: Trust Webcam: is tagged by udev as: Keyboard
+[  4548.651] (II) event4  - Trust Webcam: Trust Webcam: device is a keyboard
+[  4548.652] (II) event4  - Trust Webcam: Trust Webcam: device removed
+[  4548.652] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-5/1-5.4/1-5.4:1.0/input/input4/event4"
+[  4548.652] (II) XINPUT: Adding extended input device "Trust Webcam: Trust Webcam" (type: KEYBOARD, id 14)
+[  4548.654] (II) event4  - Trust Webcam: Trust Webcam: is tagged by udev as: Keyboard
+[  4548.654] (II) event4  - Trust Webcam: Trust Webcam: device is a keyboard
+[  4548.655] (II) config/udev: Adding input device HDA Intel PCH Front Headphone (/dev/input/event10)
+[  4548.655] (II) No input driver specified, ignoring this device.
+[  4548.655] (II) This device may have been added with another device file.
+[  4548.655] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=3 (/dev/input/event11)
+[  4548.655] (II) No input driver specified, ignoring this device.
+[  4548.655] (II) This device may have been added with another device file.
+[  4548.656] (II) config/udev: Adding input device HDA Intel PCH Mic (/dev/input/event7)
+[  4548.656] (II) No input driver specified, ignoring this device.
+[  4548.656] (II) This device may have been added with another device file.
+[  4548.656] (II) config/udev: Adding input device HDA Intel PCH Line (/dev/input/event8)
+[  4548.657] (II) No input driver specified, ignoring this device.
+[  4548.657] (II) This device may have been added with another device file.
+[  4548.657] (II) config/udev: Adding input device HDA Intel PCH Line Out (/dev/input/event9)
+[  4548.657] (II) No input driver specified, ignoring this device.
+[  4548.657] (II) This device may have been added with another device file.
+[  4548.658] (II) config/udev: Adding input device PC Speaker (/dev/input/event3)
+[  4548.658] (II) No input driver specified, ignoring this device.
+[  4548.658] (II) This device may have been added with another device file.
+[  4548.661] (II) config/udev: Adding input device HP WMI hotkeys (/dev/input/event5)
+[  4548.661] (**) HP WMI hotkeys: Applying InputClass "libinput keyboard catchall"
+[  4548.661] (II) Using input driver 'libinput' for 'HP WMI hotkeys'
+[  4548.665] (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 26 paused 0
+[  4548.665] (**) HP WMI hotkeys: always reports core events
+[  4548.665] (**) Option "Device" "/dev/input/event5"
+[  4548.665] (**) Option "_source" "server/udev"
+[  4548.666] (II) event5  - HP WMI hotkeys: is tagged by udev as: Keyboard Switch
+[  4548.666] (II) event5  - HP WMI hotkeys: device is a keyboard
+[  4548.666] (II) event5  - HP WMI hotkeys: device removed
+[  4548.666] (**) Option "config_info" "udev:/sys/devices/virtual/input/input5/event5"
+[  4548.666] (II) XINPUT: Adding extended input device "HP WMI hotkeys" (type: KEYBOARD, id 15)
+[  4548.667] (II) event5  - HP WMI hotkeys: is tagged by udev as: Keyboard Switch
+[  4548.667] (II) event5  - HP WMI hotkeys: device is a keyboard
+[  4548.696] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: Applying InputClass "libinput keyboard catchall"
+[  4548.697] (II) Using input driver 'libinput' for 'MOSART Semi. 2.4G INPUT DEVICE Consumer Control'
+[  4548.697] (II) systemd-logind: returning pre-existing fd for /dev/input/event14 13:78
+[  4548.697] (**) MOSART Semi. 2.4G INPUT DEVICE Consumer Control: always reports core events
+[  4548.697] (**) Option "Device" "/dev/input/event14"
+[  4548.697] (**) Option "_source" "_driver/libinput"
+[  4548.697] (II) libinput: MOSART Semi. 2.4G INPUT DEVICE Consumer Control: is a virtual subdevice
+[  4548.697] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.1/0003:062A:4C01.0002/input/input14/event14"
+[  4548.697] (II) XINPUT: Adding extended input device "MOSART Semi. 2.4G INPUT DEVICE Consumer Control" (type: KEYBOARD, id 16)
+[  4567.675] (EE) event12 - MOSART Semi. 2.4G INPUT DEVICE: client bug: event processing lagging behind by 31ms, your system is too slow
+[  4578.513] (**) Option "fd" "15"
+[  4578.513] (II) event2  - Power Button: device removed
+[  4578.513] (**) Option "fd" "18"
+[  4578.513] (II) event6  - Video Bus: device removed
+[  4578.513] (**) Option "fd" "19"
+[  4578.513] (II) event0  - Power Button: device removed
+[  4578.513] (**) Option "fd" "20"
+[  4578.513] (II) event1  - Sleep Button: device removed
+[  4578.514] (**) Option "fd" "21"
+[  4578.514] (II) event12 - MOSART Semi. 2.4G INPUT DEVICE: device removed
+[  4578.514] (**) Option "fd" "22"
+[  4578.514] (II) event13 - MOSART Semi. 2.4G INPUT DEVICE Mouse: device removed
+[  4578.514] (**) Option "fd" "23"
+[  4578.514] (**) Option "fd" "24"
+[  4578.514] (II) event15 - MOSART Semi. 2.4G INPUT DEVICE System Control: device removed
+[  4578.514] (**) Option "fd" "25"
+[  4578.514] (II) event4  - Trust Webcam: Trust Webcam: device removed
+[  4578.514] (**) Option "fd" "26"
+[  4578.514] (II) event5  - HP WMI hotkeys: device removed
+[  4578.515] (**) Option "fd" "23"
+[  4578.515] (II) event14 - MOSART Semi. 2.4G INPUT DEVICE Consumer Control: device removed
+[  4578.516] (II) UnloadModule: "libinput"
+[  4578.516] (II) systemd-logind: not releasing fd for 13:78, still in use
+[  4578.516] (II) UnloadModule: "libinput"
+[  4578.517] (II) systemd-logind: releasing fd for 13:69
+[  4578.545] (II) UnloadModule: "libinput"
+[  4578.545] (II) systemd-logind: releasing fd for 13:68
+[  4578.600] (II) UnloadModule: "libinput"
+[  4578.600] (II) systemd-logind: releasing fd for 13:79
+[  4578.633] (II) UnloadModule: "libinput"
+[  4578.634] (II) systemd-logind: releasing fd for 13:78
+[  4578.656] (II) UnloadModule: "libinput"
+[  4578.656] (II) systemd-logind: releasing fd for 13:77
+[  4578.703] (II) UnloadModule: "libinput"
+[  4578.703] (II) systemd-logind: releasing fd for 13:76
+[  4578.730] (II) UnloadModule: "libinput"
+[  4578.730] (II) systemd-logind: releasing fd for 13:65
+[  4578.780] (II) UnloadModule: "libinput"
+[  4578.780] (II) systemd-logind: releasing fd for 13:64
+[  4578.823] (II) UnloadModule: "libinput"
+[  4578.823] (II) systemd-logind: releasing fd for 13:70
+[  4578.877] (II) UnloadModule: "libinput"
+[  4578.877] (II) systemd-logind: releasing fd for 13:66
+[  4579.018] (II) Server terminated successfully (0). Closing log file.

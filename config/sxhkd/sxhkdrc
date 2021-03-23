@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	$TERMINAL -e zsh
+	kitty -e zsh
 
 # program launcher
 super + @space
@@ -62,19 +62,23 @@ super + a; super + p
 
 # open calcurse
 super + o; super + c
-	$TERMINAL -e calcurse
+	kitty -e calcurse
 
 # open browser
 super + o; super + b
-	$BROWSER
+	firefox
 
 # open alsamixer
 super + o; super + a
-	$TERMINAL -e alsamixer
+	kitty -e alsamixer
 
 # open screenkey
 super + o; super + s
-	pgrep screenkey && killall screenkey || screenkey -s small &
+	pgrep screenkey && killall screenkey || screenkey -s small
+
+# open jami
+super + o; super + j
+	jami
 
 ###############################
 # Hide and unhide stuff

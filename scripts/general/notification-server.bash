@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 
 tiramisu -j | while read -r notif
 do

@@ -5,3 +5,5 @@ text=nvim.desktop
 image/png=sxiv.desktop
 text/plain=nvim.desktop
 text/x-shellscript=nvim.desktop
+text/x-c=nvim.desktop
+x-c++=nvim.desktop
