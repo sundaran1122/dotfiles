@@ -1,0 +1,3 @@
+#!/bin/dash
+
+tail -f /tmp/wm/audiofifo | xob

@@ -12,6 +12,7 @@ alias n="nvim"
 alias cf="cd \`fd -t d | sk --tiebreak=length,index --prompt=\"λ \"\`"
 alias nf="nvim \`fd -t f | sk --tiebreak=length,index --prompt=\"λ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
+alias tsm="transmission-remote"
 
 #nordic tty?
 if [[ $TERM = "linux" ]]

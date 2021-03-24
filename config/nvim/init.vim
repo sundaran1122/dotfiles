@@ -19,20 +19,21 @@ set noswapfile
 "text rendering
 set encoding=utf-8
 set linebreak
-set scrolloff=2
 
 "UI options
-set ruler
+set noruler
 set noerrorbells
-set nu
-set rnu
-set laststatus=2
+set nonu
+set nornu
+" set laststatus=2
+set laststatus=0
 set backspace=2
 set nowrap
 set showcmd
 
 "statusline
-set stl=%m%h%w\ \|%n\ <%f>\|%=%l:%c\ \|%p%%\ %L\|
+" set stl=%m%h%w\ \|%n\ <%f>\|%=%l:%c\ \|%p%%\ %L\|
+set stl=""
 
 "code folding options
 set foldmethod=indent

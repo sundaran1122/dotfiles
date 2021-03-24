@@ -45,7 +45,8 @@ super + alt + c
 
 # screenshot
 super + a; super + s
-	maim -s | xclip -selection clipboard -t image/png && notify-send -a maim "Screenshot taken!" "a screenshot has been taken. its been copied to the clipboard."
+	maim -s | xclip -selection clipboard -t image/png && \
+	notify-send -a maim "Screenshot taken!" "a screenshot has been taken. its been copied to the clipboard."
 
 # kill processes
 super + a; super + {k,c}
@@ -101,6 +102,20 @@ alt + u
 
 super + alt + u
 	~/.scripts/general/mapwindow.bash
+
+###############################
+# function keys
+###############################
+
+# control volume
+XF86AudioRaiseVolume
+	amixer set Master 2%+ &> /dev/null ; \
+	echo $(amixer get Master | grep "^\s*Mono" | cut -d\[ -f2 | cut -d% -f1) > /tmp/wm/audiofifo
+
+XF86AudioLowerVolume
+	amixer set Master 2%- &> /dev/null ; \
+	echo $(amixer get Master | grep "^\s*Mono" | cut -d\[ -f2 | cut -d% -f1) > /tmp/wm/audiofifo
+
 
 ###############################
 # General Window stuff
@@ -250,7 +265,7 @@ super + s; super + p
 ###############################
 
 # stick and unstick windows super + s 
-super + t
+super + g
 	[[ -n $(bspc query -N -n focused.sticky ) ]] && bspc node -g sticky=off || bspc node -g sticky=on
 
 # mark a node
