@@ -31,8 +31,8 @@ foreground { mkdir -p /tmp/wm }
 # daemons
 background { sxhkd }
 background { picom --experimental-backend --backend glx }
-foreground { hsetroot -fill ${HOME}/wallpapers/wallpaper.png }
-foreground { keynav }
+foreground { hsetroot -fill ${HOME}/Pictures/wallpapers/wallpaper.png }
+foreground { keynav "loadconfig ~/.config/keynavrc" }
 
 background { ${HOME}/.config/lemonbar/controllemonbar }
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule.bash }

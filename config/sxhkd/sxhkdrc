@@ -53,14 +53,22 @@ super + a; super + {k,c}
 	~/.scripts/dmenu/killproc.bash {SIGKILL,SIGINT}
 
 # open passmenu
-super + a; super + p
+super + p
 	passmenu && \
-	notify-send -a "Pass: password manager" -u normal "password copied" "a password has been copied to the clipboard"
+	notify-send -a "Pass" -u normal "password copied" "a password has been copied to the clipboard"
 
 # select unicode
 super + a; super + e
 	$TERMINAL --title Dialog -e "$HOME/.scripts/dmenu/emoji.dash" ;\
 	cat /tmp/wm/emoji | xclip -selection clipboard
+
+# torrent something
+super + a; super + t
+	~/.scripts/general/torrent.dash
+
+# download youtube
+super + a; super + v
+	~/.scripts/general/youtube.dash
 
 ###############################
 # open apps
@@ -109,12 +117,10 @@ super + alt + u
 
 # control volume
 XF86AudioRaiseVolume
-	amixer set Master 2%+ &> /dev/null ; \
-	echo $(amixer get Master | grep "^\s*Mono" | cut -d\[ -f2 | cut -d% -f1) > /tmp/wm/audiofifo
+	amixer set Master 2%+ &> /dev/null
 
 XF86AudioLowerVolume
-	amixer set Master 2%- &> /dev/null ; \
-	echo $(amixer get Master | grep "^\s*Mono" | cut -d\[ -f2 | cut -d% -f1) > /tmp/wm/audiofifo
+	amixer set Master 2%- &> /dev/null
 
 
 ###############################
@@ -163,10 +169,6 @@ super + u
 
 super + d
 	bspc node -f biggest.descendant_of.window
-
-# go to previous window
-super + p
-	bspc node -f last
 
 # switch to biggest desktop
 super + b
@@ -266,7 +268,10 @@ super + s; super + p
 
 # stick and unstick windows super + s 
 super + g
-	[[ -n $(bspc query -N -n focused.sticky ) ]] && bspc node -g sticky=off || bspc node -g sticky=on
+	bspc node -g sticky=on
+
+super + shift + g
+	bspc node -g sticky=off
 
 # mark a node
 super + e

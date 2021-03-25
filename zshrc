@@ -14,6 +14,9 @@ alias nf="nvim \`fd -t f | sk --tiebreak=length,index --prompt=\"λ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
 alias tsm="transmission-remote"
 
+alias cp="cp -i"
+alias rm="rm -i"
+
 #nordic tty?
 if [[ $TERM = "linux" ]]
 then
@@ -63,6 +66,9 @@ xplr () {
 		[[ $sel == "delete" ]] && rm -rf $(fd | grep -v \~ | sk --tiebreak=length,score,index -m -p "delete: ")
 
 		[[ $sel == "move" ]] && mv $(fd | grep -v \~ | sk --tiebreak=length,score,index -m -p "select file: ") \
+			$(fd | grep -v \~ | sk --tiebreak=length,score,index -c "fd | grep -v \~ | grep '{}' || echo {}" -i --cmd-prompt="select destination: ")
+
+		[[ $sel == "copy" ]] && cp $(fd | grep -v \~ | sk --tiebreak=length,score,index -m -p "select file: ") \
 			$(fd | grep -v \~ | sk --tiebreak=length,score,index -c "fd | grep -v \~ | grep '{}' || echo {}" -i --cmd-prompt="select destination: ")
 	done
 }

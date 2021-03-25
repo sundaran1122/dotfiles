@@ -1,3 +1,3 @@
 #!/bin/dash
 
-tail -f /tmp/wm/audiofifo | xob
+tail -f /tmp/wm/audiofifo | xob -c volume
