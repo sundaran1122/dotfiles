@@ -8,6 +8,8 @@ export TERMINAL kitty
 export SXHKD_SHELL dash
 export SHELL zsh
 
+export XDG_CONFIG_HOME ${HOME}/.config
+
 foreground { 
 	killall "picom"
 		"sxhkd"
@@ -22,13 +24,9 @@ foreground {
 		"updatedesktopmodule.bash"
 		"updatewindowmodule.bash"
 		"lemonbar"
-		"runxobbars.dash"
-		"xob"
-		"tail"
 }
 
 foreground { mkdir -p /tmp/wm }
-foreground { mkfifo /tmp/wm/audiofifo }
 
 # daemons
 background { sxhkd }
@@ -40,8 +38,6 @@ background { ${HOME}/.config/lemonbar/controllemonbar }
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule.bash }
 background { ${HOME}/.scripts/lemonbar/updatewindowmodule.bash }
 background { ${HOME}/.scripts/general/notification-server.bash }
-
-background { ${HOME}/.scripts/bspwm/runxobbars.dash }
 
 #
 # xorg stuff
