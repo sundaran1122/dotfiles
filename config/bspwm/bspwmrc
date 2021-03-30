@@ -4,11 +4,14 @@ importas HOME HOME
 
 export EDITOR nvim
 export BROWSER firefox
-export TERMINAL kitty
+export TERMINAL termite
 export SXHKD_SHELL dash
 export SHELL zsh
 
 export XDG_CONFIG_HOME ${HOME}/.config
+export ZDOTDIR ${HOME}/.config/zsh
+
+export LESSHISTFILE ${HOME}/.cache/lesshst
 
 foreground { 
 	killall "picom"
@@ -18,8 +21,6 @@ foreground {
 		"dash"
 		"bspc"
 		"tiramisu"
-		"xdotool"
-		"keynav" 
 		"xcape"
 		"updatedesktopmodule.bash"
 		"updatewindowmodule.bash"
@@ -31,8 +32,7 @@ foreground { mkdir -p /tmp/wm }
 # daemons
 background { sxhkd }
 background { picom --experimental-backend --backend glx }
-foreground { hsetroot -fill ${HOME}/Pictures/wallpapers/wallpaper.png }
-foreground { keynav "loadconfig ~/.config/keynavrc" }
+background { hsetroot -fill ${HOME}/Pictures/wallpapers/wallpaper.png }
 
 background { ${HOME}/.config/lemonbar/controllemonbar }
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule.bash }
@@ -44,14 +44,18 @@ background { ${HOME}/.scripts/general/notification-server.bash }
 #
 foreground { xrandr -s 1366x768 }
 foreground { xsetroot -cursor_name left_ptr }
-foreground { xset r rate 300 50 }
-foreground { setxkbmap -option caps:super } 
+
+foreground { xset r rate 150 100 }
+
+foreground { setxkbmap -option caps:super -option 77:shift } 
 foreground { xcape -e "Super_L=Escape" }
+foreground { xmodmap ${HOME}/.Xmodmap }
+background { xrdb ${HOME}/.Xresources }
 
 #
 # hot corners
 #
-background { xdotool behave_screen_edge --delay 1000 top-right key super+alt+s }
+# background { xdotool behave_screen_edge --delay 1000 top-right key super+alt+s }
 
 #
 # bspwm stuff
@@ -68,12 +72,18 @@ foreground { bspc config split_ratio          		0.50 }
 foreground { bspc config automatic_scheme         longest_side }
 foreground { bspc config ignore_ewmh_focus        true }
 foreground { bspc config external_rules_command  ${HOME}/.config/bspwm/external_rules }
+foreground { bspc config directional_focus_tightness low }
 
 foreground { bspc config focused_border_color     "#88C0D0" }
 foreground { bspc config presel_feedback_color    "#8FBCBB" }
 foreground { bspc config focus_follows_pointer    true }
 foreground { bspc config pointer_follows_focus    true }
 foreground { bspc config pointer_follows_monitor  true }
+
+#resize stuff
+foreground { bspc config pointer_modifier mod4 }
+foreground { bspc config pointer_action1 move }
+foreground { bspc config pointer_action2 resize_corner }
 
 # rules
 foreground { bspc rule -a Gimp state=floating }
@@ -84,9 +94,4 @@ foreground { bspc rule -a *:*:AudioValue manage=off }
 foreground { bspc rule -a Kupfer.py focus=on }
 foreground { bspc rule -a Screenkey manage=off }
 foreground { bspc rule -a Jami-gnome state=floating sticky=on }
-foreground { bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on rectangle=480x270+886+497 }
-
-#resize stuff
-foreground { bspc config pointer_modifier mod4 }
-foreground { bspc config pointer_action1 move }
-bspc config pointer_action2 resize_corner
+bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on rectangle=480x270+886+497

@@ -3,5 +3,7 @@ config/lemonbar/controllemonbar
 *pulse*
 config/lemonbar/controllemonbar
 config/nvim/.netrwhist
+config/nvim/autoload/plug.vim
 config/jami
+config/dconf/*
 *.o

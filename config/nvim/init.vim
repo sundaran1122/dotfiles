@@ -74,8 +74,5 @@ inoremap jj <Esc>
 nnoremap <Leader>n :nohls<CR>
 
 "autocomplete
-autocmd BufRead *.cpp,*.hpp,Makefile nnoremap <Leader>t :!ctags languages=c++ .<CR>
+autocmd BufRead *.cpp,*.hpp,Makefile nnoremap <Leader>t <CR>
 set completeopt=longest,menuone
-
-call plug#begin()
-call plug#end()

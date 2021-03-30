@@ -23,10 +23,10 @@ void NetworkModule(){
   tx_bytes = atoi(tx_bytes_str);
 
   MODULE_START;
-  printf(" v %.2fK ", (rx_bytes - rx_prev_bytes)/1000.0);
+  printf("v %.2fK", (rx_bytes - rx_prev_bytes)/1000.0);
   printf("%{B-} ");
   MODULE_START;
-  printf(" ^ %.2fK ", (tx_bytes - tx_prev_bytes)/1000.0);
+  printf("^ %.2fK", (tx_bytes - tx_prev_bytes)/1000.0);
 
   rx_prev_bytes = rx_bytes;
   tx_prev_bytes = tx_bytes;

@@ -1,0 +1,9 @@
+#!/bin/dash	
+
+cd ~/.password-store
+
+pass ls -c $(fd | cut -d'.' -f-1 | dmenu -nb "#2E3440" -nf "#D8DEE9" \
+		-sb "#3B4252" -sf "#ECEFF3" \
+		-fn "Mononokai" -p "password:" -i)
+
+notify-send -a "Pass" -u normal "password copied" "a password has been copied to the clipboard"

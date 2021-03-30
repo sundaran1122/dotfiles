@@ -8,7 +8,7 @@ do
 
 	timeout=$(echo $notif | jq '.timeout' | cut -d\" -f 2)
 
-	[ $timeout -lt 1 ] && timeout=1
+	test $timeout -lt 1 && timeout=1
 
 	yad --form --align=center --title=Alert --no-buttons \
 		--posx=-5 --posy=25 --timeout="$timeout" --width=275 \

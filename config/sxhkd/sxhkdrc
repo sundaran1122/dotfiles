@@ -54,8 +54,7 @@ super + a; super + {k,c}
 
 # open passmenu
 super + p
-	passmenu && \
-	notify-send -a "Pass" -u normal "password copied" "a password has been copied to the clipboard"
+	~/.scripts/dmenu/passmenu.dash
 
 # select unicode
 super + a; super + e
@@ -122,6 +121,12 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	amixer set Master 2%- &> /dev/null
 
+# open calculator
+XF86Calculator
+	$TERMINAL -e bc
+
+super + XF86Calculator
+	$TERMINAL -e python
 
 ###############################
 # General Window stuff

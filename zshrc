@@ -1,9 +1,10 @@
 #!/bin/zsh
 export PROMPT="%F{1}%f %F{12}%~%F{8}>
- %F{2}λ%f "
+ %F{2}ﮐ%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
 autoload -Uz compinit; compinit
+source ~/programs/xplr/xplr.zsh
 
 bindkey -v
 bindkey '^?' backward-delete-char
@@ -13,6 +14,10 @@ alias cf="cd \`fd -t d | sk --tiebreak=length,index --prompt=\"λ \"\`"
 alias nf="nvim \`fd -t f | sk --tiebreak=length,index --prompt=\"λ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
 alias tsm="transmission-remote"
+
+alias gs="git status"
+alias ga="git add"
+alias gr="git reset"
 
 alias cp="cp -i"
 alias rm="rm -i"
@@ -51,24 +56,3 @@ chpwd () {
 }
 
 cd $(cat /tmp/pwd) || chpwd
-
-# custom funtions
-xplr () {
-	while true
-	do
-		dirs="$(fd | grep -v \~)"
-		sel=$(echo -e $dirs\\n.. | sk --tiebreak=length,score,index -c "echo -e 'delete\nmove\n' | grep '{}'" \
-			-p "xplr: " --cmd-prompt="action: ")
-		[[ -d $sel ]] && cd $sel && continue
-		[[ -e $sel ]] && xdg-open $sel 2> /dev/null
-
-		[[ $sel == "" ]] && return
-		[[ $sel == "delete" ]] && rm -rf $(fd | grep -v \~ | sk --tiebreak=length,score,index -m -p "delete: ")
-
-		[[ $sel == "move" ]] && mv $(fd | grep -v \~ | sk --tiebreak=length,score,index -m -p "select file: ") \
-			$(fd | grep -v \~ | sk --tiebreak=length,score,index -c "fd | grep -v \~ | grep '{}' || echo {}" -i --cmd-prompt="select destination: ")
-
-		[[ $sel == "copy" ]] && cp $(fd | grep -v \~ | sk --tiebreak=length,score,index -m -p "select file: ") \
-			$(fd | grep -v \~ | sk --tiebreak=length,score,index -c "fd | grep -v \~ | grep '{}' || echo {}" -i --cmd-prompt="select destination: ")
-	done
-}

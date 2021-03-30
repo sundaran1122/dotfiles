@@ -35,9 +35,9 @@ int main(){
   int pid = fork();
   if(pid == 0){
     dup2(lemonin[0], 0);
-    execlp("lemonbar", "lemonbar", "-fmononoki-Regular Nerd Font Complete Mono",
+    execlp("lemonbar", "lemonbar", "-fFiraCode-11",
         "-B#2E3440", "-F#D8DEE9", "-U#88C0D0",
-        "-u1", "-gx20", "-o3", "-p");
+        "-u1", "-gx15", "-o2", "-p");
   }
   dup2(lemonin[1], 1);
 
@@ -53,9 +53,9 @@ int main(){
   kill(getpid(), SIGUSR2);
 
   for(;;){
-    printf("  ");
+    printf(" ");
     printf(desktops);
-    printf("  ");
+    printf(" ");
     printf(windowname);
 
     // center aligned modules
@@ -66,7 +66,7 @@ int main(){
     printf("%{r}");
     NetworkModule();
 
-    printf("  \n");
+    printf(" \n");
     fflush(stdout);
     sleep(1);
   }

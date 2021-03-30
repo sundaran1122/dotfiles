@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[ -d $1 ] && echo "[directory]" && exit
+
+case $(xdg-mime query filetype $1 | cut -d/ -f1) in
+	text)
+		bat -f $1
+		;;
+	image)
+		chafa -s $(tput cols)x $1
+		;;
+	*)
+		echo "[binary]"
+		;;
+esac

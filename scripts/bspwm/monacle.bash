@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/dash
 
 bspc node -t fullscreen
 xdotool search --class Bar windowunmap
@@ -10,7 +10,7 @@ do
   bspc node $WINDOW -g hidden=true
 done
 
-bspc subscribe node_state node_add node_remove -c 1  > /dev/null
+bspc subscribe node_state node_remove -c 1  > /dev/null
 xdotool search --class Bar windowmap
 
 for WINDOW in $HIDDENWINDOWS
