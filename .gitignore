@@ -1,9 +1,10 @@
 config/lemonbar/controllemonbar
 *GIMP*
 *pulse*
-config/lemonbar/controllemonbar
-config/nvim/.netrwhist
-config/nvim/autoload/plug.vim
-config/jami
-config/dconf/*
+controllemonbar
+.netrwhist
+plug.vim
+jami
+dconf/*
 *.o
+urls

@@ -1,39 +1,36 @@
-"syntax hilighting
+" syntax stuff
 filetype indent plugin on
 syntax enable
 
-"indent option set ai
+"editing stuff
+set backspace=2
+
+"search stuff
+set incsearch
+set nohls
+
+"text and UI rendering
+set encoding=utf-8
+set linebreak
+set noruler
+set noerrorbells
+set laststatus=0
+set nowrap
+set showcmd
+set lazyredraw
+set cf
+
+"indent options
 set shiftwidth=2
 set tabstop=2
 set smarttab
 set noexpandtab
 
-"search stuff
-set hlsearch
-set smartcase
-set incsearch
-
-"swapfile stuff
-set noswapfile
-
-"text rendering
-set encoding=utf-8
-set linebreak
-
-"UI options
-set noruler
-set noerrorbells
-set nonu
-set nornu
-" set laststatus=2
-set laststatus=0
-set backspace=2
-set nowrap
-set showcmd
-
-"statusline
-" set stl=%m%h%w\ \|%n\ <%f>\|%=%l:%c\ \|%p%%\ %L\|
-set stl=""
+"swapfile and undo stuff
+set swapfile
+set dir=$HOME/.cache/swapfiles
+set undodir=$HOME/.cache/undos/
+set undofile
 
 "code folding options
 set foldmethod=indent
@@ -44,12 +41,18 @@ set nofoldenable
 set path+=**
 set wildmenu
 set wildignore+=**/node_modules/**
+set wildignore+=*.o
+
+"spliting windows and tabs
+set splitright
+set splitbelow
+set stal=1
 
 "useful stuff
 let g:mapleader=" "
-set clipboard=unnamed
-set nocompatible
+set nocp
 set clipboard=unnamedplus
+set shell=zsh
 
 "netrw config
 let g:netrw_liststyle=3
@@ -70,9 +73,15 @@ nnoremap <Leader>L <C-w>L
 "general maps
 nnoremap <F6> :so %<CR>
 nnoremap <Leader><C-e> :15Lexplore<CR>
-inoremap jj <Esc>
 nnoremap <Leader>n :nohls<CR>
+nnoremap <Leader><Leader> /<++><CR>ca<
 
 "autocomplete
-autocmd BufRead *.cpp,*.hpp,Makefile nnoremap <Leader>t <CR>
 set completeopt=longest,menuone
+set tags=./tags
+
+call plug#begin()
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
+colorscheme nord

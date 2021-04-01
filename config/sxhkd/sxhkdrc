@@ -50,7 +50,7 @@ super + a; super + s
 
 # kill processes
 super + a; super + {k,c}
-	~/.scripts/dmenu/killproc.bash {SIGKILL,SIGINT}
+	~/.scripts/dmenu/killproc.bash {SIGINT,SIGKILL}
 
 # open passmenu
 super + p
@@ -92,6 +92,14 @@ super + o; super + s
 # open jami
 super + o; super + j
 	jami
+
+# open notes
+super + n
+	$TERMINAL --class Notes -e nvim
+
+# open newsboat
+super + o; super + n
+	$TERMINAL -e newsboat
 
 ###############################
 # Hide and unhide stuff

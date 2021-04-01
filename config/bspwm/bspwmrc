@@ -90,8 +90,8 @@ foreground { bspc rule -a Gimp state=floating }
 foreground { bspc rule -a *:*:Dialog state=floating }
 foreground { bspc rule -a *:*:Alert manage=off }
 foreground { bspc rule -a *:*:Progress manage=off }
-foreground { bspc rule -a *:*:AudioValue manage=off }
 foreground { bspc rule -a Kupfer.py focus=on }
 foreground { bspc rule -a Screenkey manage=off }
 foreground { bspc rule -a Jami-gnome state=floating sticky=on }
+foreground { bspc rule -a Notes state=floating sticky=on }
 bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on rectangle=480x270+886+497
