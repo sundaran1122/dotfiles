@@ -2,9 +2,13 @@ config/lemonbar/controllemonbar
 *GIMP*
 *pulse*
 controllemonbar
-.netrwhist
+*/.netrwhist
 plug.vim
 jami
-dconf/*
+FreeTube
+*-80bbf4
+config/dconf/*
 *.o
 urls
+reddio/*
+.zcompdump

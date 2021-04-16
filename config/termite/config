@@ -2,11 +2,9 @@
 allow_bold = true
 audible_bell = false
 #bold_is_bright = true
-cell_height_scale = 1.0
-cell_width_scale = 0.8 
 clickable_url = true
 dynamic_title = true
-font = FiraCode 9
+font = mononoki 10
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -66,11 +64,13 @@ color15 = #ECEFF4
 highlight = #434C5E
 
 [hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
+font = mononoki 10
+foreground = #D8DEE9
+background = #2E3440
+
 #active_foreground = #e68080
 #active_background = #3f3f3f
+
 #padding = 2
 #border = #3f3f3f
 #border_width = 0.5

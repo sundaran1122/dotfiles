@@ -35,7 +35,8 @@ int main(){
   int pid = fork();
   if(pid == 0){
     dup2(lemonin[0], 0);
-    execlp("lemonbar", "lemonbar", "-fFiraCode-11",
+    execlp("lemonbar", "lemonbar",
+				"-fmononoki-Regular Nerd Font Complete Mono:pixelsize=14",
         "-B#2E3440", "-F#D8DEE9", "-U#88C0D0",
         "-u1", "-gx15", "-o2", "-p");
   }
@@ -53,7 +54,7 @@ int main(){
   kill(getpid(), SIGUSR2);
 
   for(;;){
-    printf(" ");
+    printf("\uf303 ");
     printf(desktops);
     printf(" ");
     printf(windowname);

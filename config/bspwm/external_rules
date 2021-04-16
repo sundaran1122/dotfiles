@@ -1,14 +1,10 @@
-#!/bin/bash
+#!/bin/dash
 
 # check if we have presel
-[[ -z $(bspc query -N -n focused.automatic.tiled) ]] && exit
+test -z $(bspc query -N -n focused.automatic.tiled) && exit
 
 # check if receptacle exists
-receptacle=$(bspc query -N -n .leaf.\!window -d focused)
-if [[ -n $receptacle ]]
-then
-  echo "node=$receptacle"
-  exit
-fi
+receptacle=$(bspc query -N -n .leaf.!window -d focused)
+test ! "$receptacle" = "" && echo "node=$receptacle" && exit
 
 echo "node=biggest.local.tiled"

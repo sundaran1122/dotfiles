@@ -4,12 +4,14 @@ importas HOME HOME
 
 export EDITOR nvim
 export BROWSER firefox
-export TERMINAL termite
+export TERMINAL st
 export SXHKD_SHELL dash
 export SHELL zsh
 
 export XDG_CONFIG_HOME ${HOME}/.config
 export ZDOTDIR ${HOME}/.config/zsh
+
+export PASSWORD_STORE_DIR ${HOME}/.local/password-store
 
 export LESSHISTFILE ${HOME}/.cache/lesshst
 
@@ -22,8 +24,8 @@ foreground {
 		"bspc"
 		"tiramisu"
 		"xcape"
-		"updatedesktopmodule.bash"
-		"updatewindowmodule.bash"
+		"updatedesktopmodule.dash"
+		"updatewindowmodule.dash"
 		"lemonbar"
 }
 
@@ -45,10 +47,10 @@ background { ${HOME}/.scripts/general/notification-server.bash }
 foreground { xrandr -s 1366x768 }
 foreground { xsetroot -cursor_name left_ptr }
 
-foreground { xset r rate 150 100 }
+foreground { xset r rate 250 100 }
 
-foreground { setxkbmap -option caps:super -option 77:shift } 
-foreground { xcape -e "Super_L=Escape" }
+foreground { setxkbmap -option caps:super } 
+foreground { xcape -e Super_L=Escape }
 foreground { xmodmap ${HOME}/.Xmodmap }
 background { xrdb ${HOME}/.Xresources }
 
@@ -94,4 +96,5 @@ foreground { bspc rule -a Kupfer.py focus=on }
 foreground { bspc rule -a Screenkey manage=off }
 foreground { bspc rule -a Jami-gnome state=floating sticky=on }
 foreground { bspc rule -a Notes state=floating sticky=on }
-bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on rectangle=480x270+886+497
+foreground { bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on }
+bspc rule -a \*:\*:Picture\ in\ picture state=floating sticky=on

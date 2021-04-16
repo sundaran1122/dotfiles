@@ -10,14 +10,17 @@ bindkey -v
 bindkey '^?' backward-delete-char
 
 alias n="nvim"
-alias cf="cd \`fd -t d | sk --tiebreak=length,index --prompt=\"λ \"\`"
-alias nf="nvim \`fd -t f | sk --tiebreak=length,index --prompt=\"λ \"\`"
+alias cf="cd \`fd -t d | sk --tiebreak=length,index --prompt=\"ﮐ \"\`"
+alias nf="nvim \`fd -t f | sk --tiebreak=length,index --prompt=\"ﮐ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
 alias tsm="transmission-remote"
+alias sudo="sudo"
 
 alias gs="git status"
 alias ga="git add"
 alias gr="git reset"
+alias gc="git commit"
+alias gcm="git commit -m"
 
 alias cp="cp -i"
 alias rm="rm -i"
@@ -50,7 +53,7 @@ fi
 
 DISABLE_AUTO_TITLE="true"
 chpwd () {
-  print -Pn "\e]0;zsh : %~\a"
+  print -Pn "\e]0;zsh:%~\a"
   killall "controllemonbar" -SIGUSR2
   pwd > /tmp/pwd
 }

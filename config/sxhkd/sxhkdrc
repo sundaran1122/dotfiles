@@ -6,11 +6,15 @@
 super + Return
 	$TERMINAL -e zsh
 
+# secondary terminal emulator
+super + shift + Return
+	termite -e zsh
+
 # program launcher
 super + @space
 	dmenu_run -nb "#2E3440" -nf "#D8DEE9" \
 	-sb "#3B4252" -sf "#ECEFF3" \
-	-fn "Mononokai" -p "run:" -i
+	-fn "Mononoki-10" -p "run:" -i
 
 ###############################
 # super + alt stuff
@@ -25,7 +29,7 @@ super + alt + q
 	~/.scripts/bspwm/quitbspwm.bash
 
 # lock screen
-super + alt + s
+super + z
 	~/.scripts/general/lockscreen.bash
 
 # change window gap
@@ -58,8 +62,8 @@ super + p
 
 # select unicode
 super + a; super + e
-	$TERMINAL --title Dialog -e "$HOME/.scripts/dmenu/emoji.dash" ;\
-	cat /tmp/wm/emoji | xclip -selection clipboard
+	$TERMINAL -n Dialog -e "$HOME/.scripts/dmenu/emoji.dash" ;\
+	cat /tmp/wm/emoji | xclip -selection clipboard -r
 
 # torrent something
 super + a; super + t
@@ -87,7 +91,9 @@ super + o; super + a
 
 # open screenkey
 super + o; super + s
-	pgrep screenkey && killall screenkey || screenkey -s small
+	pgrep screenkey && killall screenkey || \
+	screenkey --no-whitespace -s small \
+	-f mononoki
 
 # open jami
 super + o; super + j
@@ -95,11 +101,19 @@ super + o; super + j
 
 # open notes
 super + n
-	$TERMINAL --class Notes -e nvim
+	$TERMINAL -c Notes -e nvim
 
 # open newsboat
 super + o; super + n
 	$TERMINAL -e newsboat
+
+# open reddit
+super + o; super + r
+	~/.local/nativefier/reddit-linux-x64/reddit
+
+# open freetube
+super + o; super + y
+	/opt/FreeTube/freetube
 
 ###############################
 # Hide and unhide stuff
