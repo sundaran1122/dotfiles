@@ -17,7 +17,7 @@ bind-key ^d delete-article
 bind-key O open-all-unread-in-browser-and-mark-read
 
 external-url-viewer "~/.scripts/newsboat/linkhandler"
-browser "~/.scripts/newsboat/linkhandler %u"
+browser "~/.scripts/newsboat/linkhandler"
 macro , set browser "setsid -f firefox %u"; open-in-browser
 macro t set browser "w3m %u"; open-in-browser
 
@@ -28,8 +28,9 @@ color listfocus_unread yellow color8 underline
 color info color4 default
 color article default default
 
-highlight feedlist "--.*--" yellow default
-highlight article "^(Title|Author|Date|Link|Feed):" color10 default bold
-highlight article "https?://[^ ]+" color6 default underline
-highlight article "\\[[1-9]+\\]" yellow default
-highlight article "\\((link|image)\\)" yellow default
+highlight feedlist --.*-- yellow default # title
+highlight article ^(Title|Author|Date|Link|Feed): color10 default bold # title, author etc
+highlight article "https?://[^ ]+" color6 default underline # urls
+highlight article \[[1-9]+\] yellow default # link numbers
+highlight article \((link|image)\) yellow default # links and images
+highlight article \#\w+(\s|$) color12 default # hashtags

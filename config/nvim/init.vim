@@ -84,4 +84,5 @@ call plug#begin()
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+"color stuff
 colorscheme nord

@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo $1 | egrep "^https?://youtube.com" && setsid -f /opt/FreeTube/freetube "$1" && exit
+echo "$1" | egrep "^https?://(www.)?youtube.com" \
+	&& setsid -f /opt/FreeTube/freetube "$1" && exit
 
-case $1 in
+case "$1" in
 	*)
-		setsid -f firefox $1
+		setsid -f firefox "$1"
 	;;
 esac
