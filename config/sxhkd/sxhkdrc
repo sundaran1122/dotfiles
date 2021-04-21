@@ -26,11 +26,11 @@ super + alt + r
 
 # quit bspwm
 super + alt + q
-	~/.scripts/bspwm/quitbspwm.bash
+	~/.scripts/bspwm/quitbspwm
 
 # lock screen
 super + z
-	~/.scripts/general/lockscreen.bash
+	~/.scripts/general/lockscreen
 
 # change window gap
 super + alt + equal
@@ -54,11 +54,11 @@ super + a; super + s
 
 # kill processes
 super + a; super + {k,c}
-	~/.scripts/dmenu/killproc.bash {SIGINT,SIGKILL}
+	~/.scripts/dmenu/killproc {SIGINT,SIGKILL}
 
 # open passmenu
 super + p
-	~/.scripts/dmenu/passmenu.dash
+	~/.scripts/dmenu/passmenu
 
 # select unicode
 super + a; super + e
@@ -67,11 +67,11 @@ super + a; super + e
 
 # torrent something
 super + a; super + t
-	~/.scripts/general/torrent.dash
+	~/.scripts/general/torrent
 
 # download youtube
 super + a; super + v
-	~/.scripts/general/youtube.dash
+	~/.scripts/general/youtube
 
 ###############################
 # open apps
@@ -130,7 +130,7 @@ alt + u
 	bspc node -g hidden=true
 
 super + alt + u
-	~/.scripts/general/mapwindow.bash
+	~/.scripts/general/mapwindow
 
 ###############################
 # function keys
@@ -208,16 +208,19 @@ super + b
 super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
 
+super + m; super + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
 # swap with biggest node
-super + shift + b
+super + m; super + b
 	bspc node focused -s biggest.local.tiled.\!hidden
 
 # swap with previous node
-super + shift + p
+super + m; super + p
 	bspc node focused -s last --follow
 
 # swap with marked node
-super + shift + e
+super + m; super + e
 	bspc node -s any.marked
 
 # insert windows
@@ -257,17 +260,17 @@ super + alt + {h,j,k,l}
 
 # switch to desktops
 alt + l
-	~/.scripts/bspwm/switchtonextdesktop.bash
+	~/.scripts/bspwm/switchtonextdesktop
 
 alt + h
-	~/.scripts/bspwm/switchtoprevdesktop.bash
+	~/.scripts/bspwm/switchtoprevdesktop
 
 # switch windows between desktops
 alt + k
-	~/.scripts/bspwm/movetonextdesktop.bash
+	~/.scripts/bspwm/movetonextdesktop
 
 alt + j
-	~/.scripts/bspwm/movetoprevdesktop.bash
+	~/.scripts/bspwm/movetoprevdesktop
 
 ###############################
 # change to all the modes
@@ -275,7 +278,7 @@ alt + j
 
 # fullscreen
 super + s; super + m
-	~/.scripts/bspwm/monacle.bash
+	~/.scripts/bspwm/monacle
 
 # tiling mode
 super + s; super + t

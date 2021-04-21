@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for package in $(pacman -Qdq)
+do
+	req=$(pacman -Qi $package | grep -i '^Required By' | cut -d\: -f2 | wc -w)
+	depend=$(pacman -Qi $package | grep -i '^Depends on' | cut -d\: -f2 | wc -w)
+	[[ $depend == "0" ]] && continue
+	echo "$req" : $package : "$depend"
+done

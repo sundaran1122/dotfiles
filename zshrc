@@ -10,8 +10,8 @@ bindkey -v
 bindkey '^?' backward-delete-char
 
 alias n="nvim"
-alias cf="cd \`fd -t d | sk --tiebreak=length,index --prompt=\"ﮐ \"\`"
-alias nf="nvim \`fd -t f | sk --tiebreak=length,index --prompt=\"ﮐ \"\`"
+alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --prompt=\"ﮐ \"\`"
+alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"ﮐ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
 alias tsm="transmission-remote"
 alias sudo="sudo"

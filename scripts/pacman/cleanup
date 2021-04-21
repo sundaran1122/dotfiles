@@ -1,0 +1,19 @@
+#!/bin/bash
+
+sudo pacman -Qq \
+	|grep xorg | \
+	grep -v xorg-server | \
+	grep -v xorg-xset | \
+	grep -v xorg-xprop | \
+	grep -v xorg-fonts-encodings | \
+	grep -v xorg-xkbcomp | \
+	grep -v xorg-setxkbmap | \
+	grep -v xorg-xauth | \
+	grep -v xorg-xdpyinfo | \
+	grep -v xorg-xrandr | \
+	grep -v xorg-xwininfo | \
+	grep -v xorgproto | \
+	grep -v xorg-util-macros | \
+	grep -v xorg-xmodmap | \
+	grep -v xorg-docs | \
+	sudo pacman -Rns -

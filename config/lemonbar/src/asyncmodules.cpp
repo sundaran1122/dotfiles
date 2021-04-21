@@ -7,10 +7,10 @@ extern char * desktops;
 extern char * windowname;
 
 void DesktopModule(int){
-  LoadModule("/home/sundaran/.scripts/lemonbar/desktopmodule.bash" , desktops, 1024);
+  LoadModule("/home/sundaran/.scripts/lemonbar/desktopmodule" , desktops, 1024);
   kill(getpid(), SIGUSR2);
 }
 
 void WindowModule(int){
- LoadModule("/home/sundaran/.scripts/lemonbar/windownamemodule.bash", windowname, 64);
+ LoadModule("/home/sundaran/.scripts/lemonbar/windownamemodule", windowname, 64);
 }
