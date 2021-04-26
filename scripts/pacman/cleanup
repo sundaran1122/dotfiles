@@ -13,7 +13,5 @@ sudo pacman -Qq \
 	grep -v xorg-xrandr | \
 	grep -v xorg-xwininfo | \
 	grep -v xorgproto | \
-	grep -v xorg-util-macros | \
-	grep -v xorg-xmodmap | \
-	grep -v xorg-docs | \
+	grep -v xorg-util-macros| \
 	sudo pacman -Rns -

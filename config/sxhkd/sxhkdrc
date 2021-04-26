@@ -62,8 +62,11 @@ super + p
 
 # select unicode
 super + a; super + e
-	$TERMINAL -n Dialog -e "$HOME/.scripts/dmenu/emoji.dash" ;\
-	cat /tmp/wm/emoji | xclip -selection clipboard -r
+	cat ~/.scripts/dmenu/emoji | dmenu \
+	-nb "#2E3440" -nf "#D8DEE9" \
+	-sb "#3B4252" -sf "#ECEFF3" \
+	-fn "Mononoki-10" -p "emoji:" -i -l 15 \
+	| cut -d\  -f1 | tr -d '\n' | xclip -selection clipboard
 
 # torrent something
 super + a; super + t

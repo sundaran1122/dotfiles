@@ -18,14 +18,13 @@ export LESSHISTFILE ${HOME}/.cache/lesshst
 foreground { 
 	killall "picom"
 		"sxhkd"
-		"controllemonbar"
-		"bash"
-		"dash"
 		"bspc"
-		"tiramisu"
+		"controllemonbar"
 		"xcape"
 		"updatedesktopmodule"
 		"updatewindowmodule"
+		"notification-server"
+		"tiramisu"
 		"lemonbar"
 }
 
@@ -92,9 +91,8 @@ foreground { bspc rule -a Gimp state=floating }
 foreground { bspc rule -a *:*:Dialog state=floating }
 foreground { bspc rule -a *:*:Alert manage=off }
 foreground { bspc rule -a *:*:Progress manage=off }
-foreground { bspc rule -a Kupfer.py focus=on }
 foreground { bspc rule -a Screenkey manage=off }
-foreground { bspc rule -a Jami-gnome state=floating sticky=on }
 foreground { bspc rule -a Notes state=floating sticky=on }
+foreground { bspc rule -a *:*:TLauncher state=floating }
 foreground { bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on }
 bspc rule -a \*:\*:Picture\ in\ picture state=floating sticky=on

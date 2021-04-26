@@ -1,5 +1,5 @@
 #!/bin/zsh
-export PROMPT="%F{1}%f %F{12}%~%F{8}>
+PROMPT="%F{1}%f %F{12}%~%F{8}>
  %F{2}ﮐ%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
