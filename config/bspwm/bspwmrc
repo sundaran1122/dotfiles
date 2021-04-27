@@ -33,8 +33,9 @@ foreground { mkdir -p /tmp/wm }
 # daemons
 background { sxhkd }
 background { picom --experimental-backend --backend glx }
-background { bash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wallpaper.png" }
+background { dash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wallpaper.png" }
 
+# some backgroud scripts
 background { ${HOME}/.config/lemonbar/controllemonbar }
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule }
 background { ${HOME}/.scripts/lemonbar/updatewindowmodule }
@@ -45,13 +46,15 @@ background { ${HOME}/.scripts/general/notification-server }
 #
 foreground { xrandr -s 1366x768 }
 foreground { xsetroot -cursor_name left_ptr }
+background { xrdb ${HOME}/.Xresources }
 
 foreground { xset r rate 250 100 }
 
+
+# map caps lock to some other keys
 foreground { setxkbmap -option caps:super } 
 foreground { xcape -e Super_L=Escape }
 foreground { xmodmap ${HOME}/.Xmodmap }
-background { xrdb ${HOME}/.Xresources }
 
 #
 # hot corners
@@ -90,7 +93,6 @@ foreground { bspc config pointer_action2 resize_corner }
 foreground { bspc rule -a Gimp state=floating }
 foreground { bspc rule -a *:*:Dialog state=floating }
 foreground { bspc rule -a *:*:Alert manage=off }
-foreground { bspc rule -a *:*:Progress manage=off }
 foreground { bspc rule -a Screenkey manage=off }
 foreground { bspc rule -a Notes state=floating sticky=on }
 foreground { bspc rule -a *:*:TLauncher state=floating }

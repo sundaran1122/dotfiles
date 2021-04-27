@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	$TERMINAL -e zsh
+	$TERMINAL -e $SHELL
 
 # secondary terminal emulator
 super + shift + Return
@@ -86,7 +86,7 @@ super + o; super + c
 
 # open browser
 super + o; super + b
-	$BROWSER
+	$BROWSER --new-tab
 
 # open alsamixer
 super + o; super + a
@@ -98,9 +98,10 @@ super + o; super + s
 	screenkey --no-whitespace -s small \
 	-f mononoki
 
+# jami is no longer being used
 # open jami
-super + o; super + j
-	jami
+# super + o; super + j
+	# jami
 
 # open notes
 super + n
@@ -110,13 +111,18 @@ super + n
 super + o; super + n
 	$TERMINAL -e newsboat
 
+# nativefier is no longer being used
 # open reddit
-super + o; super + r
-	~/.local/nativefier/reddit-linux-x64/reddit
+# super + o; super + r
+	# ~/.local/nativefier/reddit-linux-x64/reddit
 
 # open freetube
 super + o; super + y
 	/opt/FreeTube/freetube
+
+# open brave
+super + o; super + g # super + g used because brave is only for google services
+	brave --new-window
 
 ###############################
 # Hide and unhide stuff
@@ -124,8 +130,8 @@ super + o; super + y
 
 # hide and unhide bar
 super + alt + g
-	(xdotool search --all --onlyvisible --class Bar windowunmap && \
-	bspc config top_padding 0) || \
+	xdotool search --all --onlyvisible --class Bar windowunmap && \
+	bspc config top_padding 0 || \
 	xdotool search --class Bar windowmap
 
 # hide and unhide windows

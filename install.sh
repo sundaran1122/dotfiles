@@ -10,9 +10,9 @@ $UPDATE
 # install stuff
 $INSTALL neovim zsh
 $INSTALL bspwm sxhkd
-$INSTALL picom hsetroot betterlockscreen
-$INSTALL dmenu fzf xdotool xdo fd yad
-$INSTALL kitty neofetch
+$INSTALL picom hsetroot
+$INSTALL dmenu skim xdotool xdo fd yad
+$INSTALL termite neofetch
 
 mkdir ~/packages
 cd ~/packages
