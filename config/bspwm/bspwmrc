@@ -38,7 +38,7 @@ background { dash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wa
 # some backgroud scripts
 background { 
 pipeline { ${HOME}/.config/lemonbar/controllemonbar }
-lemonbar -fmononoki:pixelsize=13 -B#2E3440 -F#D8DEE9 -U#88C0D0 -o2
+lemonbar -gx17 -fmononoki:pixelsize=13 -B#2E3440 -F#D8DEE9 -U#88C0D0 -o2
 }
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule }
 background { ${HOME}/.scripts/lemonbar/updatewindowmodule }

@@ -16,17 +16,17 @@ void WindowModule(int) {
 	// LoadModule("/home/sundaran/.scripts/lemonbar/windownamemodule", windowname, 64);
 	Window focused;
 	int revert_to;
-
 	XGetInputFocus(dpy, &focused, &revert_to);
-	memset(windowname, 0, 64);
 
 	XTextProperty text;
-
 	XGetWMName(dpy, focused, &text);
-	strncpy(windowname, (char *)text.value, 64);
+
+	snprintf(windowname, 64, "%s" , (char *)text.value);
+
+	return;
 }
 
 void DesktopModule(int) {
 	LoadModule("/home/sundaran/.scripts/lemonbar/desktopmodule" , desktops, 1024);
-	WindowModule(SIGUSR2);
+	kill(getpid(), SIGUSR2);
 }
