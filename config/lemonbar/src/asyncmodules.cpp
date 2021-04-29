@@ -13,17 +13,18 @@ char * windowname = new char[64];
 Display * dpy;
 
 void WindowModule(int) {
-	// LoadModule("/home/sundaran/.scripts/lemonbar/windownamemodule", windowname, 64);
+	// get focused window
 	Window focused;
 	int revert_to;
 	XGetInputFocus(dpy, &focused, &revert_to);
 
+	// get focused window name
 	XTextProperty text;
 	XGetWMName(dpy, focused, &text);
 
-	snprintf(windowname, 64, "%s" , (char *)text.value);
+	char * name = (char *)text.value;
 
-	return;
+	snprintf(windowname, 64, "%s", name); 
 }
 
 void DesktopModule(int) {

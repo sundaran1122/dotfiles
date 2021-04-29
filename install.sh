@@ -14,8 +14,8 @@ $INSTALL picom hsetroot
 $INSTALL dmenu skim xdotool xdo fd yad
 $INSTALL termite neofetch
 
-mkdir ~/packages
-cd ~/packages
+mkdir ~/.packs
+cd ~/.packs
 git clone https://aur.archlinux.org/paru.git
 cd paru 
 makepkg -si
