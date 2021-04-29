@@ -14,9 +14,10 @@ alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --pro
 alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"ﮐ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
 alias tsm="transmission-remote"
-alias sudo="sudo"
+alias sudo="doas"
 
 alias gs="git status"
+alias gd="git diff"
 alias ga="git add"
 alias gr="git reset"
 alias gc="git commit"

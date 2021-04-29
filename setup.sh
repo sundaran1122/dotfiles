@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install stuff
-sudo ./install.sh
+doas ./install.sh
 ./aur.sh
 
 # set symlinks
