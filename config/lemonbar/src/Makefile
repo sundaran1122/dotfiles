@@ -1,7 +1,8 @@
-CC=g++
+CC=g++ 
+LIBS=-lX11
 
 %.o: %.cpp
-	$(CC) -c $<
+	$(CC) -O3 -c $<
 
 all: main.o asyncmodules.o helpers.o time.o network.o
-	$(CC) -s -O2 -o ../controllemonbar $^
+	$(CC) $^ $(LIBS) -o ../controllemonbar
