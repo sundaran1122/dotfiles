@@ -38,6 +38,9 @@ int main(){
 
   for(;;){
 		std::cout << " "
+			// "\xef\x8c\x9a" tux: 
+			"\xef\x8c\x83" // arch logo: 
+			" "
     << desktops
     << " "
     << windowname;

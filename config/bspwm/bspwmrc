@@ -38,18 +38,23 @@ background { dash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wa
 # some backgroud scripts
 background { 
 pipeline { ${HOME}/.config/lemonbar/controllemonbar }
-lemonbar -gx17 -fmononoki:pixelsize=13 -B#2E3440 -F#D8DEE9 -U#88C0D0 -o2
+lemonbar -gx17 "-fmononoki Nerd Font:pixelsize=13" -B#2E3440 -F#D8DEE9 -U#88C0D0 -o2
 }
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule }
 background { ${HOME}/.scripts/lemonbar/updatewindowmodule }
 background { ${HOME}/.scripts/general/notification-server }
 
 #
+# xdg stuff
+#
+background { dex ~/.config/autostart }
+background { xrdb ${HOME}/.Xresources }
+
+#
 # xorg stuff
 #
 foreground { xrandr -s 1366x768 }
 foreground { xsetroot -cursor_name left_ptr }
-background { xrdb ${HOME}/.Xresources }
 
 foreground { xset r rate 250 100 }
 
@@ -67,17 +72,14 @@ foreground { xmodmap ${HOME}/.Xmodmap }
 #
 # bspwm stuff
 #
-foreground { bspc desktop -n · }
-
 foreground { bspc config border_width         0 }
 foreground { bspc config window_gap           1 }
-foreground { bspc config left_padding         1 }
+foreground { bspc config left_padding         0 }
 foreground { bspc config right_padding        0 }
-foreground { bspc config bottom_padding       1 }
+foreground { bspc config bottom_padding       0 }
 
 foreground { bspc config split_ratio          		0.50 }
 foreground { bspc config automatic_scheme         longest_side }
-foreground { bspc config ignore_ewmh_focus        true }
 foreground { bspc config external_rules_command  ${HOME}/.config/bspwm/external_rules }
 foreground { bspc config directional_focus_tightness low }
 

@@ -14,7 +14,7 @@ super + shift + Return
 super + @space
 	dmenu_run -nb "#2E3440" -nf "#D8DEE9" \
 	-sb "#3B4252" -sf "#ECEFF3" \
-	-fn "Mononoki-10" -p "run:" -i
+	-fn "mononoki Nerd Font-10" -p "run:" -i
 
 ###############################
 # super + alt stuff
@@ -65,7 +65,7 @@ super + a; super + e
 	cat ~/.scripts/dmenu/emoji | dmenu \
 	-nb "#2E3440" -nf "#D8DEE9" \
 	-sb "#3B4252" -sf "#ECEFF3" \
-	-fn "Mononoki-10" -p "emoji:" -i -l 15 \
+	-fn "mononoki Nerd Font-10" -p "emoji:" -i -l 15 \
 	| cut -d\  -f1 | tr -d '\n' | xclip -selection clipboard
 
 # torrent something

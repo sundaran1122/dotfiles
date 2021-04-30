@@ -1,6 +1,6 @@
 #!/bin/zsh
 PROMPT="%F{1}%f %F{12}%~%F{8}>
- %F{2}ﮐ%f "
+ %F{2}λ%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
 autoload -Uz compinit; compinit
@@ -10,8 +10,8 @@ bindkey -v
 bindkey '^?' backward-delete-char
 
 alias n="nvim"
-alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --prompt=\"ﮐ \"\`"
-alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"ﮐ \"\`"
+alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
+alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
 alias tsm="transmission-remote"
 alias sudo="doas"
