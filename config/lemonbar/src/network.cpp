@@ -4,6 +4,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <iostream>
+
 #include "helpers.h"
 
 int rx_bytes_fd, tx_bytes_fd;

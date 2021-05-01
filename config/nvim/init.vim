@@ -9,17 +9,18 @@ set backspace=2
 set incsearch
 set nohls
 
-"text and UI rendering
+"text rendering
 set encoding=utf-8
 set linebreak
-set noruler
-set noerrorbells
-set laststatus=0
 set nowrap
+
+"UI rendering
+set noruler
 set showcmd
 set lazyredraw
-set cf
+set confirm
 set cursorline
+set laststatus=0
 
 "indent options
 set shiftwidth=2
@@ -54,6 +55,23 @@ let g:mapleader=" "
 set nocp
 set clipboard=unnamedplus
 set shell=zsh
+set noerrorbells
+"autocomplete
+set completeopt=longest,menuone
+set tags=./tags
+
+call plug#begin()
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
+"color stuff
+set termguicolors
+let g:nord_cursor_line_number_background = 1
+let g:nord_bold = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+colorscheme nord
+
 
 "netrw config
 let g:netrw_liststyle=3
@@ -77,17 +95,3 @@ nnoremap <Leader><C-e> :15Lexplore<CR>
 nnoremap <Leader>n :nohls<CR>
 nnoremap <Leader><Leader> /<++><CR>ca<
 
-"autocomplete
-set completeopt=longest,menuone
-set tags=./tags
-
-call plug#begin()
-Plug 'arcticicestudio/nord-vim'
-call plug#end()
-
-"color stuff
-let g:nord_cursor_line_number_background = 1
-let g:nord_bold = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-colorscheme nord

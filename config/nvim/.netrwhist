@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/sundaran/dotfiles/config/bspwm'
+let g:netrw_dirhist_5='/home/sundaran/dotfiles/config/lemonbar/src'
 let g:netrw_dirhist_4='/home/sundaran/dotfiles/.git'
 let g:netrw_dirhist_3='/home/sundaran/.packs/peas/linPEAS'
 let g:netrw_dirhist_2='/etc/s6/sv/hostname'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/home/sundaran/.password-store'
 let g:netrw_dirhist_9='/home/sundaran'
 let g:netrw_dirhist_8='/etc/s6/sv/NetworkManager-srv'
 let g:netrw_dirhist_7='/etc/s6/sv/NetworkManager-log'
-let g:netrw_dirhist_6='/home/sundaran/programs/c++/glfw-window/src'
-let g:netrw_dirhist_5='/home/sundaran/.themes/Nordic/gtk-2.0/assets'
