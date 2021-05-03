@@ -8,7 +8,7 @@ super + Return
 
 # secondary terminal emulator
 super + shift + Return
-	termite -e zsh
+	termite -e $SHELL
 
 # program launcher
 super + @space
@@ -56,10 +56,6 @@ super + a; super + s
 super + a; super + {k,c}
 	~/.scripts/dmenu/killproc {SIGINT,SIGKILL}
 
-# open passmenu
-super + p
-	~/.scripts/dmenu/passmenu
-
 # select unicode
 super + a; super + e
 	cat ~/.scripts/dmenu/emoji | dmenu \
@@ -81,48 +77,42 @@ super + a; super + v
 ###############################
 
 # open calcurse
-super + o; super + c
+super + o; @super + c
 	$TERMINAL -e calcurse
 
 # open browser
-super + o; super + b
+super + o; @super + b
 	$BROWSER --new-tab
 
 # open alsamixer
-super + o; super + a
+super + o; @super + a
 	$TERMINAL -e alsamixer
 
 # open screenkey
-super + o; super + s
+super + o; @super + s
 	pgrep screenkey && killall screenkey || \
 	screenkey --no-whitespace -s small \
-	-f mononoki
-
-# jami is no longer being used
-# open jami
-# super + o; super + j
-	# jami
+	-f 'mononoki Nerd Font'
 
 # open notes
 super + n
 	$TERMINAL -c Notes -e nvim
 
 # open newsboat
-super + o; super + n
+super + o; @super + n
 	$TERMINAL -e newsboat
 
-# nativefier is no longer being used
-# open reddit
-# super + o; super + r
-	# ~/.local/nativefier/reddit-linux-x64/reddit
-
 # open freetube
-super + o; super + y
+super + o; @super + y
 	/opt/FreeTube/freetube
 
 # open brave
-super + o; super + g # super + g used because brave is only for google services
+super + o; @super + g # super + g used because brave is only for google services
 	brave --new-window
+
+# open passmenu
+@super + p
+	~/.scripts/dmenu/passmenu
 
 ###############################
 # Hide and unhide stuff
@@ -151,6 +141,10 @@ XF86AudioRaiseVolume
 
 XF86AudioLowerVolume
 	amixer set Master 2%- &> /dev/null
+
+# mute audio
+XF86AudioMute
+	amixer set Master toggle
 
 # open calculator
 XF86Calculator

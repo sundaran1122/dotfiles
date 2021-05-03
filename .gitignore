@@ -6,9 +6,10 @@ controllemonbar
 plug.vim
 jami
 FreeTube
-*-80bbf4
 config/dconf/*
 *.o
 urls
 reddio/*
-.zcompdump
+config/zsh/.zcompdump
+config/BraveSoftware
+config/transmission

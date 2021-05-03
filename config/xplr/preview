@@ -4,7 +4,7 @@
 
 case $(xdg-mime query filetype $1 | cut -d/ -f1) in
 	text)
-		bat -f $1
+		cat $1
 		;;
 	image)
 		chafa -s $(tput cols)x $1

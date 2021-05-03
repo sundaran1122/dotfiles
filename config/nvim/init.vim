@@ -37,7 +37,6 @@ set undofile
 "code folding options
 set foldmethod=indent
 set foldnestmax=3
-set nofoldenable
 
 "fuzzy search
 set path+=**

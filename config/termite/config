@@ -4,7 +4,7 @@ audible_bell = false
 #bold_is_bright = true
 clickable_url = true
 dynamic_title = true
-font = mononoki 10
+font = mononoki Nerd Font 13px
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -64,7 +64,7 @@ color15 = #ECEFF4
 highlight = #434C5E
 
 [hints]
-font = mononoki 10
+#font = mononoki 10
 foreground = #D8DEE9
 background = #2E3440
 
