@@ -48,7 +48,7 @@ background { ${HOME}/.scripts/general/notification-server }
 # xdg stuff
 #
 background { dex ~/.config/autostart }
-background { xrdb ${HOME}/.Xresources }
+background { xrdb ${HOME}/.config/X11/Xresources }
 
 #
 # xorg stuff
@@ -62,7 +62,7 @@ foreground { xset r rate 250 100 }
 # map caps lock to some other keys
 foreground { setxkbmap -option caps:super } 
 foreground { xcape -e Super_L=Escape }
-foreground { xmodmap ${HOME}/.Xmodmap }
+foreground { xmodmap ${HOME}/.config/X11/Xmodmap }
 
 #
 # hot corners

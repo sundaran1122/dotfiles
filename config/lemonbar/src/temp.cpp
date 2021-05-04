@@ -15,6 +15,15 @@ void TempModule() {
 	temp = atol(buf);
 
 	MODULE_START;
-	std::cout << temp / 1000.0 << "\xc2\xb0" "C" ;
+	if(temp >= 45000) {
+		std::cout << "%{F#EBCB8B}";
+	} else if(temp > 65000) {
+		std::cout << "%{F#BF616A}";
+	}
+	
+
+	std::cout << temp / 1000.0;
+
+	std::cout << "\xc2\xb0" "C" "%{F-}";
 	MODULE_END;
 }
