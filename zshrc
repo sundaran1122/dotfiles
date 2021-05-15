@@ -1,6 +1,5 @@
 #!/bin/zsh
-PROMPT="%F{1}%f %F{12}%~%F{8}>
- %F{2}λ%f "
+PROMPT="%F{1}%f %F{12}%~ %F{2}λ%F{8}>%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
 autoload -Uz compinit; compinit
@@ -12,9 +11,11 @@ bindkey '^?' backward-delete-char
 alias n="nvim"
 alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
 alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
-alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ *"
+alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
 alias tsm="transmission-remote"
 alias sudo="doas"
+alias netchk="gping google.com facebook.com youtube.com"
+alias zthr="zathura"
 
 alias gs="git status"
 alias gd="git diff"
@@ -22,6 +23,8 @@ alias ga="git add"
 alias gr="git reset"
 alias gc="git commit"
 alias gcm="git commit -m"
+alias gch="git checkout"
+alias gb="git branch"
 
 alias cp="cp -i"
 alias rm="rm -i"
@@ -52,11 +55,12 @@ then
   clear
 fi
 
+touch /dev/shm/pwd
 DISABLE_AUTO_TITLE="true"
 chpwd () {
   print -Pn "\e]0;zsh:%~\a"
   killall "controllemonbar" -SIGUSR2
-  pwd > /tmp/pwd
+  pwd > /dev/shm/pwd
 }
 
-cd $(cat /tmp/pwd) || chpwd
+cd $(cat /dev/shm/pwd) || chpwd

@@ -1,14 +1,23 @@
 # show-read-feeds no
 auto-reload yes
 
+unbind-key UP
+unbind-key DOWN
+unbind-key HOME
+unbind-key END
+unbind-key PPAGE
+unbind-key NPAGE
+unbind-key q
+unbind-key ENTER
+
 bind-key j down
 bind-key k up
 bind-key J next-feed articlelist
 bind-key K prev-feed articlelist
 bind-key G end
 bind-key g home
-bind-key d pagedown
 bind-key u pageup
+bind-key d pagedown
 bind-key l open
 bind-key h quit
 bind-key a toggle-article-read

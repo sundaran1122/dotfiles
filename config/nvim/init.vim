@@ -55,6 +55,8 @@ set nocp
 set clipboard=unnamedplus
 set shell=zsh
 set noerrorbells
+set mouse=n "enable mouse in normal mode only
+
 "autocomplete
 set completeopt=longest,menuone
 set tags=./tags
@@ -93,4 +95,7 @@ nnoremap <F6> :so %<CR>
 nnoremap <Leader><C-e> :15Lexplore<CR>
 nnoremap <Leader>n :nohls<CR>
 nnoremap <Leader><Leader> /<++><CR>ca<
+inoremap <C-space> <Esc>/<++><CR>ca<
 
+"filetype based commands
+au BufNewFile,BufRead *.md set wrap

@@ -1,5 +1,8 @@
 #!/bin/execlineb -s1
 
+foreground { mkdir -p /tmp/wm }
+redirfd -a 1 /tmp/wm/log
+redirfd -a 2 /tmp/wm/log
 importas HOME HOME
 
 export EDITOR nvim
@@ -7,6 +10,9 @@ export BROWSER firefox
 export TERMINAL st
 export SXHKD_SHELL dash
 export SHELL zsh
+
+# fixes some java application issues
+export _JAVA_AWT_WM_NONREPARENTING 1
 
 export XDG_CONFIG_HOME ${HOME}/.config
 export ZDOTDIR ${HOME}/.config/zsh
@@ -28,12 +34,10 @@ foreground {
 		"lemonbar"
 }
 
-foreground { mkdir -p /tmp/wm }
 
 # daemons
 background { sxhkd }
 background { picom --experimental-backend --backend glx }
-background { dash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wallpaper.png" }
 
 # some backgroud scripts
 background { 
@@ -47,13 +51,14 @@ background { ${HOME}/.scripts/general/notification-server }
 #
 # xdg stuff
 #
-background { dex ~/.config/autostart }
+background { dex -a }
 background { xrdb ${HOME}/.config/X11/Xresources }
 
 #
 # xorg stuff
 #
-foreground { xrandr -s 1366x768 }
+background { xrandr -s 1366x768 }
+background { dash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wallpaper.png" }
 foreground { xsetroot -cursor_name left_ptr }
 
 foreground { xset r rate 250 100 }
@@ -89,17 +94,20 @@ foreground { bspc config focus_follows_pointer    true }
 # foreground { bspc config pointer_follows_focus    true }
 foreground { bspc config pointer_follows_monitor  true }
 
-#resize stuff
+# resize stuff
 foreground { bspc config pointer_modifier mod4 }
 foreground { bspc config pointer_action1 move }
 foreground { bspc config pointer_action2 resize_corner }
 
 # rules
-foreground { bspc rule -a Gimp state=floating }
 foreground { bspc rule -a *:*:Dialog state=floating }
 foreground { bspc rule -a *:*:Alert manage=off }
 foreground { bspc rule -a Screenkey manage=off }
 foreground { bspc rule -a Notes state=floating sticky=on }
 foreground { bspc rule -a *:*:TLauncher state=floating }
 foreground { bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on }
-bspc rule -a \*:\*:Picture\ in\ picture state=floating sticky=on
+foreground { bspc rule -a Youtube-video state=floating sticky=on }
+
+# force some windows into tiling
+foreground { bspc rule -a gimp state=tiling }
+foreground { bspc rule -a Zathura state=tiling }

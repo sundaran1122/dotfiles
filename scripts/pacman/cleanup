@@ -1,17 +1,18 @@
 #!/bin/bash
 
-sudo pacman -Qq \
-	|grep xorg | \
-	grep -v xorg-server | \
-	grep -v xorg-xset | \
-	grep -v xorg-xprop | \
-	grep -v xorg-fonts-encodings | \
-	grep -v xorg-xkbcomp | \
-	grep -v xorg-setxkbmap | \
-	grep -v xorg-xauth | \
-	grep -v xorg-xdpyinfo | \
-	grep -v xorg-xrandr | \
-	grep -v xorg-xwininfo | \
-	grep -v xorgproto | \
-	grep -v xorg-util-macros| \
-	sudo pacman -Rns -
+pacman -Qdtq | sudo pacman -Rns - &> /dev/null || echo "no orphan packages found"
+
+cd /usr
+
+for file in $(fd . /usr)
+do
+	echo -ne "\e[2K\e[G" 
+	echo -n "checking $file"
+	if pacman -Qo "$file" &> /dev/null; 
+	then
+		echo -ne "\e[2K\e[G$file is ok"
+	else
+		echo -e "\e[2K\e[Gno package owns $file"
+		sudo rm -ri $file
+	fi
+done
