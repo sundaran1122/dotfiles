@@ -1,5 +1,5 @@
 "set autoformat
-set formatprg="clang-format -style"
+set formatprg="clang-format -style=file"
 
 "if snippets
 ab if if() {<CR><++><CR>}<CR><++><Esc>kkki

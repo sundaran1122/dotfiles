@@ -8,6 +8,11 @@ source ~/programs/xplr/xplr.zsh
 bindkey -v
 bindkey '^?' backward-delete-char
 
+# fix busybox grep
+alias grep=grep
+alias egrep=egrep
+alias fgrep=fgrep
+
 alias n="nvim"
 alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
 alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
