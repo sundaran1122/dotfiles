@@ -1,4 +1,5 @@
-#!/bin/dash
+# vim: ft=bash
+#!/bin/sh
 
 tiramisu -j | while read -r notif
 do

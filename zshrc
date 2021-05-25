@@ -1,5 +1,6 @@
 #!/bin/zsh
-PROMPT="%F{1}%f %F{12}%~ %F{2}λ%F{8}>%f "
+PROMPT="%F{1}%f %F{12}%~%F{8}>
+ %F{2}λ%f "
 HISTFILE=~/.cache/zsh/zshhistory
 
 autoload -Uz compinit; compinit
@@ -34,6 +35,16 @@ alias gb="git branch"
 alias cp="cp -i"
 alias rm="rm -i"
 
+touch /dev/shm/pwd
+DISABLE_AUTO_TITLE="true"
+chpwd () {
+  print -Pn "\e]0;zsh:%~\a"
+  killall "controllemonbar" -SIGUSR2
+  pwd > /dev/shm/pwd
+}
+
+cd $(cat /dev/shm/pwd) || chpwd
+
 #nordic tty?
 if [[ $TERM = "linux" ]]
 then
@@ -59,13 +70,3 @@ then
 
   clear
 fi
-
-touch /dev/shm/pwd
-DISABLE_AUTO_TITLE="true"
-chpwd () {
-  print -Pn "\e]0;zsh:%~\a"
-  killall "controllemonbar" -SIGUSR2
-  pwd > /dev/shm/pwd
-}
-
-cd $(cat /dev/shm/pwd) || chpwd

@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/ash
 
 bspc node -t fullscreen
 xdotool search --class Bar windowunmap

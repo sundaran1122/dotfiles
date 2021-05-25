@@ -1,14 +1,29 @@
 #!/bin/execlineb -s1
 
+#####################
+# Initialize log
+#####################
 foreground { mkdir -p /tmp/wm }
+execline-cd /tmp/wm
 redirfd -a 1 /tmp/wm/log
 redirfd -a 2 /tmp/wm/log
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Initialized bspwm log...\\e[0m" }
+
+#########################################
+# create lock so only one instance can exist
+#########################################
+if -n { test -e /tmp/wm/bspwm.lck }
+foreground { touch /tmp/wm/bspwm.lck }
+
+#####################
+# set up enviornment variables
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Setting up environment variables...\\e[0m" }
 importas HOME HOME
 
 export EDITOR nvim
 export BROWSER firefox
 export TERMINAL st
-export SXHKD_SHELL dash
 export SHELL zsh
 
 # fixes some java application issues
@@ -21,62 +36,75 @@ export PASSWORD_STORE_DIR ${HOME}/.local/password-store
 
 export LESSHISTFILE ${HOME}/.cache/lesshst
 
-foreground { 
-	killall "picom"
-		"sxhkd"
-		"bspc"
-		"controllemonbar"
-		"xcape"
-		"updatedesktopmodule"
-		"updatewindowmodule"
-		"notification-server"
-		"tiramisu"
-		"lemonbar"
-}
+# if $1 is greater than 1 that means this is not run for the first time
+ifthenelse { test ${1} -gt 1 } {
+	foreground { echo -e "\\e[34m\\e[1m::\\e[37m killing duplicate processess..\\e[0m" }
+	foreground { 
+	#forbacktickx pid { pgrep }
+		killall -w "picom"
+			"sxhkd"
+			"bspc"
+			"controllemonbar"
+			"xcape"
+			"updatedesktopmodule"
+			"notification-server"
+			"tiramisu"
+			"lemonbar"
+	}
+} { true }
 
 
+#####################
 # daemons
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Starting daemons...\\e[0m" }
+
 background { sxhkd }
 background { picom --experimental-backend --backend glx }
 
-# some backgroud scripts
 background { 
-pipeline { ${HOME}/.config/lemonbar/controllemonbar }
-lemonbar -gx17 "-fmononoki Nerd Font:pixelsize=13" -B#2E3440 -F#D8DEE9 -U#88C0D0 -o2
+	pipeline { ${HOME}/.config/lemonbar/controllemonbar }
+	lemonbar -gx17 "-fmononoki Nerd Font:pixelsize=13" -B#2E3440 -F#D8DEE9 -U#88C0D0 -o2
 }
+
+# some backgroud scripts
 background { ${HOME}/.scripts/lemonbar/updatedesktopmodule }
-background { ${HOME}/.scripts/lemonbar/updatewindowmodule }
-background { ${HOME}/.scripts/general/notification-server }
+#background { ${HOME}/.scripts/general/notification-server }
 
-#
+#####################
 # xdg stuff
-#
-background { dex -a }
-background { xrdb ${HOME}/.config/X11/Xresources }
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Autostarting processess...\\e[0m" }
+background { dex -a } # autostart
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Loading Xresources...\\e[0m" }
+background { xrdb ${HOME}/.config/X11/Xresources } # load Xresources
 
-#
+#####################
 # xorg stuff
-#
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Setting wallpaper...\\e[0m" }
+background { ash -c "hsetroot -solid '#3B4252' -fill ~/Pictures/wallpapers/wallpaper.png" }
+
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Configuring X...\\e[0m" }
 background { xrandr -s 1366x768 }
-background { dash -c "hsetroot -solid '#3B4252' -center ~/Pictures/wallpapers/wallpaper.png" }
 foreground { xsetroot -cursor_name left_ptr }
-
 foreground { xset r rate 250 100 }
-
 
 # map caps lock to some other keys
 foreground { setxkbmap -option caps:super } 
 foreground { xcape -e Super_L=Escape }
 foreground { xmodmap ${HOME}/.config/X11/Xmodmap }
 
-#
+#####################
 # hot corners
-#
+#####################
 # background { xdotool behave_screen_edge --delay 1000 top-right key super+alt+s }
 
-#
-# bspwm stuff
-#
+#####################
+# bspwm settings
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Configuring bspwm...\\e[0m" }
+
 foreground { bspc config border_width         0 }
 foreground { bspc config window_gap           1 }
 foreground { bspc config left_padding         0 }
@@ -99,7 +127,11 @@ foreground { bspc config pointer_modifier mod4 }
 foreground { bspc config pointer_action1 move }
 foreground { bspc config pointer_action2 resize_corner }
 
-# rules
+#####################
+# bspwm rules
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Setting window rules...\\e[0m" }
+
 foreground { bspc rule -a *:*:Dialog state=floating }
 foreground { bspc rule -a *:*:Alert manage=off }
 foreground { bspc rule -a Screenkey manage=off }
@@ -108,6 +140,13 @@ foreground { bspc rule -a *:*:TLauncher state=floating }
 foreground { bspc rule -a firefox:\*:Picture-in-Picture state=floating sticky=on }
 foreground { bspc rule -a Youtube-video state=floating sticky=on }
 
-# force some windows into tiling
+# force some windows into tiling mode
 foreground { bspc rule -a gimp state=tiling }
 foreground { bspc rule -a Zathura state=tiling }
+
+#####################
+# finish
+#####################
+foreground { echo -e "\\e[34m\\e[1m::\\e[37m Finished\\e[0m" }
+
+rm /tmp/wm/bspwm.lck # clean up lock

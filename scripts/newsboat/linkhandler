@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "opening $1"
 
 case "$1" in
 	https://www.youtube.com*)
-		setsid -f mpv --hwdec=auto \
+		setsid mpv --hwdec=auto \
 			"--ytdl-format=bestvideo[height<=?720][ext=mp4][fps<=30]+bestaudio[ext=m4a]" "$1"
 		;;
 	*)
-		setsid -f "$BROWSER" "$1"
+		setsid "$BROWSER" "$1"
 		;;
 esac

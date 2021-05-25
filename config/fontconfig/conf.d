@@ -2,11 +2,11 @@
 <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
 <fontconfig>
 	<!--
-	make mononoki more closer together
+	make mononoki more compressed
 	-->
 	<match target="font">
 		<test name="family" qual="any">
-			<string>mononoki</string>
+			<string>mononoki Nerd Font</string>
 		</test>
 		<edit name="matrix" mode="assign">
 			<times>
@@ -17,6 +17,14 @@
 				</matrix>
 			</times>
 		</edit>
-	</match>
 
+		<!--
+			enable anti-aliasing on mononoki
+		-->
+		<edit name="antialias" mode="assign">
+			<bool>true</bool>
+		</edit>
+	</match>
 </fontconfig>
+<!-- vim: ft=xml
+-->

@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/execlineb -P
 
 # maim -m 1 -u /tmp/lockscreen.png
 

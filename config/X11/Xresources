@@ -1,20 +1,41 @@
-urxvt.font: xft:FiraCode-Regular:pixelsize=14;xft:JoyPixels:pixelsize=14
-
+!!!!!!!!!!!!!!!!!!!!!
+! generic options
+!!!!!!!!!!!!!!!!!!!!!
 *.background: #2E3440
 *.foreground: #D8DEE9
-*.color0: #2E3440
-*.color1: #BF616A
-*.color2: #A3BE8C
-*.color3: #EBCB8B
-*.color4: #81A1C1
-*.color5: #B48EAD
-*.color6: #88C0D0
-*.color7: #E5E9F0
-*.color8: #3B4252
-*.color9: #BF616A
-*.color10: #A3BE8C
-*.color11: #EBCB8B
-*.color12: #81A1C1
-*.color13: #B48EAD
-*.color14: #8FBCBB
-*.color15: #ECEFF4
+*.font: mononoki Nerd Font:pixelsize=13
+
+!!!!!!!!!!!!!!!!!!!!!
+! some system xresources
+!!!!!!!!!!!!!!!!!!!!!
+Xcursor.size: 16
+
+!!!!!!!!!!!!!!!!!!!!!
+! st options
+!!!!!!!!!!!!!!!!!!!!!
+
+! colors
+st.color0: #2E3440
+st.color1: #BF616A
+st.color2: #A3BE8C
+st.color3: #EBCB8B
+st.color4: #81A1C1
+st.color5: #B48EAD
+st.color6: #88C0D0
+st.color7: #E5E9F0
+st.color8: #3B4252
+st.color9: #BF616A
+st.color10: #A3BE8C
+st.color11: #EBCB8B
+st.color12: #81A1C1
+st.color13: #B48EAD
+st.color14: #8FBCBB
+st.color15: #ECEFF4
+st.background: 7
+st.foreground: 0
+
+! misc
+st.shell: /bin/zsh
+st.termname: st-256color
+st.bellvolume: 0
+st.tabspaces: 2
