@@ -49,8 +49,7 @@ super + alt + c
 
 # screenshot
 super + a; super + s
-	maim -s | xclip -selection clipboard -t image/png && \
-	notify-send -a maim "Screenshot taken!" "a screenshot has been taken. its been copied to the clipboard."
+	~/.scripts/dmenu/screenshot
 
 # kill processes
 super + a; super + {k,c}
@@ -58,7 +57,7 @@ super + a; super + {k,c}
 
 # select unicode
 super + a; super + e
-	cat ~/.scripts/dmenu/emoji | dmenu \
+	cat ~/.scripts/dmenu/emoji.data | dmenu \
 	-nb "#2E3440" -nf "#D8DEE9" \
 	-sb "#3B4252" -sf "#ECEFF3" \
 	-fn "mononoki Nerd Font-10" -p "emoji:" -i -l 15 \

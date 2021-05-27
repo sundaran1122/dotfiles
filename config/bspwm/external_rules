@@ -1,4 +1,5 @@
-#!/bin/sh
+# vim: ft=bash
+#!/bin/ash
 
 # check if we have presel
 test -z $(bspc query -N -n focused.automatic.tiled) && exit

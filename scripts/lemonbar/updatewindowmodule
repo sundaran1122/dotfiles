@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/execlineb -P
 
-while true
-do
-  bspc subscribe -c 1 node_add node_remove node_focus &> /dev/null && killall -SIGUSR2 controllemonbar
-done
+redirfd -a 1 /dev/null
+
+loopwhilex foreground {
+	foreground { bspc subscribe -c 1 node_add node_remove node_focus desktop_focus } 
+	killall -SIGUSR2 controllemonbar
+}

@@ -11,7 +11,7 @@ options="
 
 sel=$(echo -en $options | dmenu -nb "#2E3440" -nf "#D8DEE9" \
 	-sb "#3B4252" -sf "#ECEFF3" \
-	-fn "mononoki Nerd Font-10" -p "run:" \
+	-fn "mononoki Nerd Font-10" -p "screenshot:" \
 	-i -l 15)
 
 case $(echo $sel | cut -d\: -f1)
@@ -22,6 +22,7 @@ in
 
 		notify-send -a screenshot "Success!" \
 			"The Screenshot was successfully taken, it is in the clipboard."
+		rm $tmp
 		;;
 	*)
 		error "option not implemented yet"

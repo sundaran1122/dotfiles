@@ -55,7 +55,7 @@ set nocp
 set clipboard=unnamedplus
 set shell=zsh
 set noerrorbells
-set mouse=n "enable mouse in normal mode only
+set mouse=nv "enable mouse in normal mode only
 
 "autocomplete
 set completeopt=longest,menuone
@@ -71,7 +71,7 @@ let g:nord_cursor_line_number_background = 1
 let g:nord_bold = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
-"colorscheme nord
+colorscheme nord
 
 
 "netrw config
