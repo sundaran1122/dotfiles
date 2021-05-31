@@ -5,9 +5,7 @@ do
   windows="$windows\n$(xdotool getwindowname $window)"
 done
 
-windowname="$(echo -e $windows | sort | uniq | dmenu -nb "#2E3440" -nf "#D8DEE9" \
-  -sb "#3B4252" -sf "#ECEFF3" \
-  -fn "mononoki Nerd Font-10" -p "map:" -i -l 20)"
+windowname="$(echo -e $windows | sort | uniq | dmenu -p "map:" -i -l 20 -F)"
 
 for tomapwindow in $(xdotool search --desktop $(xdotool get_desktop) --name "$windowname")
 do

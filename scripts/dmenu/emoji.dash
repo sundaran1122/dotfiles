@@ -1,3 +1,0 @@
-#!/bin/dash
-
-cat ~/.scripts/dmenu/emoji | sk -p "emoji: " | cut -d\  -f1 > /tmp/wm/emoji

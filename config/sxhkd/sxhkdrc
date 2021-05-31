@@ -12,9 +12,7 @@ super + shift + Return
 
 # program launcher
 super + @space
-	dmenu_run -nb "#2E3440" -nf "#D8DEE9" \
-	-sb "#3B4252" -sf "#ECEFF3" \
-	-fn "mononoki Nerd Font-10" -p "run:" -i
+	dmenu_run -p "run:" -i -F
 
 ###############################
 # super + alt stuff
@@ -24,13 +22,15 @@ super + @space
 super + alt + r
 	bspc wm -r
 
+# reload Xresources
+super + alt + x
+	xrdb -I$HOME/.config/Xres ~/.config/Xres/main.xres && \
+	notify-send -a Sxhkd "Xresources Reloaded" \
+	"Xresources were successfully reloaded"
+
 # quit bspwm
 super + alt + q
 	~/.scripts/bspwm/quitbspwm
-
-# lock screen
-super + z
-	~/.scripts/general/lockscreen
 
 # change window gap
 super + alt + equal
@@ -47,6 +47,10 @@ super + alt + c
 # action commands
 ###############################
 
+# lock screen
+super + z
+	~/.scripts/general/lockscreen
+
 # screenshot
 super + a; super + s
 	~/.scripts/dmenu/screenshot
@@ -57,10 +61,7 @@ super + a; super + {k,c}
 
 # select unicode
 super + a; super + e
-	cat ~/.scripts/dmenu/emoji.data | dmenu \
-	-nb "#2E3440" -nf "#D8DEE9" \
-	-sb "#3B4252" -sf "#ECEFF3" \
-	-fn "mononoki Nerd Font-10" -p "emoji:" -i -l 15 \
+	cat ~/.scripts/dmenu/emoji.data | dmenu -p "emoji:" -i -l 15 -F \
 	| cut -d\  -f1 | tr -d '\n' | xclip -selection clipboard
 
 # torrent something
@@ -100,10 +101,6 @@ super + n
 # open newsboat
 super + o; super + n
 	$TERMINAL -e newsboat
-
-# open freetube
-super + o; super + y
-	/opt/FreeTube/freetube
 
 # open brave
 super + o; super + g # super + g used because brave is only for google services
@@ -151,6 +148,10 @@ XF86Calculator
 
 super + XF86Calculator
 	$TERMINAL -e python
+
+# lock screen
+Scroll_Lock
+	~/.scripts/general/lockscreen
 
 ###############################
 # General Window stuff

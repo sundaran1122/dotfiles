@@ -1,0 +1,13 @@
+!!!!!!!!!!!!!!!!!!!!!
+! dmenu options
+!!!!!!!!!!!!!!!!!!!!!
+dmenu.selbackground: #3B4252
+dmenu.selforeground: #ECEFF4
+
+! related to dmenu highlight
+dmenu.highlightfg: #88C0D0
+dmenu.highlightbg: #2E3440
+dmenu.highlightselbg: #3B4252
+dmenu.highlightselfg: #88C0D0
+
+! vim: ft=xdefaults

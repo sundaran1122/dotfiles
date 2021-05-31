@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "opening $1"
+echo ":: opening $1"
 
 case "$1" in
 	https://www.youtube.com*)

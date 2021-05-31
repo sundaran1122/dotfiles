@@ -1,6 +1,4 @@
 #!/bin/execlineb -s1
 
 pipeline { echo "yes\nno" }
-dmenu -nb "#2E3440" -nf "#D8DEE9"
-	-sb "#3B4252" -sf "#ECEFF3"
-	-fn "mononoki Nerd Font-10" -p "${1}" -i
+dmenu -p "${1}" -i -F

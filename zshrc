@@ -9,20 +9,18 @@ source ~/programs/xplr/xplr.zsh
 bindkey -v
 bindkey '^?' backward-delete-char
 
-# fix busybox grep
-alias grep=grep
-alias egrep=egrep
-alias fgrep=fgrep
+export SKIM_DEFAULT_OPTIONS="--height=70% --reverse --tiebreak=length,index --prompt=\"λ \""
+alias cf="cd \`fd -t d | sk $SKIM_DEFAULT_OPTIONS\`"
+alias nf="nvim \`fd -t f | sk $SKIM_DEFAULT_OPTIONS\`"
 
 alias n="nvim"
-alias cf="cd \`fd -t d | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
-alias nf="nvim \`fd -t f | sk --height=70% --reverse --tiebreak=length,index --prompt=\"λ \"\`"
 alias ctagsgen="ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++"
 alias tsm="transmission-remote"
 alias sudo="doas"
 alias netchk="gping google.com facebook.com youtube.com"
 alias zthr="zathura"
 
+# git aliases
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
@@ -31,6 +29,12 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gch="git checkout"
 alias gb="git branch"
+
+# autotools aliases
+alias am="automake"
+alias ac="autoconf"
+alias arc="autoreconf"
+alias arci="autoreconfi"
 
 alias cp="cp -i"
 alias rm="rm -i"

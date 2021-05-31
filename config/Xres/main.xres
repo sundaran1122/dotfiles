@@ -1,0 +1,20 @@
+!!!!!!!!!!!!!!!!!!!!!
+! generic options
+!!!!!!!!!!!!!!!!!!!!!
+*.background: #2E3440
+*.foreground: #D8DEE9
+*.font: mononoki Nerd Font:pixelsize=13:antialias=true
+*.tabspaces: 2
+
+!!!!!!!!!!!!!!!!!!!!!
+! some system xresources
+!!!!!!!!!!!!!!!!!!!!!
+Xcursor.size: 16
+
+!!!!!!!!!!!!!!!!!!!!!
+! load other xresources
+!!!!!!!!!!!!!!!!!!!!!
+#include "st.xres"
+#include "dmenu.xres"
+
+! vim: ft=xdefaults
